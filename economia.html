@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economia - Indicadores - Observatório da Mulher de Niterói</title>
+    
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Readex+Pro:wght@300;400;500;700&family=Vina+Sans&display=swap" rel="stylesheet">
+    
+    <!-- ESTILO EXTERNO PADRONIZADO -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="indicator-single-page" data-page="indicadores" data-eixo="economia">
+
+    <!-- CABEÇALHO (Injetado dinamicamente via JS) -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- SEÇÃO DE APRESENTAÇÃO DO EIXO -->
+        <section class="section-content">
+            <div class="content-container">
+                <h1>Economia</h1>
+                <div class="content-grid">
+                    <div class="content-text">
+                        <p><strong>A importância dos dados</strong> econômicos e do trabalho reside na capacidade de monitorar a inserção das mulheres no mercado de trabalho, a igualdade salarial, a autonomia financeira e o empreendedorismo feminino em Niterói.</p>
+                        <p>Acompanhar esses indicadores possibilita o desenho de políticas públicas focadas na redução de disparidades de renda, na conciliação do trabalho de cuidado com o mercado formal e no incentivo ao protagonismo econômico das mulheres no município.</p>
+                    </div>
+                    <div class="content-image-wrapper">
+                        <img src="assets/img/economia.jpg" alt="Economia e Autonomia Financeira em Niterói">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DO PAINEL POWER BI -->
+        <section class="section-panel">
+            <div class="dashboard-panel-box">
+                <span class="dashboard-placeholder-text">Painel de Indicadores de Economia (Power BI)</span>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-gradient"></div>
+
+    <!-- RODAPÉ (Injetado dinamicamente via JS) -->
+    <div id="footer-container"></div>
+
+    <!-- SCRIPT DE CARREGAMENTO DOS COMPONENTES -->
+    <script>
+        async function loadComponent(elementId, filePath) {
+            try {
+                const response = await fetch(filePath);
+                if (response.ok) {
+                    const html = await response.text();
+                    document.getElementById(elementId).innerHTML = html;
+                }
+            } catch (error) {
+                console.error(`Erro ao carregar componente ${filePath}:`, error);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadComponent("header-container", "components/header.html");
+            loadComponent("footer-container", "components/footer.html");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossário - Observatório da Mulher de Niterói</title>
+    
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Readex+Pro:wght@300;400;500;700&family=Vina+Sans&display=swap" rel="stylesheet">
+    
+    <!-- CSS EXTERNO PADRONIZADO -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="glossary-page" data-page="glossario">
+
+    <!-- CABEÇALHO (Injetado via JS / Componente) -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- SEÇÃO 1: INTRODUÇÃO, BARRA DE PESQUISA E FILTROS A-Z -->
+        <section class="section-glossary-intro">
+            <div class="glossary-container">
+                <div class="glossary-intro">
+                    <h1>Glossário</h1>
+                    <p>Conceitos fundamentais relacionados aos direitos das mulheres, equidade de gênero e políticas públicas.</p>
+                </div>
+
+                <!-- Campo de Pesquisa por Termo -->
+                <div class="glossary-search-wrap">
+                    <input type="text" id="searchInput" placeholder="Pesquisar termo...">
+                </div>
+
+                <!-- Navegação Alfabética (A-Z) gerada por botões -->
+                <div class="alphabet-nav" id="alphabetNav">
+                    <!-- Os botões de A a Z serão gerados via JavaScript -->
+                </div>
+
+                <!-- Botão para limpar filtros e mostrar todos -->
+                <div>
+                    <button class="btn-show-all" id="showAllBtn">Mostrar todos (A-Z)</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: GRADE COM OS CARDS DE TERMOS DO GLOSSÁRIO -->
+        <section class="section-glossary-content">
+            <div class="glossary-container">
+                <div class="glossary-grid" id="glossaryGrid">
+                    
+                    <!-- Letra A -->
+                    <div class="glossary-card" data-term="assédio moral" data-letter="a">
+                        <h3>Assédio Moral</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Assédio Moral')">Definição</button>
+                    </div>
+
+                    <div class="glossary-card" data-term="assédio sexual" data-letter="a">
+                        <h3>Assédio Sexual</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Assédio Sexual')">Definição</button>
+                    </div>
+
+                    <!-- Letra B -->
+                    <div class="glossary-card" data-term="boletim de ocorrência" data-letter="b">
+                        <h3>Boletim de Ocorrência</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Boletim de Ocorrência')">Definição</button>
+                    </div>
+
+                    <!-- Letra C -->
+                    <div class="glossary-card" data-term="cisgênero" data-letter="c">
+                        <h3>Cisgênero</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Cisgênero')">Definição</button>
+                    </div>
+
+                    <div class="glossary-card" data-term="cisnormatividade" data-letter="c">
+                        <h3>Cisnormatividade</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Cisnormatividade')">Definição</button>
+                    </div>
+
+                    <div class="glossary-card" data-term="consentimento" data-letter="c">
+                        <h3>Consentimento</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Consentimento')">Definição</button>
+                    </div>
+
+                    <div class="glossary-card" data-term="cuidado economia do cuidado" data-letter="c">
+                        <h3>Cuidado (Economia do Cuidado)</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Cuidado (Economia do Cuidado)')">Definição</button>
+                    </div>
+
+                    <!-- Letra D -->
+                    <div class="glossary-card" data-term="desigualdade de gênero" data-letter="d">
+                        <h3>Desigualdade de Gênero</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Desigualdade de Gênero')">Definição</button>
+                    </div>
+
+                    <div class="glossary-card" data-term="divisão sexual do trabalho" data-letter="d">
+                        <h3>Divisão Sexual do Trabalho</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Divisão Sexual do Trabalho')">Definição</button>
+                    </div>
+
+                    <div class="glossary-card" data-term="direitos reprodutivos" data-letter="d">
+                        <h3>Direitos Reprodutivos</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Direitos Reprodutivos')">Definição</button>
+                    </div>
+
+                    <!-- Letra E -->
+                    <div class="glossary-card" data-term="expressão de gênero" data-letter="e">
+                        <h3>Expressão de Gênero</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Expressão de Gênero')">Definição</button>
+                    </div>
+
+                    <!-- Letra F -->
+                    <div class="glossary-card" data-term="feminismo" data-letter="f">
+                        <h3>Feminismo</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Feminismo')">Definição</button>
+                    </div>
+
+                    <div class="glossary-card" data-term="feminicídio" data-letter="f">
+                        <h3>Feminicídio</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Feminicídio')">Definição</button>
+                    </div>
+
+                    <!-- Letra G -->
+                    <div class="glossary-card" data-term="gênero" data-letter="g">
+                        <h3>Gênero</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Gênero')">Definição</button>
+                    </div>
+
+                    <!-- Letra H -->
+                    <div class="glossary-card" data-term="heteronormatividade" data-letter="h">
+                        <h3>Heteronormatividade</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Heteronormatividade')">Definição</button>
+                    </div>
+
+                    <div class="glossary-card" data-term="homofobia" data-letter="h">
+                        <h3>Homofobia</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Homofobia')">Definição</button>
+                    </div>
+
+                    <!-- Letra I -->
+                    <div class="glossary-card" data-term="interseccionalidade" data-letter="i">
+                        <h3>Interseccionalidade</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Interseccionalidade')">Definição</button>
+                    </div>
+
+                    <!-- Letra L -->
+                    <div class="glossary-card" data-term="lgbtia+" data-letter="l">
+                        <h3>LGBTIA+</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('LGBTIA+')">Definição</button>
+                    </div>
+
+                    <div class="glossary-card" data-term="lesbofobia" data-letter="l">
+                        <h3>Lesbofobia</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Lesbofobia')">Definição</button>
+                    </div>
+
+                    <!-- Letra M -->
+                    <div class="glossary-card" data-term="misoginia" data-letter="m">
+                        <h3>Misoginia</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Misoginia')">Definição</button>
+                    </div>
+
+                    <!-- Letra N -->
+                    <div class="glossary-card" data-term="não binário" data-letter="n">
+                        <h3>Não Binário</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Não Binário')">Definição</button>
+                    </div>
+
+                    <div class="glossary-card" data-term="normas de gênero" data-letter="n">
+                        <h3>Normas de Gênero</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Normas de Gênero')">Definição</button>
+                    </div>
+
+                    <!-- Letra O -->
+                    <div class="glossary-card" data-term="orientação sexual" data-letter="o">
+                        <h3>Orientação Sexual</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Orientação Sexual')">Definição</button>
+                    </div>
+
+                    <!-- Letra P -->
+                    <div class="glossary-card" data-term="patriarcado" data-letter="p">
+                        <h3>Patriarcado</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Patriarcado')">Definição</button>
+                    </div>
+
+                    <!-- Letra Q -->
+                    <div class="glossary-card" data-term="queer teoria queer" data-letter="q">
+                        <h3>Queer (Teoria Queer)</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Queer (Teoria Queer)')">Definição</button>
+                    </div>
+
+                    <!-- Letra R -->
+                    <div class="glossary-card" data-term="representatividade" data-letter="r">
+                        <h3>Representatividade</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Representatividade')">Definição</button>
+                    </div>
+
+                    <!-- Letra S -->
+                    <div class="glossary-card" data-term="sexismo" data-letter="s">
+                        <h3>Sexismo</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Sexismo')">Definição</button>
+                    </div>
+
+                    <div class="glossary-card" data-term="stalking" data-letter="s">
+                        <h3>Stalking</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Stalking')">Definição</button>
+                    </div>
+
+                    <!-- Letra T -->
+                    <div class="glossary-card" data-term="transexualidade" data-letter="t">
+                        <h3>Transexualidade</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Transexualidade')">Definição</button>
+                    </div>
+
+                    <!-- Letra V -->
+                    <div class="glossary-card" data-term="violência doméstica" data-letter="v">
+                        <h3>Violência Doméstica</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Violência Doméstica')">Definição</button>
+                    </div>
+
+                    <div class="glossary-card" data-term="violência vicária" data-letter="v">
+                        <h3>Violência Vicária</h3>
+                        <button class="btn-definition" onclick="abrirDefinicao('Violência Vicária')">Definição</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-gradient"></div>
+
+    <!-- RODAPÉ (Injetado via JS / Componente) -->
+    <div id="footer-container"></div>
+
+    <!-- SCRIPTS DE INTERATIVIDADE E INJEÇÃO DOS COMPONENTES -->
+    <script>
+        async function loadComponent(elementId, filePath) {
+            try {
+                const response = await fetch(filePath);
+                if (response.ok) {
+                    const html = await response.text();
+                    document.getElementById(elementId).innerHTML = html;
+                }
+            } catch (error) {
+                console.error(`Erro ao carregar componente ${filePath}:`, error);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Carrega cabeçalho e rodapé desacoplados
+            loadComponent("header-container", "components/header.html");
+            loadComponent("footer-container", "components/footer.html");
+
+            // Lógica de Filtros e Busca do Glossário
+            const alphabetNav = document.getElementById('alphabetNav');
+            const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+            let activeLetter = '';
+
+            alphabet.forEach(letter => {
+                const btn = document.createElement('button');
+                btn.classList.add('alpha-btn');
+                btn.textContent = letter;
+                btn.addEventListener('click', () => {
+                    if (activeLetter === letter.toLowerCase()) {
+                        activeLetter = '';
+                        btn.classList.remove('active');
+                    } else {
+                        document.querySelectorAll('.alpha-btn').forEach(b => b.classList.remove('active'));
+                        activeLetter = letter.toLowerCase();
+                        btn.classList.add('active');
+                        document.getElementById('searchInput').value = '';
+                    }
+                    filterAndReorderCards();
+                });
+                alphabetNav.appendChild(btn);
+            });
+
+            const searchInput = document.getElementById('searchInput');
+            const showAllBtn = document.getElementById('showAllBtn');
+            const grid = document.getElementById('glossaryGrid');
+            const cards = Array.from(grid.getElementsByClassName('glossary-card'));
+
+            function filterAndReorderCards() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                const matchingCards = [];
+                const nonMatchingCards = [];
+
+                cards.forEach(card => {
+                    const termText = card.getAttribute('data-term');
+                    const termLetter = card.getAttribute('data-letter');
+
+                    const matchesSearch = termText.includes(searchTerm);
+                    const matchesLetter = !activeLetter || termLetter === activeLetter;
+
+                    if (matchesSearch && matchesLetter) {
+                        card.style.display = 'flex';
+                        matchingCards.push(card);
+                    } else {
+                        card.style.display = 'none';
+                        nonMatchingCards.push(card);
+                    }
+                });
+
+                matchingCards.forEach(card => grid.appendChild(card));
+                nonMatchingCards.forEach(card => grid.appendChild(card));
+            }
+
+            searchInput.addEventListener('input', () => {
+                activeLetter = '';
+                document.querySelectorAll('.alpha-btn').forEach(b => b.classList.remove('active'));
+                filterAndReorderCards();
+            });
+
+            showAllBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                activeLetter = '';
+                document.querySelectorAll('.alpha-btn').forEach(b => b.classList.remove('active'));
+                filterAndReorderCards();
+            });
+        });
+
+        function abrirDefinicao(termo) {
+            alert("Exibir definição completa para o termo: " + termo);
+        }
+    </script>
+</body>
+</html>

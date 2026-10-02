@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança - Indicadores - Observatório da Mulher de Niterói</title>
+    
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Readex+Pro:wght@300;400;500;700&family=Vina+Sans&display=swap" rel="stylesheet">
+    
+    <!-- ESTILO EXTERNO PADRONIZADO -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="indicator-single-page" data-page="indicadores" data-eixo="seguranca">
+
+    <!-- CABEÇALHO (Injetado dinamicamente via JS) -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- SEÇÃO DE APRESENTAÇÃO DO EIXO -->
+        <section class="section-content">
+            <div class="content-container">
+                <h1>Segurança</h1>
+                <div class="content-grid">
+                    <div class="content-text">
+                        <p><strong>A importância dos dados</strong> sobre segurança e prevenção à violência reflete o monitoramento contínuo das ocorrências contra a mulher, como violência doméstica, assédio e feminicídio no município de Niterói.</p>
+                        <p>Acompanhar esses índices permite aperfeiçoar a rede de atendimento e proteção às mulheres, orientando ações integradas entre órgãos municipais e forças de segurança para a garantia de uma vida livre de violência.</p>
+                    </div>
+                    <div class="content-image-wrapper">
+                        <img src="assets/img/seguranca.jpg" alt="Segurança e Proteção em Niterói">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DO PAINEL POWER BI INTEGRADO -->
+        <section class="section-panel">
+            <div class="dashboard-panel-box">
+                <iframe 
+                    title="Observatorio_mulher_painel_seguranca" 
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMWUzNWMyMDctMmYzNS00OTU4LWFmMTktNWYzYzdlODliM2I0IiwidCI6ImRiM2MxYzY5LWUyOGMtNDNkNy04ZTFhLTk1ODNlOWU5OGE1MSJ9" 
+                    allowFullScreen="true">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-gradient"></div>
+
+    <!-- RODAPÉ (Injetado dinamicamente via JS) -->
+    <div id="footer-container"></div>
+
+    <!-- SCRIPT DE CARREGAMENTO DOS COMPONENTES -->
+    <script>
+        async function loadComponent(elementId, filePath) {
+            try {
+                const response = await fetch(filePath);
+                if (response.ok) {
+                    const html = await response.text();
+                    document.getElementById(elementId).innerHTML = html;
+                }
+            } catch (error) {
+                console.error(`Erro ao carregar componente ${filePath}:`, error);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadComponent("header-container", "components/header.html");
+            loadComponent("footer-container", "components/footer.html");
+        });
+    </script>
+</body>
+</html>

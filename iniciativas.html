@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciativas Municipais - Observatório da Mulher de Niterói</title>
+    
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Readex+Pro:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- LEAFLET MAPS CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- CSS EXTERNO PADRONIZADO -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="initiatives-page" data-page="iniciativas">
+
+    <!-- CABEÇALHO (Injetado dinamicamente) -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- INTRODUÇÃO CENTRALIZADA -->
+        <section class="section-intro initiatives-intro">
+            <div class="intro-container">
+                <h1>Iniciativas Municipais</h1>
+                <p>Mapeamento e acompanhamento das ações, programas e políticas públicas municipais direcionadas à garantia de direitos, igualdade e proteção das mulheres no município de Niterói.</p>
+            </div>
+        </section>
+
+        <!-- CONTROLES CENTRALIZADOS, CARDS, LINHA DO TEMPO E MAPA -->
+        <section class="section-list">
+            <div class="list-container">
+                
+                <!-- BARRA DE CONTROLES -->
+                <div class="controls-bar">
+                    <!-- ALTERNÂNCIA DE VISÃO -->
+                    <div class="view-toggle-wrap">
+                        <button class="view-btn active" id="btnViewCards">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1z"/></svg>
+                            <span>Visão em Cards</span>
+                        </button>
+                        <button class="view-btn" id="btnViewTimeline">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <span>Linha do Tempo</span>
+                        </button>
+                        <button class="view-btn" id="btnViewMap">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <span>Mapa de Equipamentos</span>
+                        </button>
+                    </div>
+
+                    <!-- DROPDOWN DE FILTROS (SERÁ OCULTADO NA VISÃO EM MAPA) -->
+                    <div class="category-filter-wrap" id="categoryFilterWrap">
+                        <button class="category-filter-btn" id="filterToggleBtn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/></svg>
+                            <span id="filterBtnLabel">Filtrar Iniciativas</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+
+                        <div class="filter-dropdown-menu" id="filterDropdown">
+                            <div class="filter-group-title">Eixos Temáticos</div>
+                            <label class="filter-option">
+                                <input type="checkbox" value="all-eixos" class="filter-eixo-all" checked> Todos os Eixos
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Violência" class="filter-eixo"> Enfrentamento à Violência
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Saúde" class="filter-eixo"> Saúde e Bem-Estar
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Educação" class="filter-eixo"> Educação
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Econômica" class="filter-eixo"> Autonomia Econômica
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Urbanismo" class="filter-eixo"> Urbanismo & Mobilidade
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Governança" class="filter-eixo"> Governança & Gestão
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Assistência" class="filter-eixo"> Assistência Social
+                            </label>
+
+                            <hr class="filter-divider">
+
+                            <div class="filter-group-title">Tipos de Impacto</div>
+                            <label class="filter-option">
+                                <input type="checkbox" value="all-impactos" class="filter-impacto-all" checked> Todos os Impactos
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Direto" class="filter-impacto"> Impacto Direto
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Indireto" class="filter-impacto"> Impacto Indireto
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VISÃO 1: GRID DE CARDS -->
+                <div class="initiative-grid" id="initiativeGrid">
+                    <p style="grid-column: 1/-1; text-align: center; padding: 40px;">Carregando iniciativas...</p>
+                </div>
+
+                <!-- VISÃO 2: LINHA DO TEMPO CRONOLÓGICA -->
+                <div class="timeline-container" id="timelineContainer">
+                    <!-- Gerado dinamicamente -->
+                </div>
+
+                <!-- VISÃO 3: MAPA DE EQUIPAMENTOS (SIGEO / LEAFLET) -->
+                <div class="map-view-container" id="mapContainer" style="display: none; width: 100%; height: 600px; border-radius: 16px; overflow: hidden; margin-top: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
+                    <div id="leafletMap" style="width: 100%; height: 100%;"></div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL / FICHA DA INICIATIVA -->
+    <div class="modal-overlay" id="initiativeModal">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            
+            <div class="modal-header">
+                <div class="modal-header-icon" id="mIcon"></div>
+                <div class="modal-header-text">
+                    <h2 id="mTitle">Nome da Iniciativa</h2>
+                    <span id="mEixo">EIXO TEMÁTICO</span>
+                </div>
+            </div>
+
+            <div class="modal-body-grid">
+                <!-- O que é? -->
+                <div class="info-box vertical full-width">
+                    <div class="info-box-header">O que é?</div>
+                    <div class="info-box-value" id="mDesc" style="font-weight: 400; font-size: 15px;">Descrição da iniciativa...</div>
+                </div>
+
+                <!-- Órgão Responsável -->
+                <div class="info-box">
+                    <div class="info-box-icon" id="iconOrgao"></div>
+                    <div class="info-box-text">
+                        <div class="info-box-header">Órgão responsável</div>
+                        <div class="info-box-value" id="mOrgao">-</div>
+                    </div>
+                </div>
+
+                <!-- Ano de início -->
+                <div class="info-box">
+                    <div class="info-box-icon" id="iconAno"></div>
+                    <div class="info-box-text">
+                        <div class="info-box-header">Ano de início</div>
+                        <div class="info-box-value" id="mAno">-</div>
+                    </div>
+                </div>
+
+                <!-- Orçamento estimado -->
+                <div class="info-box">
+                    <div class="info-box-icon" id="iconOrcamento"></div>
+                    <div class="info-box-text">
+                        <div class="info-box-header">Orçamento estimado</div>
+                        <div class="info-box-value" id="mOrcamento">-</div>
+                    </div>
+                </div>
+
+                <!-- Público prioritário -->
+                <div class="info-box">
+                    <div class="info-box-icon" id="iconPublico"></div>
+                    <div class="info-box-text">
+                        <div class="info-box-header">Público prioritário</div>
+                        <div class="info-box-value" id="mPublico">-</div>
+                    </div>
+                </div>
+
+                <!-- Situação atual -->
+                <div class="info-box">
+                    <div class="info-box-icon" id="iconSituacao"></div>
+                    <div class="info-box-text">
+                        <div class="info-box-header">Situação atual</div>
+                        <div class="info-box-value" id="mSituacao">-</div>
+                    </div>
+                </div>
+
+                <!-- Impacto -->
+                <div class="info-box">
+                    <div class="info-box-icon" id="iconImpacto"></div>
+                    <div class="info-box-text">
+                        <div class="info-box-header">Impacto</div>
+                        <div class="info-box-value" id="mImpacto">-</div>
+                    </div>
+                </div>
+
+                <!-- Números que Falam -->
+                <div class="info-box vertical full-width" id="mNumerosBox">
+                    <div class="info-box-header">Destaques / Números que Falam</div>
+                    <div class="info-box-value" id="mNumeros" style="font-weight: 400; font-size: 15px;">-</div>
+                </div>
+            </div>
+
+            <div class="modal-footer-action">
+                <button class="btn-update" onclick="alert('Formulário de atualização em breve.')">Informar dados de atualização</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-gradient"></div>
+
+    <!-- RODAPÉ (Injetado dinamicamente) -->
+    <div id="footer-container"></div>
+
+    <!-- SCRIPT DE MANIPULAÇÃO, NORMALIZAÇÃO E INTEGRAÇÃO SIGEO -->
+    <script>
+        let iniciativasGlobal = [];
+        let mapInstance = null;
+        let mapInitialized = false;
+
+        // ÍCONES VETORIAIS SVG PARA O MODAL
+        const fieldSVGIcons = {
+            orgao: `<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7h20L12 2zm-7 7h2v10H5V9zm5 0h2v10h-2V9zm5 0h2v10h-2V9zm5 0h2v10h-2V9zM2 20h20v2H2v-2z"/></svg>`,
+            ano: `<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>`,
+            orcamento: `<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1H6.32c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>`,
+            publico: `<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>`,
+            situacao: `<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>`,
+            impacto: `<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>`
+        };
+
+        async function loadComponent(elementId, filePath) {
+            try {
+                const response = await fetch(filePath);
+                if (response.ok) {
+                    const html = await response.text();
+                    document.getElementById(elementId).innerHTML = html;
+                }
+            } catch (error) {
+                console.error(`Erro ao carregar componente ${filePath}:`, error);
+            }
+        }
+
+        function getEixoTagClass(eixo) {
+            if (!eixo) return 'tag-out';
+            const e = eixo.toLowerCase();
+            
+            if (e.includes('econômica') || e.includes('economica') || e.includes('economia') || e.includes('empreendedorismo')) return 'tag-eco';
+            if (e.includes('violência') || e.includes('violencia') || e.includes('segurança') || e.includes('seguranca')) return 'tag-seg';
+            if (e.includes('saúde') || e.includes('saude')) return 'tag-sau';
+            if (e.includes('educação') || e.includes('educacao')) return 'tag-edu';
+            if (e.includes('governança') || e.includes('governanca') || e.includes('gestão') || e.includes('gestao')) return 'tag-gov';
+            if (e.includes('urbanismo') || e.includes('mobilidade') || e.includes('infraestrutura')) return 'tag-urb';
+            if (e.includes('assistência') || e.includes('assistencia')) return 'tag-ast';
+            
+            return 'tag-out';
+        }
+
+        function normalizeData(raw) {
+            let list = [];
+            if (Array.isArray(raw)) {
+                list = raw;
+            } else if (raw && Array.isArray(raw.Planilha1)) {
+                list = raw.Planilha1;
+            } else if (raw && typeof raw === 'object') {
+                const firstKey = Object.keys(raw).find(k => Array.isArray(raw[k]));
+                if (firstKey) list = raw[firstKey];
+            }
+
+            return list.map((item, idx) => {
+                let orc = item.orcamento || item["ORÇAMENTO SENSÍVEL A GÊNERO - ESTIMADO"] || "-";
+                if (typeof orc === 'number') {
+                    orc = "R$ " + orc.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                }
+
+                let anoRaw = String(item.ano_inicio || item["ANO DE ÍNICIO"] || "-").trim();
+                if (anoRaw.toLowerCase().includes("não") || anoRaw.toLowerCase().includes("nao")) {
+                    anoRaw = "Não iniciado";
+                }
+
+                return {
+                    id: item.id || idx + 1,
+                    nome: String(item.nome || item["NOME DA INICIATIVA"] || "Sem Nome").trim(),
+                    eixo: String(item.eixo || item["EIXO TEMÁTICO"] || "Geral").trim(),
+                    orgao: String(item.orgao || item["ÓRGÃO"] || "-").trim(),
+                    ano_inicio: anoRaw,
+                    orcamento: orc,
+                    publico_prioritario: String(item.publico_prioritario || item["PÚBLICO PRIOTÁRIO"] || item["PÚBLICO PRIORITÁRIO"] || "-").trim(),
+                    situacao: String(item.situacao || item["SITUAÇÃO ATUAL"] || "-").trim(),
+                    impacto: String(item.impacto || item["IMPACTO"] || "Direto").trim(),
+                    descricao: String(item.descricao || item["O QUE É "] || item["O QUE É"] || "").trim(),
+                    destaques: String(item.destaques || item["NÚMEROS QUE FALAM"] || "").trim()
+                };
+            });
+        }
+
+        function initSIGeoMap() {
+            if (mapInitialized) {
+                setTimeout(() => mapInstance.invalidateSize(), 150);
+                return;
+            }
+
+            mapInstance = L.map('leafletMap').setView([-22.8832, -43.1034], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; Prefeitura de Niterói | SIGeo'
+            }).addTo(mapInstance);
+
+            const urlGeoJSON = 'https://sig.niteroi.rj.gov.br/server/rest/services/Hosted/Pontos_de_Atendimento_SMMU/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson';
+
+            fetch(urlGeoJSON)
+                .then(response => response.json())
+                .then(data => {
+                    const geoJsonLayer = L.geoJSON(data, {
+                        onEachFeature: function (feature, layer) {
+                            const p = feature.properties;
+                            const nome = p.nome || p.Nome || p.NOME || 'Ponto de Atendimento';
+                            const endereco = p.endereco || p.Endereco || p.ENDERECO || 'Endereço não informado';
+                            const telefone = p.telefone || p.Telefone || p.TELEFONE || 'Não informado';
+                            const horario = p.horario || p.Horario || p.HORARIO || 'Não informado';
+
+                            const popupHTML = `
+                                <div style="font-family: 'Readex Pro', sans-serif; padding: 4px; color: #2d001e;">
+                                    <h4 style="margin: 0 0 8px; color: #5a0040; font-size: 15px; font-weight: 700;">${nome}</h4>
+                                    <p style="margin: 4px 0; font-size: 13px;"><strong>Endereço:</strong> ${endereco}</p>
+                                    <p style="margin: 4px 0; font-size: 13px;"><strong>Telefone:</strong> ${telefone}</p>
+                                    <p style="margin: 4px 0; font-size: 13px;"><strong>Horário:</strong> ${horario}</p>
+                                </div>
+                            `;
+                            layer.bindPopup(popupHTML);
+                        }
+                    }).addTo(mapInstance);
+
+                    if (geoJsonLayer.getBounds().isValid()) {
+                        mapInstance.fitBounds(geoJsonLayer.getBounds(), { padding: [30, 30] });
+                    }
+
+                    mapInitialized = true;
+                })
+                .catch(err => {
+                    console.error("Erro ao carregar GeoJSON da API do SIGeo:", err);
+                });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadComponent("header-container", "components/header.html");
+            loadComponent("footer-container", "components/footer.html");
+
+            const btnViewCards = document.getElementById("btnViewCards");
+            const btnViewTimeline = document.getElementById("btnViewTimeline");
+            const btnViewMap = document.getElementById("btnViewMap");
+            
+            const initiativeGrid = document.getElementById("initiativeGrid");
+            const timelineContainer = document.getElementById("timelineContainer");
+            const mapContainer = document.getElementById("mapContainer");
+            const categoryFilterWrap = document.getElementById("categoryFilterWrap");
+
+            const filterToggleBtn = document.getElementById("filterToggleBtn");
+            const filterDropdown = document.getElementById("filterDropdown");
+            const modal = document.getElementById("initiativeModal");
+            const modalCloseBtn = document.getElementById("modalCloseBtn");
+
+            document.getElementById("iconOrgao").innerHTML = fieldSVGIcons.orgao;
+            document.getElementById("iconAno").innerHTML = fieldSVGIcons.ano;
+            document.getElementById("iconOrcamento").innerHTML = fieldSVGIcons.orcamento;
+            document.getElementById("iconPublico").innerHTML = fieldSVGIcons.publico;
+            document.getElementById("iconSituacao").innerHTML = fieldSVGIcons.situacao;
+            document.getElementById("iconImpacto").innerHTML = fieldSVGIcons.impacto;
+
+            // ALTERNÂNCIA DE ABAS DE VISÃO
+            btnViewCards.addEventListener("click", () => {
+                btnViewCards.classList.add("active");
+                btnViewTimeline.classList.remove("active");
+                btnViewMap.classList.remove("active");
+
+                initiativeGrid.style.display = "grid";
+                timelineContainer.classList.remove("active");
+                mapContainer.style.display = "none";
+                categoryFilterWrap.style.display = "block"; // Exibe o filtro nas outras abas
+            });
+
+            btnViewTimeline.addEventListener("click", () => {
+                btnViewTimeline.classList.add("active");
+                btnViewCards.classList.remove("active");
+                btnViewMap.classList.remove("active");
+
+                initiativeGrid.style.display = "none";
+                timelineContainer.classList.add("active");
+                mapContainer.style.display = "none";
+                categoryFilterWrap.style.display = "block"; // Exibe o filtro nas outras abas
+            });
+
+            btnViewMap.addEventListener("click", () => {
+                btnViewMap.classList.add("active");
+                btnViewCards.classList.remove("active");
+                btnViewTimeline.classList.remove("active");
+
+                initiativeGrid.style.display = "none";
+                timelineContainer.classList.remove("active");
+                mapContainer.style.display = "block";
+                categoryFilterWrap.style.display = "none"; // Oculta o botão/menu de filtro no mapa
+
+                initSIGeoMap();
+            });
+
+            filterToggleBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                filterDropdown.classList.toggle("active");
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!filterDropdown.contains(e.target) && e.target !== filterToggleBtn) {
+                    filterDropdown.classList.remove("active");
+                }
+            });
+
+            fetch("data/iniciativas.json")
+                .then(res => {
+                    if (!res.ok) throw new Error("JSON não localizado");
+                    return res.json();
+                })
+                .then(data => {
+                    iniciativasGlobal = normalizeData(data);
+                    applyFilters();
+                })
+                .catch(err => {
+                    console.warn("Tentando rota alternativa 'Iniciativas municipais - Gênero.json'...", err);
+                    fetch("Iniciativas municipais - Gênero.json")
+                        .then(res => res.json())
+                        .then(data => {
+                            iniciativasGlobal = normalizeData(data);
+                            applyFilters();
+                        })
+                        .catch(e => {
+                            console.error("Não foi possível carregar o arquivo JSON:", e);
+                            initiativeGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--plum);">Erro ao carregar o arquivo JSON. Verifique se o arquivo está na pasta correta.</p>`;
+                        });
+                });
+
+            const eixoAllCb = document.querySelector(".filter-eixo-all");
+            const eixoCbs = document.querySelectorAll(".filter-eixo");
+            const impactoAllCb = document.querySelector(".filter-impacto-all");
+            const impactoCbs = document.querySelectorAll(".filter-impacto");
+
+            eixoAllCb.addEventListener("change", () => {
+                if (eixoAllCb.checked) eixoCbs.forEach(cb => cb.checked = false);
+                applyFilters();
+            });
+
+            eixoCbs.forEach(cb => {
+                cb.addEventListener("change", () => {
+                    if (cb.checked) eixoAllCb.checked = false;
+                    const anyChecked = Array.from(eixoCbs).some(c => c.checked);
+                    if (!anyChecked) eixoAllCb.checked = true;
+                    applyFilters();
+                });
+            });
+
+            impactoAllCb.addEventListener("change", () => {
+                if (impactoAllCb.checked) impactoCbs.forEach(cb => cb.checked = false);
+                applyFilters();
+            });
+
+            impactoCbs.forEach(cb => {
+                cb.addEventListener("change", () => {
+                    if (cb.checked) impactoAllCb.checked = false;
+                    const anyChecked = Array.from(impactoCbs).some(c => c.checked);
+                    if (!anyChecked) impactoAllCb.checked = true;
+                    applyFilters();
+                });
+            });
+
+            function applyFilters() {
+                const isEixoAll = eixoAllCb.checked;
+                const activeEixos = Array.from(eixoCbs).filter(c => c.checked).map(c => c.value.toLowerCase());
+
+                const isImpactoAll = impactoAllCb.checked;
+                const activeImpactos = Array.from(impactoCbs).filter(c => c.checked).map(c => c.value.toLowerCase());
+
+                const filtered = iniciativasGlobal.filter(item => {
+                    let matchEixo = isEixoAll;
+                    if (!matchEixo) {
+                        matchEixo = activeEixos.some(val => item.eixo && item.eixo.toLowerCase().includes(val));
+                    }
+
+                    let matchImpacto = isImpactoAll;
+                    if (!matchImpacto) {
+                        matchImpacto = activeImpactos.some(val => item.impacto && item.impacto.toLowerCase() === val);
+                    }
+
+                    return matchEixo && matchImpacto;
+                });
+
+                renderIniciativas(filtered);
+            }
+
+            function renderIniciativas(items) {
+                renderGrid(items);
+                renderTimeline(items);
+            }
+
+            function renderGrid(items) {
+                if (!items || items.length === 0) {
+                    initiativeGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--plum);">Nenhuma iniciativa encontrada com os filtros selecionados.</p>`;
+                    return;
+                }
+
+                initiativeGrid.innerHTML = items.map(item => {
+                    const eixoClass = getEixoTagClass(item.eixo);
+                    const impactoClass = item.impacto.toLowerCase().includes('direto') && !item.impacto.toLowerCase().includes('indireto') ? 'tag-impact-direct' : 'tag-impact-indirect';
+
+                    return `
+                        <div class="initiative-card" onclick="openModal(${item.id})">
+                            <div class="card-content">
+                                <h3>${item.nome}</h3>
+                                <div class="card-meta">
+                                    <strong>Órgão:</strong> ${item.orgao}<br>
+                                    <strong>Ano:</strong> ${item.ano_inicio}
+                                </div>
+                            </div>
+                            <div class="card-tags">
+                                <span class="tag ${eixoClass}">${item.eixo}</span>
+                                <span class="tag ${impactoClass}">${item.impacto}</span>
+                            </div>
+                        </div>
+                    `;
+                }).join("");
+            }
+
+            function renderTimeline(items) {
+                if (!items || items.length === 0) {
+                    timelineContainer.innerHTML = "";
+                    return;
+                }
+
+                const grouped = {};
+                items.forEach(item => {
+                    const ano = item.ano_inicio || "Outros";
+                    if (!grouped[ano]) grouped[ano] = [];
+                    grouped[ano].push(item);
+                });
+
+                const sortedYears = Object.keys(grouped).sort((a, b) => b - a);
+
+                timelineContainer.innerHTML = sortedYears.map(ano => `
+                    <div class="timeline-year-group">
+                        <div class="timeline-year-badge">${ano}</div>
+                        <div class="timeline-items">
+                            ${grouped[ano].map(item => {
+                                const eixoClass = getEixoTagClass(item.eixo);
+                                return `
+                                    <div class="timeline-item" onclick="openModal(${item.id})">
+                                        <div class="timeline-item-card">
+                                            <h4>${item.nome}</h4>
+                                            <p>${item.descricao || ""}</p>
+                                            <div class="card-tags">
+                                                <span class="tag ${eixoClass}">${item.eixo}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join("")}
+                        </div>
+                    </div>
+                `).join("");
+            }
+
+            window.openModal = function(id) {
+                const item = iniciativasGlobal.find(i => Number(i.id) === Number(id));
+                if (!item) return;
+
+                document.getElementById("mTitle").innerText = item.nome;
+                document.getElementById("mEixo").innerText = item.eixo.toUpperCase();
+                document.getElementById("mDesc").innerText = item.descricao || "Sem descrição disponível.";
+                document.getElementById("mOrgao").innerText = item.orgao || "-";
+                document.getElementById("mAno").innerText = item.ano_inicio || "-";
+                document.getElementById("mOrcamento").innerText = item.orcamento || "-";
+                document.getElementById("mPublico").innerText = item.publico_prioritario || "-";
+                document.getElementById("mSituacao").innerText = item.situacao || "-";
+                document.getElementById("mImpacto").innerText = item.impacto || "-";
+                document.getElementById("mNumeros").innerText = item.destaques || "Sem destaques registrados.";
+
+                modal.classList.add("active");
+            };
+
+            modalCloseBtn.addEventListener("click", () => modal.classList.remove("active"));
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) modal.classList.remove("active");
+            });
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") modal.classList.remove("active");
+            });
+        });
+    </script>
+</body>
+</html>

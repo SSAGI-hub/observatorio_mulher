@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Observatório da Mulher de Niterói</title>
+    
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Readex+Pro:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS EXTERNO -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="library-page" data-page="biblioteca">
+
+    <!-- CABEÇALHO (Injetado via JS / Componente) -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- 1ª SEÇÃO: INTRODUÇÃO E BUSCA CENTRALIZADA -->
+        <section class="section-library-intro">
+            <div class="library-container">
+                <div class="library-intro">
+                    <h1>Biblioteca</h1>
+                    <p>Repositório de pesquisas, artigos acadêmicos, leis e relatórios técnicos relevantes sobre gênero, direitos e políticas públicas para as mulheres.</p>
+                </div>
+
+                <!-- Filtros de Pesquisa e Categoria Customizada -->
+                <div class="library-filters">
+                    <div class="search-input-wrap">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 11.99 14 9.5 14z"/></svg>
+                        <input type="text" id="searchInput" placeholder="Buscar por título ou autor...">
+                    </div>
+
+                    <!-- Dropdown Customizado -->
+                    <div class="custom-select-container" id="customSelect">
+                        <div class="custom-select-trigger">
+                            <span class="select-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/></svg>
+                            </span>
+                            <span class="custom-select-label">Todas as Categorias</span>
+                            <span class="arrow-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                            </span>
+                        </div>
+                        <div class="custom-select-options">
+                            <div class="custom-option selected" data-value="">Todas as Categorias</div>
+                            <div class="custom-option" data-value="estudos">Estudos Acadêmicos</div>
+                            <div class="custom-option" data-value="politicas">Políticas Públicas e Relatórios</div>
+                            <div class="custom-option" data-value="normativos">Normativos e Leis</div>
+                        </div>
+                        <input type="hidden" id="categorySelect" value="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2ª SEÇÃO: GRADE DE CATÁLOGO -->
+        <section class="section-library-content">
+            <div class="library-container">
+                <div class="library-grid" id="libraryGrid">
+                    <!-- Card 1 -->
+                    <div class="library-card" data-category="estudos">
+                        <div class="card-library-content">
+                            <h3>Dossiê Mulheres Negras e Violência no Brasil</h3>
+                            <div class="card-library-meta">
+                                <strong>Autor/Fonte:</strong> Instituto de Pesquisa X / Rede de Observatórios<br>
+                                <strong>Ano:</strong> 2024
+                            </div>
+                            <div class="card-library-desc">
+                                Análise aprofundada sobre a interseccionalidade de gênero e raça nas ocorrências de violência urbana e doméstica.
+                            </div>
+                        </div>
+                        <div class="card-library-footer">
+                            <span class="tag-lib tag-estudos" onclick="filterByCategory('estudos')">Estudos Acadêmicos</span>
+                            <a href="#" class="btn-access">
+                                <span>Acessar versão original</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="library-card" data-category="politicas">
+                        <div class="card-library-content">
+                            <h3>Guia Metodológico de Orçamento Sensível a Gênero</h3>
+                            <div class="card-library-meta">
+                                <strong>Autor/Fonte:</strong> Secretaria de Planejamento (SEPLAG)<br>
+                                <strong>Ano:</strong> 2025
+                            </div>
+                            <div class="card-library-desc">
+                                Diretrizes técnicas para a rotulagem e alocação de recursos públicos com foco na redução das desigualdades de gênero.
+                            </div>
+                        </div>
+                        <div class="card-library-footer">
+                            <span class="tag-lib tag-politicas" onclick="filterByCategory('politicas')">Políticas Públicas</span>
+                            <a href="#" class="btn-access">
+                                <span>Acessar versão original</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="library-card" data-category="normativos">
+                        <div class="card-library-content">
+                            <h3>Decreto Municipal nº 14.293/2022 - Comissão de Ética e Integridade</h3>
+                            <div class="card-library-meta">
+                                <strong>Autor/Fonte:</strong> Prefeitura Municipal de Niterói<br>
+                                <strong>Ano:</strong> 2022
+                            </div>
+                            <div class="card-library-desc">
+                                Legislação oficial que institui a comissão de combate ao assédio moral e sexual no âmbito da administração pública.
+                            </div>
+                        </div>
+                        <div class="card-library-footer">
+                            <span class="tag-lib tag-normativos" onclick="filterByCategory('normativos')">Normativos e Leis</span>
+                            <a href="#" class="btn-access">
+                                <span>Acessar versão original</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="library-card" data-category="estudos">
+                        <div class="card-library-content">
+                            <h3>Impacto das Moedas Sociais na Autonomia Financeira de Mães Solo</h3>
+                            <div class="card-library-meta">
+                                <strong>Autor/Fonte:</strong> Universidade Federal Fluminense (UFF)<br>
+                                <strong>Ano:</strong> 2024
+                            </div>
+                            <div class="card-library-desc">
+                                Artigo científico avaliando os efeitos de programas de transferência de renda local liderados por mulheres.
+                            </div>
+                        </div>
+                        <div class="card-library-footer">
+                            <span class="tag-lib tag-estudos" onclick="filterByCategory('estudos')">Estudos Acadêmicos</span>
+                            <a href="#" class="btn-access">
+                                <span>Acessar versão original</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="library-card" data-category="politicas">
+                        <div class="card-library-content">
+                            <h3>Plano Municipal de Políticas para as Mulheres</h3>
+                            <div class="card-library-meta">
+                                <strong>Autor/Fonte:</strong> Secretaria Municipal da Mulher (SMMU)<br>
+                                <strong>Ano:</strong> 2023
+                            </div>
+                            <div class="card-library-desc">
+                                Documento orientador das diretrizes estratégicas, eixos de atuação e metas de longo prazo para o município.
+                            </div>
+                        </div>
+                        <div class="card-library-footer">
+                            <span class="tag-lib tag-politicas" onclick="filterByCategory('politicas')">Políticas Públicas</span>
+                            <a href="#" class="btn-access">
+                                <span>Acessar versão original</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="library-card" data-category="normativos">
+                        <div class="card-library-content">
+                            <h3>Lei Federal nº 11.340/2006 (Lei Maria da Penha)</h3>
+                            <div class="card-library-meta">
+                                <strong>Autor/Fonte:</strong> Congresso Nacional<br>
+                                <strong>Ano:</strong> 2006
+                            </div>
+                            <div class="card-library-desc">
+                                Legislação marco no país para criar mecanismos de coibir e prevenir a violência doméstica e familiar contra a mulher.
+                            </div>
+                        </div>
+                        <div class="card-library-footer">
+                            <span class="tag-lib tag-normativos" onclick="filterByCategory('normativos')">Normativos e Leis</span>
+                            <a href="#" class="btn-access">
+                                <span>Acessar versão original</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ (Injetado via JS / Componente) -->
+    <div id="footer-container"></div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Função para carregar componentes externos (Header / Footer)
+        async function loadComponent(elementId, filePath) {
+            try {
+                const response = await fetch(filePath);
+                if (response.ok) {
+                    const html = await response.text();
+                    document.getElementById(elementId).innerHTML = html;
+                }
+            } catch (error) {
+                console.error(`Erro ao carregar componente ${filePath}:`, error);
+            }
+        }
+
+        // Lógica da página e filtros
+        document.addEventListener("DOMContentLoaded", () => {
+            loadComponent("header-container", "components/header.html");
+            loadComponent("footer-container", "components/footer.html");
+
+            const searchInput = document.getElementById('searchInput');
+            const hiddenCategoryInput = document.getElementById('categorySelect');
+            const grid = document.getElementById('libraryGrid');
+            const cards = Array.from(grid.getElementsByClassName('library-card'));
+
+            const customSelect = document.getElementById('customSelect');
+            const trigger = customSelect.querySelector('.custom-select-trigger');
+            const label = customSelect.querySelector('.custom-select-label');
+            const options = customSelect.querySelectorAll('.custom-option');
+
+            // Toggle do dropdown customizado
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                customSelect.classList.toggle('open');
+            });
+
+            // Fechar dropdown ao clicar fora
+            document.addEventListener('click', () => {
+                customSelect.classList.remove('open');
+            });
+
+            // Seleção de opção no custom select
+            options.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const val = option.getAttribute('data-value');
+                    const text = option.textContent;
+
+                    options.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    label.textContent = text;
+                    hiddenCategoryInput.value = val;
+
+                    customSelect.classList.remove('open');
+                    filterCards();
+                });
+            });
+
+            // Evento de digitação na busca
+            searchInput.addEventListener('input', filterCards);
+
+            // Filtragem combinada (texto + categoria)
+            function filterCards() {
+                const query = searchInput.value.toLowerCase().trim();
+                const selectedCategory = hiddenCategoryInput.value;
+
+                cards.forEach(card => {
+                    const textContent = card.textContent.toLowerCase();
+                    const cardCategory = card.getAttribute('data-category');
+
+                    const matchesSearch = textContent.includes(query);
+                    const matchesCategory = !selectedCategory || cardCategory === selectedCategory;
+
+                    if (matchesSearch && matchesCategory) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            // Função global para acionar filtro ao clicar diretamente nas tags
+            window.filterByCategory = function(category) {
+                const targetOption = Array.from(options).find(opt => opt.getAttribute('data-value') === category);
+                if (targetOption) {
+                    targetOption.click();
+                }
+            };
+        });
+    </script>
+</body>
+</html>
