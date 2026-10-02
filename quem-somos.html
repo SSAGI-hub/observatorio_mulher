@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos - Observatório da Mulher de Niterói</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="quem-somos">
+
+    <!-- CABEÇALHO -->
+    <div id="header-container"></div>
+
+    <main>
+        <section class="section-intro">
+            <div class="intro-container" style="text-align: center; padding: 80px 20px;">
+                <h1>Quem Somos</h1>
+                <p>Página em desenvolvimento...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <div id="footer-container"></div>
+
+    <script>
+        async function loadComponent(elementId, filePath) {
+            try {
+                const response = await fetch(filePath);
+                if (response.ok) {
+                    document.getElementById(elementId).innerHTML = await response.text();
+                }
+            } catch (error) {
+                console.error(`Erro ao carregar ${filePath}:`, error);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadComponent("header-container", "components/header.html");
+            loadComponent("footer-container", "components/footer.html");
+        });
+    </script>
+</body>
+</html>
