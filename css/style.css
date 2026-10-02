@@ -287,87 +287,213 @@ a {
 }
 
 /* ==========================================================================
-   FOOTER E DIVISOR
+   FOOTER
    ========================================================================== */
-.site-footer { 
-    position: relative; 
-    padding: 60px 20px 40px; /* Reduzido de 158px para 60px */
-    background: var(--plum); 
-    color: var(--cream); 
+.site-footer {
+    background-color: var(--plum);
+    color: var(--cream);
+    padding: 60px 4% 40px 4%;
+    font-family: "Readex Pro", sans-serif;
 }
 
-.footer-content { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1.2fr; 
-    gap: 80px; /* Reduzido de 234px para 80px para aproximar as colunas */
-    width: min(1171px, 100%); 
-    margin: 0 auto; 
-}
-
-.footer-content h2 { 
-    margin: 0 0 18px; 
-    font-size: 20px; 
-    line-height: 1.2; 
-    font-family: "Bricolage Grotesque", sans-serif;
-}
-
-.footer-content a, 
-.footer-content p { 
-    display: block; 
-    margin: 0 0 10px; 
-    font-size: 16px; 
-    line-height: 1.4; 
-    opacity: 0.9;
-}
-
-.footer-content a:hover {
-    color: var(--orange);
-    opacity: 1;
-}
-
-/* SEÇÃO DE CONTATO APROXIMADA */
-.contact { 
-    position: relative; 
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
-.contact .email { 
-    display: flex; 
-    align-items: center; 
-    gap: 12px; 
-    margin-top: 5px; 
+.footer-column {
+    flex: 1 1 250px;
+}
+
+.footer-column.contact-column {
+    flex: 1.2 1 300px;
+}
+
+.footer-column h4 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Listas e Links */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+.footer-column ul li a:hover,
+.footer-column ul li a.active {
+    color: var(--orange);
+}
+
+/* Sub-itens recuados (Mapa do Site) */
+.footer-column ul li.sub-item {
+    padding-left: 18px;
     margin-bottom: 8px;
 }
 
-.email img { 
-    width: 22px; 
-    height: 22px; 
+.footer-column ul li.sub-item a {
+    font-size: 15px;
+    opacity: 0.9;
 }
 
-.contact p { 
-    margin-top: 0; /* Removido o espaço de 218px */
-    margin-bottom: 24px;
-    font-size: 15px; 
-    font-weight: 300; 
+/* Contato e Endereço */
+.contact-email {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
 }
 
-.footer-logo { 
-    width: 280px; /* Reduzido de 392px */
-    height: auto; 
-    margin-top: 10px; /* Aproximado do endereço */
-    object-fit: contain; 
+.contact-email svg {
+    color: var(--cream);
 }
 
-/* RESPONSIVO */
-@media (max-width: 900px) {
-    .footer-content { 
-        grid-template-columns: 1fr 1fr; 
-        gap: 40px 20px; 
-    }
-    .contact { 
-        grid-column: 1 / -1; 
-    }
+.contact-email a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-brand-wrap {
+    margin-top: 10px;
+}
+
+.footer-seplag-logo {
+    width: 260px;
+    height: auto;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.footer-address {
+    font-size: 14px;
+    color: var(--cream);
+    opacity: 0.85;
+    margin: 0;
+}
+
+/* ==========================================================================
+   PÁGINA QUEM SOMOS
+   ========================================================================== */
+.about-hero {
+    background-color: var(--plum);
+    color: var(--cream);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-hero h1 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+    color: var(--orange);
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+.about-section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text h2, 
+.section-title, 
+.institutional-section h2 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    color: var(--plum);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-text p, 
+.institutional-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+/* Grelha dos Pilares */
+.pillars-section {
+    background-color: #f9f6f8;
+    padding: 60px 20px;
+}
+
+.pillars-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.pillar-card {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--orange);
+}
+
+.pillar-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.pillar-card h3 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    color: var(--plum);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.pillar-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+.institutional-section {
+    padding: 60px 20px 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 /* ==========================================================================
