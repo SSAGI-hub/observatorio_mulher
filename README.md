@@ -32,6 +32,6 @@ Este repositório contém a interface web do mapeamento e acompanhamento de inic
 ├── components/
 │   ├── header.html          # Cabeçalho modular
 │   └── footer.html          # Rodapé modular
-├── data/
-│   └── iniciativas.json     # Base de dados estruturada das iniciativas
+├── iniciativas.json     # Base de dados estruturada das iniciativas
+|
 └── README.md                # Documentação do projeto
