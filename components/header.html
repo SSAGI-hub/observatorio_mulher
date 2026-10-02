@@ -1,28 +1,33 @@
 <header class="site-header">
-    <a href="index.html" aria-label="Homepage"><img class="header-mark" src="assets/header-union.svg" alt=""></a>
-    <img class="seplag-logo" src="assets/img/logo-niteroi-seplag.png" alt="Logotipo Prefeitura e SEPLAG">
-    <nav class="main-nav" aria-label="Navegação principal">
-        <a href="iniciativas.html">Iniciativas</a>
-        
-        <!-- Menu Dropdown de Indicadores -->
+    <!-- MARCA E LOGOTIPO -->
+    <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="assets/header-union.svg" alt="Ícone Observatório" class="header-mark">
+        <img src="assets/img/logo-niteroi-seplag.png" alt="SEPLAG - Prefeitura de Niterói" class="seplag-logo">
+    </a>
+
+    <!-- NAVEGAÇÃO PRINCIPAL -->
+    <nav class="main-nav">
+        <a href="index.html">Página Inicial</a>
+        <a href="quem-somos.html">Quem Somos</a>
+
+        <!-- DROPDOWN DE INICIATIVAS -->
         <div class="dropdown">
-            <a href="indicadores.html">Indicadores</a>
+            <a href="iniciativas.html" class="dropdown-link">Iniciativas</a>
             <div class="dropdown-content">
-                <a href="indicadores.html">Visão Geral</a>
+                <a href="iniciativas.html">Todas as Iniciativas</a>
                 <hr class="dropdown-divider">
-                <a href="saude.html">Saúde</a>
-                <hr class="dropdown-divider">
-                <a href="educacao.html">Educação</a>
-                <hr class="dropdown-divider">
-                <a href="economia.html">Economia</a>
-                <hr class="dropdown-divider">
-                <a href="seguranca.html">Segurança</a>
-                <hr class="dropdown-divider">
-                <a href="demografia.html">Demografia</a>
+                <a href="iniciativas.html?eixo=Violência">Enfrentamento à Violência</a>
+                <a href="iniciativas.html?eixo=Saúde">Saúde e Bem-Estar</a>
+                <a href="iniciativas.html?eixo=Educação">Educação</a>
+                <a href="iniciativas.html?eixo=Econômica">Autonomia Econômica</a>
+                <a href="iniciativas.html?eixo=Urbanismo">Urbanismo & Mobilidade</a>
+                <a href="iniciativas.html?eixo=Governança">Governança & Gestão</a>
+                <a href="iniciativas.html?eixo=Assistência">Assistência Social</a>
             </div>
         </div>
 
-        <a href="biblioteca.html">Biblioteca</a>
-        <a href="glossario.html">Glossário</a>
+        <a href="equipamentos.html">Equipamentos</a>
+        <a href="indicadores.html">Indicadores</a>
+        <a href="noticias.html">Notícias</a>
     </nav>
 </header>
