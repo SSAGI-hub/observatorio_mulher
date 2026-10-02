@@ -1,30 +1,48 @@
 <footer class="site-footer">
-    <div class="footer-content">
-        <div>
-            <h2>Mapa do Site</h2>
-            <a href="index.html">Homepage</a>
-            <a href="iniciativas.html">Iniciativas</a>
-            <a href="indicadores.html">Indicadores</a>
-            <a href="biblioteca.html">Biblioteca</a>
-            <a href="glossario.html">Glossário</a>
+    <div class="footer-container">
+        <!-- COLUNA 1: MAPA DO SITE -->
+        <div class="footer-column">
+            <h4>Mapa do Site</h4>
+            <ul class="footer-nav">
+                <li><a href="index.html" class="active">Página Inicial</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="iniciativas.html">Iniciativas</a></li>
+                <li><a href="indicadores.html">Indicadores</a></li>
+                <li class="sub-item"><a href="indicadores.html?eixo=saude">Saúde</a></li>
+                <li class="sub-item"><a href="indicadores.html?eixo=educacao">Educação</a></li>
+                <li class="sub-item"><a href="indicadores.html?eixo=economia">Economia</a></li>
+                <li class="sub-item"><a href="indicadores.html?eixo=seguranca">Segurança</a></li>
+                <li class="sub-item"><a href="indicadores.html?eixo=demografia">Demografia</a></li>
+                <li><a href="biblioteca.html">Biblioteca</a></li>
+                <li><a href="glossario.html">Glossário</a></li>
+            </ul>
         </div>
-        <div>
-            <h2>Links Úteis</h2>
-            <a href="https://www.niteroi.rj.gov.br/" target="_blank" rel="noopener">Prefeitura de Niterói</a>
-            <a href="#" target="_blank" rel="noopener">SEPLAG</a>
-            <a href="#" target="_blank" rel="noopener">ObservaNit</a>
-            <a href="#" target="_blank" rel="noopener">SIGEO</a>
-            <a href="#" target="_blank" rel="noopener">Niterói 360°</a>
-            <a href="#" target="_blank" rel="noopener">SMMU</a>
+
+        <!-- COLUNA 2: LINKS ÚTEIS -->
+        <div class="footer-column">
+            <h4>Links Úteis</h4>
+            <ul class="footer-links">
+                <li><a href="https://www.niteroi.rj.gov.br/" target="_blank" rel="noopener">Prefeitura de Niterói</a></li>
+                <li><a href="https://seplag.niteroi.rj.gov.br/" target="_blank" rel="noopener">SEPLAG</a></li>
+                <li><a href="#" target="_blank" rel="noopener">SMMU</a></li>
+                <li><a href="https://observanit.niteroi.rj.gov.br/" target="_blank" rel="noopener">ObservaNit</a></li>
+                <li><a href="https://sig.niteroi.rj.gov.br/" target="_blank" rel="noopener">SIGEO</a></li>
+                <li><a href="https://niteroi360.niteroi.rj.gov.br/" target="_blank" rel="noopener">Niterói 360°</a></li>
+            </ul>
         </div>
-        <div class="contact">
-            <h2>Contato</h2>
-            <a class="email" href="mailto:ssagi@seplag.niteroi.rj.gov.br">
-                <img src="assets/mail.svg" alt="Ícone de e-mail">
-                ssagi@seplag.niteroi.rj.gov.br
-            </a>
-            <p>Rua São Pedro, 181, Centro - Niterói</p>
-            <img class="footer-logo" src="assets/img/logo-niteroi-seplag.png" alt="Logotipo Prefeitura e SEPLAG">
+
+        <!-- COLUNA 3: CONTATO E MARCA -->
+        <div class="footer-column contact-column">
+            <h4>Contato</h4>
+            <div class="contact-email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <a href="mailto:ssagi@seplag.niteroi.rj.gov.br">ssagi@seplag.niteroi.rj.gov.br</a>
+            </div>
+
+            <div class="footer-brand-wrap">
+                <img src="assets/img/logo-niteroi-seplag.png" alt="Prefeitura de Niterói / SEPLAG" class="footer-seplag-logo">
+                <p class="footer-address">Rua São Pedro, 181, Centro - Niterói</p>
+            </div>
         </div>
     </div>
 </footer>
