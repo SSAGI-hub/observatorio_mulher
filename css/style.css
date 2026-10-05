@@ -1542,23 +1542,23 @@ main {
 /* DISTRIBUIÇÃO RADIAL */
 .petal-saude { transform: rotate(0deg) translateY(-130px); }
 .petal-saude .petal-content { transform: rotate(0deg); }
-.petal-saude:hover { transform: rotate(0deg) translateY(-130px) scale(1.2); filter: drop-shadow(0 12px 25px rgba(252, 112, 4, 0.5)); z-index: 20; }
+.petal-saude:hover { transform: rotate(0deg) translateY(-130px) scale(1.15); filter: drop-shadow(0 12px 25px rgba(252, 112, 4, 0.5)); z-index: 20; }
 
 .petal-educacao { transform: rotate(72deg) translateY(-130px); }
 .petal-educacao .petal-content { transform: rotate(-72deg); }
-.petal-educacao:hover { transform: rotate(72deg) translateY(-130px) scale(1.2); filter: drop-shadow(0 12px 25px rgba(252, 112, 4, 0.5)); z-index: 20; }
+.petal-educacao:hover { transform: rotate(72deg) translateY(-130px) scale(1.15); filter: drop-shadow(0 12px 25px rgba(252, 112, 4, 0.5)); z-index: 20; }
 
 .petal-economia { transform: rotate(144deg) translateY(-130px); }
 .petal-economia .petal-content { transform: rotate(-144deg); }
-.petal-economia:hover { transform: rotate(144deg) translateY(-130px) scale(1.2); filter: drop-shadow(0 12px 25px rgba(252, 112, 4, 0.5)); z-index: 20; }
+.petal-economia:hover { transform: rotate(144deg) translateY(-130px) scale(1.15); filter: drop-shadow(0 12px 25px rgba(252, 112, 4, 0.5)); z-index: 20; }
 
 .petal-seguranca { transform: rotate(216deg) translateY(-130px); }
 .petal-seguranca .petal-content { transform: rotate(-216deg); }
-.petal-seguranca:hover { transform: rotate(216deg) translateY(-130px) scale(1.2); filter: drop-shadow(0 12px 25px rgba(252, 112, 4, 0.5)); z-index: 20; }
+.petal-seguranca:hover { transform: rotate(216deg) translateY(-130px) scale(1.15); filter: drop-shadow(0 12px 25px rgba(252, 112, 4, 0.5)); z-index: 20; }
 
 .petal-demografia { transform: rotate(288deg) translateY(-130px); }
 .petal-demografia .petal-content { transform: rotate(-288deg); }
-.petal-demografia:hover { transform: rotate(288deg) translateY(-130px) scale(1.2); filter: drop-shadow(0 12px 25px rgba(252, 112, 4, 0.5)); z-index: 20; }
+.petal-demografia:hover { transform: rotate(288deg) translateY(-130px) scale(1.15); filter: drop-shadow(0 12px 25px rgba(252, 112, 4, 0.5)); z-index: 20; }
 
 /* TOOLTIP DA FLOR */
 .petal-tooltip {
