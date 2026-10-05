@@ -429,7 +429,7 @@
                 })
                 .catch(err => {
                     console.warn("Tentando rota alternativa 'Iniciativas municipais - Gênero.json'...", err);
-                    fetch("Iniciativas municipais - Gênero.json")
+                    fetch("iniciativas_municipais_genero.json")
                         .then(res => res.json())
                         .then(data => {
                             iniciativasGlobal = normalizeData(data);
