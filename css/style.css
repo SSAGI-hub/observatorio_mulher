@@ -1222,9 +1222,10 @@ main {
 
 
 /* ==========================================================================
-   ESTILOS ESPECÍFICOS: GLOSSÁRIO
+   ESTILOS ESPECÍFICOS: GLOSSÁRIO E MODAL
    ========================================================================== */
 
+/* SEÇÃO INTRODUTÓRIA */
 .section-glossary-intro {
     position: relative;
     width: 100%;
@@ -1232,19 +1233,22 @@ main {
     background: linear-gradient(180deg, rgba(187, 34, 86, 0.15), transparent);
     text-align: center;
 }
+
 .glossary-container {
     width: min(1200px, calc(100% - 60px));
     margin: 0 auto;
     position: relative;
     z-index: 1;
 }
+
 .glossary-intro h1 {
     margin: 0 0 15px;
     font-family: "Bricolage Grotesque", sans-serif;
     font-size: 56px;
-    color: var(--plum);
+    color: var(--plum, #4a0e2e);
     line-height: 1.1;
 }
+
 .glossary-intro p {
     font-size: 20px;
     line-height: 1.5;
@@ -1252,18 +1256,19 @@ main {
     margin: 0 auto 35px;
 }
 
-/* BARRA DE PESQUISA CENTRALIZADA */
+/* BARRA DE PESQUISA */
 .glossary-search-wrap {
     max-width: 780px;
     margin: 0 auto 30px;
     position: relative;
-    background-color: var(--pink);
+    background-color: var(--pink, #b01b4e);
     border-radius: 35px;
     padding: 16px 30px;
     display: flex;
     align-items: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
 .glossary-search-wrap input {
     width: 100%;
     background: transparent;
@@ -1271,14 +1276,15 @@ main {
     outline: none;
     font-family: "Readex Pro", sans-serif;
     font-size: 18px;
-    color: var(--cream);
+    color: var(--cream, #fff2eb);
     text-align: center;
 }
+
 .glossary-search-wrap input::placeholder {
     color: rgba(255, 242, 235, 0.8);
 }
 
-/* BARRA DE NAVEGAÇÃO ALFABÉTICA (A-Z) */
+/* NAVEGAÇÃO E FILTROS ALFABÉTICOS (A-Z) */
 .alphabet-nav {
     display: flex;
     flex-wrap: wrap;
@@ -1287,12 +1293,13 @@ main {
     max-width: 850px;
     margin: 0 auto 25px;
 }
+
 .alpha-btn {
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background-color: var(--green);
-    color: white;
+    background-color: var(--pink, #b01b4e);
+    color: #ffffff;
     font-family: "Bricolage Grotesque", sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -1301,18 +1308,27 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-.alpha-btn:hover, .alpha-btn.active {
-    background-color: #125e4c;
-    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(84, 0, 68, 0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* BOTÃO "MOSTRAR TODOS (A-Z)" */
+.alpha-btn:hover {
+    background-color: var(--orange, #f26522);
+    color: #ffffff;
+    transform: scale(1.15);
+}
+
+.alpha-btn.active {
+    background-color: var(--plum, #4a0e2e);
+    color: var(--cream, #fff2eb);
+    transform: scale(1.18);
+    box-shadow: 0 0 0 3px var(--orange, #f26522);
+}
+
+/* BOTÃO "MOSTRAR TODOS" */
 .btn-show-all {
-    background-color: var(--pink);
-    color: white;
+    background-color: var(--pink, #b01b4e);
+    color: #ffffff;
     font-family: "Readex Pro", sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -1323,16 +1339,18 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
     transition: background-color 0.2s ease;
 }
+
 .btn-show-all:hover {
     background-color: #a01c4a;
 }
 
-/* GRADE DE CARDS DOS TERMOS */
+/* SEÇÃO E GRADE DOS CARDS */
 .section-glossary-content {
     position: relative;
     width: 100%;
     padding: 30px 0 100px;
 }
+
 .glossary-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1341,7 +1359,6 @@ main {
     z-index: 1;
 }
 
-/* ESTILO DOS CARDS DO GLOSSÁRIO */
 .glossary-card {
     background-color: #f6dcd8;
     border-radius: 24px;
@@ -1356,20 +1373,23 @@ main {
     border: 1px solid rgba(187, 34, 86, 0.15);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .glossary-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(84, 0, 68, 0.12);
 }
+
 .glossary-card h3 {
     font-family: "Bricolage Grotesque", sans-serif;
     font-size: 26px;
-    color: var(--plum);
+    color: var(--plum, #4a0e2e);
     margin: 0 0 20px;
     line-height: 1.2;
 }
+
 .btn-definition {
-    background-color: var(--pink);
-    color: white;
+    background-color: var(--pink, #b01b4e);
+    color: #ffffff;
     font-family: "Readex Pro", sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -1380,57 +1400,152 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
     transition: background-color 0.2s ease;
 }
+
 .btn-definition:hover {
     background-color: #a01c4a;
 }
 
-@media (max-width: 900px) {
-    .glossary-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 700px) {
-    .glossary-intro h1 { font-size: 38px; }
-    .glossary-intro p { font-size: 18px; }
-}
+/* ==========================================================================
+   ESTILOS DA JANELA MODAL
+   ========================================================================== */
 
-/* TECLAS A-Z DO GLOSSÁRIO */
-.alphabet-nav {
-    display: flex;
-    flex-wrap: wrap;
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
-    max-width: 850px;
-    margin: 0 auto 25px;
+    z-index: 10000;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.alpha-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background-color: var(--pink) !important; /* Cor de fundo forte para destaque */
-    color: #ffffff !important;                /* Texto em branco bem visível */
-    font-family: "Bricolage Grotesque", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
+.modal-overlay.active {
+    display: flex;
+}
+
+/* Cartão do Modal (Apenas o container principal) */
+.glossary-modal-card {
+    background-color: var(--pink, #b01b4e);
+    color: #ffffff;
+    border-radius: 24px;
+    padding: 36px;
+    max-width: 650px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    font-family: 'Readex Pro', sans-serif;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+/* Container do conteúdo dinâmico */
+#modalCardBody {
+    width: 100%;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
     border: none;
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 22px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(84, 0, 68, 0.2);
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    transition: background 0.2s ease;
+    z-index: 10;
 }
 
-.alpha-btn:hover {
-    background-color: var(--orange) !important; /* Destaque em laranja ao passar o mouse */
-    color: #ffffff !important;
-    transform: scale(1.15);
+.modal-close-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
 }
 
-.alpha-btn.active {
-    background-color: var(--plum) !important;   /* Roxo escuro para a tecla selecionada */
-    color: var(--cream) !important;
-    transform: scale(1.18);
-    box-shadow: 0 0 0 3px var(--orange);        /* Borda de seleção em laranja */
+.glossary-modal-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    padding-right: 40px;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.glossary-modal-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    color: var(--orange, #f26522);
+}
+
+.glossary-modal-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-line;
+    color: #ffffff;
+}
+
+.glossary-modal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.glossary-modal-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    background-color: var(--orange, #f26522);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.glossary-modal-link-btn:hover {
+    background-color: #d85416;
+    transform: translateY(-1px);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .glossary-grid { 
+        grid-template-columns: 1fr; 
+    }
+}
+
+@media (max-width: 700px) {
+    .glossary-intro h1 { 
+        font-size: 38px; 
+    }
+    .glossary-intro p { 
+        font-size: 18px; 
+    }
+    .glossary-modal-card {
+        padding: 24px;
+    }
 }
 
 /* ==========================================================================
