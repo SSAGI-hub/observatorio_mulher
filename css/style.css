@@ -1125,18 +1125,16 @@ main {
     flex-direction: column;
     align-items: flex-start;
 }
-.info-box.full-width { grid-column: 1 / -1; }
-
 .info-box-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background-color: var(--plum);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    flex-shrink: 0;
+}
+
+.info-box-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
 .info-box-text {
@@ -1533,10 +1531,11 @@ main {
     transition: transform 0.3s ease;
 }
 
-.petal svg {
-    width: 52px;
-    height: 52px;
-    fill: white;
+.petal img {
+    width: 150px;  /* <--- Aumenta ou diminui a largura aqui */
+    height: 150px; /* <--- Aumenta ou diminui a altura aqui */
+    object-fit: contain;
+    pointer-events: none;
 }
 
 /* DISTRIBUIÇÃO RADIAL */
