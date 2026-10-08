@@ -310,6 +310,20 @@
             });
         }
 
+        let userLocation = null;
+
+        // Solicita a localização exata do usuário ao carregar a página
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    userLocation = `${position.coords.latitude},${position.coords.longitude}`;
+                },
+                (error) => {
+                    console.warn("Permissão de localização não concedida ou indisponível:", error);
+                }
+            );
+        }
+
         function initSIGeoMap() {
             if (mapInitialized) {
                 setTimeout(() => mapInstance.invalidateSize(), 150);
@@ -318,10 +332,27 @@
 
             mapInstance = L.map('leafletMap').setView([-22.8832, -43.1034], 13);
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; Prefeitura de Niterói | SIGeo'
-            }).addTo(mapInstance);
+            // 1. CAMADA DO GOOGLE MAPS
+            const googleMap = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+                maxZoom: 20,
+                subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+                attribution: '&copy; Google Maps | Prefeitura de Niterói / SIGeo'
+            });
 
+            // 2. CAMADA DO OPENSTREETMAP
+            const osmMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap | Prefeitura de Niterói / SIGeo'
+            });
+
+            googleMap.addTo(mapInstance);
+
+            const baseMaps = {
+                "Google Maps": googleMap,
+                "OpenStreetMap": osmMap
+            };
+            L.control.layers(baseMaps).addTo(mapInstance);
+
+            // 3. CARREGAMENTO DOS PONTOS DO SIGEO (GeoJSON)
             const urlGeoJSON = 'https://sig.niteroi.rj.gov.br/server/rest/services/Hosted/Pontos_de_Atendimento_SMMU/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson';
 
             fetch(urlGeoJSON)
@@ -335,12 +366,35 @@
                             const telefone = p.telefone || p.Telefone || p.TELEFONE || 'Não informado';
                             const horario = p.horario || p.Horario || p.HORARIO || 'Não informado';
 
+                            // Pega as coordenadas exatas [longitude, latitude] do ponto GeoJSON
+                            let destParam = '';
+                            if (feature.geometry && feature.geometry.coordinates) {
+                                const [lng, lat] = feature.geometry.coordinates;
+                                destParam = `${lat},${lng}`;
+                            } else {
+                                destParam = encodeURIComponent(endereco + ', Niterói - RJ');
+                            }
+
+                            // Monta a URL com destino exato e modo de transporte (ônibus/trânsito)
+                            let googleRouteUrl = `https://www.google.com/maps/dir/?api=1&destination=${destParam}&travelmode=transit`;
+                            
+                            // Se a localização do usuário já tiver sido capturada, inclui como origem
+                            if (userLocation) {
+                                googleRouteUrl += `&origin=${userLocation}`;
+                            }
+
                             const popupHTML = `
                                 <div style="font-family: 'Readex Pro', sans-serif; padding: 4px; color: #2d001e;">
                                     <h4 style="margin: 0 0 8px; color: #5a0040; font-size: 15px; font-weight: 700;">${nome}</h4>
                                     <p style="margin: 4px 0; font-size: 13px;"><strong>Endereço:</strong> ${endereco}</p>
                                     <p style="margin: 4px 0; font-size: 13px;"><strong>Telefone:</strong> ${telefone}</p>
                                     <p style="margin: 4px 0; font-size: 13px;"><strong>Horário:</strong> ${horario}</p>
+                                    <a href="${googleRouteUrl}" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    style="display: inline-block; margin-top: 8px; color: #f26522; text-decoration: none; font-weight: 600; font-size: 12px;">
+                                        🚍 Como chegar (Rotas / Ônibus)
+                                    </a>
                                 </div>
                             `;
                             layer.bindPopup(popupHTML);
