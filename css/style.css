@@ -167,7 +167,7 @@ a {
     top: 85px; 
     left: 370px; 
     margin: 0; 
-    font-family: "Vina Sans", sans-serif; 
+    font-family: "Bricolage Grotesque", sans-serif; 
     font-size: clamp(58px, 5.05vw, 87px); 
     font-weight: 400; 
     line-height: 1; 
@@ -1207,14 +1207,14 @@ main {
 }
 
 /* EIXOS TEMÁTICOS */
-.tag-eco { background-color: #1b8a70 !important; } /* Autonomia Econômica (Verde) */
+.tag-eco { background-color: #15846F!important; } /* Autonomia Econômica (Verde) */
 .tag-seg { background-color: #bb2256 !important; } /* Enfrentamento à Violência (Rosa) */
 .tag-sau { background-color: #bb2256 !important; } /* Saúde e Bem-Estar (Rosa) */
 .tag-edu { background-color: #540044 !important; } /* Educação (Roxo/Ameixa) */
 .tag-gov { background-color: #540044 !important; } /* Governança & Gestão (Roxo/Ameixa) */
-.tag-urb { background-color: #0b7285 !important; } /* Urbanismo & Mobilidade (Azul Petróleo) */
+.tag-urb { background-color: #15846F !important; } /* Urbanismo & Mobilidade (Azul Petróleo) */
 .tag-ast { background-color: #d9480f !important; } /* Assistência Social (Laranja Queimado) */
-.tag-out { background-color: #540044 !important; } /* Outros / Padrão */
+.tag-out { background-color: #FFF2EB !important; } /* Outros / Padrão */
 
 /* TIPOS DE IMPACTO */
 .tag-impact-direct { background-color: #fc7004 !important; }   /* Impacto Direto (Laranja Vivo) */
@@ -1935,5 +1935,305 @@ main {
     }
 	.library-intro h1 {
         font-size: 36px;
+    }
+}
+
+/* ==========================================
+   AJUSTES RESPONSIVOS TOTAIS (MOBILE - Até 768px)
+   ========================================== */
+@media (max-width: 768px) {
+
+    /* PREVENÇÃO DE ROLAGEM LATERAL */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+
+    /* 1. CABEÇALHO E LOGÓTIPOS */
+    header, .header-container {
+        flex-direction: column !important;
+        padding: 25px 15px 15px !important;
+        gap: 15px !important;
+    }
+
+    .header-logo, .logo, header img, .header-container img {
+        margin-bottom: 12px !important;
+        max-height: 55px !important;
+        width: auto !important;
+    }
+
+    nav, .nav-menu, header ul {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px 12px !important;
+        padding: 0 !important;
+        margin-top: 5px !important;
+    }
+
+    nav a, header a {
+        font-size: 13px !important;
+        padding: 4px 8px !important;
+    }
+
+    /* 2. PÁGINA INICIAL (HOME) */
+    .home-page main,
+    .hero,
+    .banner-container,
+    .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        text-align: center !important;
+        padding: 30px 20px !important;
+    }
+
+    .home-page main *,
+    .hero *,
+    .banner-container * {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        margin-top: 0 !important;
+    }
+
+    .home-page h2, 
+    .hero-subtitle,
+    .banner-subtitle,
+    .home-page span.orange-text {
+        display: block !important;
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 15px !important;
+        order: 1 !important;
+    }
+
+    .home-page img,
+    .hero img,
+    .sunflower-logo,
+    .hero-icon {
+        display: block !important;
+        width: 110px !important;
+        height: auto !important;
+        margin: 10px auto 15px auto !important;
+        order: 2 !important;
+    }
+
+    .home-page h1, 
+    .hero-title,
+    .banner-title {
+        display: block !important;
+        font-size: 24px !important;
+        line-height: 1.25 !important;
+        margin-bottom: 20px !important;
+        order: 3 !important;
+    }
+
+    .home-page p,
+    .hero-description {
+        display: block !important;
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+        order: 4 !important;
+    }
+
+    /* 3. PÁGINA DE INDICADORES (FLOR COM ALTURA FIXA E ESCALA A 0.38) */
+    .indicators-page main {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 20px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .indicators-page p,
+    .indicators-intro-text {
+        text-align: center !important;
+        text-align-last: center !important;
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .indicators-page h1,
+    .indicators-page h2,
+    .indicators-title,
+    .eixos-tematicos-title {
+        font-size: 20px !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        margin: 15px 0 10px 0 !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+
+    .indicators-page .flower-wrapper,
+    .indicators-page .flower-section,
+    .indicators-page .eixos-container {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: 260px !important;
+        margin: 35px auto 20px auto !important;
+        position: relative !important;
+        overflow: visible !important;
+    }
+
+    .indicators-page .flower-container,
+    .indicators-page .petals-container {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        margin: 0 auto !important;
+        transform: scale(0.38) !important;
+        transform-origin: center center !important;
+    }
+
+    /* 4. GLOSSÁRIO */
+    .section-glossary-intro {
+        padding: 30px 15px;
+    }
+
+    .glossary-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .glossary-modal-card {
+        padding: 20px;
+        max-width: 92vw;
+        max-height: 80vh;
+    }
+
+    /* 5. MAPA LEAFLET E DIMENSIONAMENTO CORRETO DOS ÍCONES DE EQUIPAMENTOS */
+    .map-wrapper,
+    .map-section,
+    [class*="map-wrapper"] {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 20px 0 !important;
+    }
+
+    #leafletMap,
+    .map-container,
+    .mapa-container,
+    #map,
+    [id*="map"],
+    [class*="map-container"] {
+        width: 100% !important;
+        height: 360px !important;
+        border-radius: 16px !important;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12) !important;
+        margin: 15px 0 !important;
+        overflow: hidden !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    /* ISOLAMENTO DAS REGRAS GLOBAIS DE IMAGEM */
+    .leaflet-container img,
+    .leaflet-container .leaflet-tile-container img {
+        max-width: none !important;
+        max-height: none !important;
+        box-sizing: content-box !important;
+    }
+
+    /* REDUÇÃO SEGURA DOS PINOS DO MAPA (DIMENSÕES FIXAS VISÍVEIS) */
+    .leaflet-marker-icon {
+        width: 20px !important;
+        height: 32px !important;
+        margin-left: -10px !important;
+        margin-top: -32px !important;
+        box-sizing: content-box !important;
+    }
+
+    .leaflet-marker-shadow {
+        width: 32px !important;
+        height: 32px !important;
+        margin-left: -10px !important;
+        margin-top: -32px !important;
+        box-sizing: content-box !important;
+        opacity: 0.5 !important;
+    }
+
+    /* CONTROLE DE CAMADAS E ZOOM */
+    .leaflet-control-layers-toggle {
+        width: 36px !important;
+        height: 36px !important;
+        background-size: 24px 24px !important;
+        background-position: center !important;
+    }
+
+    .leaflet-control-layers {
+        border-radius: 8px !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+        margin-top: 12px !important;
+        margin-right: 12px !important;
+    }
+
+    .leaflet-top.leaflet-left .leaflet-control-zoom {
+        margin-top: 12px !important;
+        margin-left: 12px !important;
+    }
+
+    /* 6. PÁGINA DE INICIATIVAS (BARRA DE ABAS EMPILHADA NO MOBILE) */
+    .iniciativas-page .tabs-container,
+    .initiatives-tabs,
+    .view-tabs,
+    .tabs-wrapper,
+    [class*="tab-container"],
+    [class*="view-toggle"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        padding: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        background: #4a0e2e !important;
+        border-radius: 16px !important;
+    }
+
+    .iniciativas-page .tab-btn,
+    .initiatives-tab,
+    .view-btn,
+    .btn-view,
+    [class*="tab-btn"],
+    [class*="view-option"] {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        padding: 12px 18px !important;
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 10px !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        white-space: nowrap !important;
+        line-height: 1 !important;
+    }
+
+    .iniciativas-page .tab-btn i,
+    .iniciativas-page .tab-btn svg,
+    .iniciativas-page .tab-btn img,
+    [class*="tab-btn"] i,
+    [class*="tab-btn"] svg,
+    [class*="tab-btn"] img,
+    [class*="icon"] {
+        font-size: 20px !important;
+        width: 20px !important;
+        height: 20px !important;
+        max-width: 20px !important;
+        max-height: 20px !important;
+        flex-shrink: 0 !important;
     }
 }
