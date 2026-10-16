@@ -1030,8 +1030,12 @@ main {
     font-size: 13px;
     margin: 0 0 12px;
     line-height: 1.4;
+
     display: -webkit-box;
+
+    line-clamp: 3;
     -webkit-line-clamp: 3;
+
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1981,12 +1985,18 @@ main {
         margin-bottom: 12px !important;
     }
 
+    /* Espaço entre a flor e o logo */
+    .site-header .header-mark {
+        margin-right: 12px !important;
+    }
+
     nav,
     .nav-menu,
     header ul {
         display: flex !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
+
         gap: 10px 12px !important;
 
         padding: 0 !important;
@@ -2183,7 +2193,21 @@ main {
        HOME
        ========================================== */
 
-    .home-page .hero,
+    .home-page .hero {
+        position: relative !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        text-align: center !important;
+        gap: 0 !important;
+    }
+
     .home-page .hero-section,
     .home-page .home-hero,
     .home-page .banner,
@@ -2205,7 +2229,6 @@ main {
 
     /* ------------------------------------------
        REMOVE POSICIONAMENTOS DO DESKTOP
-       SOMENTE DA APRESENTACAO PRINCIPAL
        ------------------------------------------ */
 
     .home-page .hero > *,
@@ -2234,89 +2257,107 @@ main {
 
 
     /* ==========================================
-        BEM-VINDO(A) ANTES DA FLOR E DO TITULO
-        ========================================== */
+       BEM-VINDO(A) ANTES DA FLOR E DO TITULO
+       ========================================== */
 
-        /* Esconde o Bem-vindo(a) original */
-        .home-page .hero-subtitle,
-        .home-page .banner-subtitle,
-        .home-page .welcome-text,
-        .home-page .orange-text,
-        .home-page span.orange-text {
-            display: none !important;
-        }
+    /* Remove qualquer texto criado artificialmente */
+    .home-page .hero::before,
+    .home-page .hero-section::before,
+    .home-page .home-hero::before,
+    .home-page .banner::before,
+    .home-page .hero-art::before {
+        content: none !important;
+        display: none !important;
+    }
 
-        /* Garante que o bloco principal aceite a nova ordem */
-        .home-page .hero,
-        .home-page .hero-section,
-        .home-page .home-hero,
-        .home-page .banner {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-        }
+    /* Esconde somente versões alternativas */
+    .home-page .hero-subtitle,
+    .home-page .banner-subtitle,
+    .home-page .welcome-text,
+    .home-page .orange-text,
+    .home-page span.orange-text {
+        display: none !important;
+    }
 
-        /* Insere o Bem-vindo(a) no início do bloco */
-        .home-page .hero::before,
-        .home-page .hero-section::before,
-        .home-page .home-hero::before,
-        .home-page .banner::before {
-            content: "Bem-vindo(a) ao" !important;
+    /*
+       Bem-vindo(a) original.
+       Fica antes do bloco que contém a flor e o título.
+    */
+    body.home-page .hero > .welcome,
+    body.home-page .welcome {
+        position: static !important;
 
-            position: static !important;
+        display: block !important;
+        visibility: visible !important;
 
-            display: block !important;
+        width: 100% !important;
+        max-width: 350px !important;
 
-            width: 100% !important;
+        margin: 0 auto 28px !important;
+        padding: 0 !important;
 
-            margin: 0 auto 24px !important;
-            padding: 0 !important;
+        color: #fc7004 !important;
 
-            color: #ff6600 !important;
+        font-family: "Bricolage Grotesque", sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        line-height: 1.35 !important;
 
-            font-size: 16px !important;
-            font-weight: 600 !important;
-            line-height: 1.35 !important;
+        text-align: center !important;
 
-            text-align: center !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
 
-            order: -10 !important;
-        }
+        transform: none !important;
 
-        /* Flor fica depois do Bem-vindo(a) */
-        .home-page .sunflower-logo,
-        .home-page .hero-icon,
-        .home-page .hero-logo,
-        .home-page .logo-flor,
-        .home-page .flower-logo,
-        .home-page .hero img:not(.header-logo),
-        .home-page .hero-section img:not(.header-logo),
-        .home-page .home-hero img:not(.header-logo) {
-            order: -9 !important;
-        }
-
-        /* Titulo fica depois da flor */
-        .home-page .hero-title,
-        .home-page .banner-title,
-        .home-page .hero h1,
-        .home-page .hero-section h1,
-        .home-page .home-hero h1 {
-            order: -8 !important;
-        }
+        z-index: 10 !important;
+        order: -10 !important;
+    }
 
 
     /* ------------------------------------------
-       2. FLOR CENTRAL DA HOME
+       BLOCO QUE CONTEM A FLOR E O TITULO
        ------------------------------------------ */
 
+    body.home-page .hero > .hero-art,
+    body.home-page .hero-art {
+        position: static !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 auto !important;
+        padding: 0 !important;
+
+        transform: none !important;
+
+        text-align: center !important;
+
+        order: 1 !important;
+    }
+
+
+    /* ------------------------------------------
+       FLOR DEPOIS DO BEM-VINDO(A)
+       ------------------------------------------ */
+
+    body.home-page .hero-art > img,
+    .home-page .hero-art img,
     .home-page .sunflower-logo,
     .home-page .hero-icon,
     .home-page .hero-logo,
     .home-page .logo-flor,
-    .home-page .flower-logo,
-    .home-page .hero img:not(.header-logo),
-    .home-page .hero-section img:not(.header-logo),
-    .home-page .home-hero img:not(.header-logo) {
+    .home-page .flower-logo {
         position: static !important;
 
         display: block !important;
@@ -2330,19 +2371,18 @@ main {
         transform: none !important;
         object-fit: contain !important;
 
-        order: 2 !important;
+        order: 1 !important;
     }
 
 
     /* ------------------------------------------
-       3. TITULO PRINCIPAL DA HOME
+       TITULO PRINCIPAL DEPOIS DA FLOR
        ------------------------------------------ */
 
+    body.home-page .hero-art > h1,
+    .home-page .hero-art h1,
     .home-page .hero-title,
-    .home-page .banner-title,
-    .home-page .hero h1,
-    .home-page .hero-section h1,
-    .home-page .home-hero h1 {
+    .home-page .banner-title {
         position: static !important;
 
         display: block !important;
@@ -2354,32 +2394,38 @@ main {
 
         color: #5b0047 !important;
 
+        font-family: "Bricolage Grotesque", sans-serif !important;
         font-size: 30px !important;
         font-weight: 700 !important;
         line-height: 1.18 !important;
 
         text-align: center !important;
 
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+
         transform: none !important;
 
-        order: 3 !important;
+        order: 2 !important;
     }
 
 
     /* ------------------------------------------
-       4. TEXTO DE APRESENTACAO DA HOME
-       IMPORTANTE: NAO AFETA OS CARDS
+       TEXTO DE APRESENTACAO DA HOME
+       NAO AFETA OS CARDS
        ------------------------------------------ */
 
     .home-page .hero-description,
     .home-page .banner-description,
     .home-page .home-description,
-    .home-page .hero > p,
-    .home-page .hero-section > p,
-    .home-page .home-hero > p,
-    .home-page .hero-content > p,
-    .home-page .banner-content > p,
-    .home-page .home-content > p {
+    .home-page .hero > p:not(.welcome),
+    .home-page .hero-section > p:not(.welcome),
+    .home-page .home-hero > p:not(.welcome),
+    .home-page .hero-content > p:not(.welcome),
+    .home-page .banner-content > p:not(.welcome),
+    .home-page .home-content > p:not(.welcome) {
         position: static !important;
 
         display: block !important;
@@ -2480,10 +2526,9 @@ main {
     }
 
     /*
-       Evita que as configuracoes do Hero alterem
+       Evita que as configurações do Hero alterem
        a ordem e o tamanho dos textos dos cards.
     */
-
     .home-page [class*="card"] h1,
     .home-page [class*="card"] h2,
     .home-page [class*="card"] h3,
@@ -2501,6 +2546,7 @@ main {
         order: initial !important;
     }
 
+}
 
     /* ==========================================
        QUEM SOMOS
