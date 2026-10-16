@@ -143,11 +143,16 @@ a {
     background: linear-gradient(180deg, rgb(187 34 86 / 15%), transparent); 
 }
 
-.home-page main { 
-    background-image: url("../assets/initiative-bg-1.svg"), url("../assets/initiative-bg-2.svg"), url("../assets/initiative-bg-3.svg"); 
-    background-position: -453px 79px, 1260px 749px, -435px 1965px; 
-    background-repeat: no-repeat; 
-    background-size: 925px 935px; 
+.home-page {
+    position: relative;
+    background-image: url("../assets/initiative-bg-1.svg"), url("../assets/initiative-bg-2.svg"), url("../assets/initiative-bg-3.svg");
+    background-position: -453px 120px, 1260px 749px, -435px 1965px;
+    background-repeat: no-repeat;
+    background-size: 925px 935px;
+}
+
+.home-page main {
+    background: transparent !important;
 }
 
 .hero-art { 
@@ -1552,11 +1557,11 @@ main {
    ESTILOS ESPECÍFICOS: INDICADORES E FLOR INTERATIVA
    ========================================================================== */
 
-.section-indicators-intro, .section-content {
+.section-indicators-intro,
+.section-content {
     position: relative;
     width: 100%;
     padding: 70px 0 40px;
-    background: linear-gradient(180deg, rgba(187, 34, 86, 0.15), transparent);
 }
 
 .indicators-container {
@@ -1939,165 +1944,1122 @@ main {
 }
 
 /* ==========================================
-   AJUSTES RESPONSIVOS TOTAIS (MOBILE - Até 768px)
+   AJUSTES RESPONSIVOS TOTAIS
+   MOBILE - ATE 768px
    ========================================== */
+
 @media (max-width: 768px) {
 
-    /* PREVENÇÃO DE ROLAGEM LATERAL */
-    html, body {
-        overflow-x: hidden !important;
+    /* ==========================================
+       PREVENCAO DE ROLAGEM LATERAL
+       ========================================== */
+
+    html,
+    body {
         width: 100% !important;
+        overflow-x: hidden !important;
     }
 
-    /* 1. CABEÇALHO E LOGÓTIPOS */
-    header, .header-container {
+
+    /* ==========================================
+       1. CABECALHO E LOGOTIPOS
+       ========================================== */
+
+    header,
+    .header-container {
         flex-direction: column !important;
         padding: 25px 15px 15px !important;
         gap: 15px !important;
     }
 
-    .header-logo, .logo, header img, .header-container img {
-        margin-bottom: 12px !important;
-        max-height: 55px !important;
+    .header-logo,
+    .logo,
+    header img,
+    .header-container img {
         width: auto !important;
+        max-height: 55px !important;
+        margin-bottom: 12px !important;
     }
 
-    nav, .nav-menu, header ul {
+    nav,
+    .nav-menu,
+    header ul {
         display: flex !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
         gap: 10px 12px !important;
+
         padding: 0 !important;
         margin-top: 5px !important;
     }
 
-    nav a, header a {
-        font-size: 13px !important;
+    nav a,
+    header a {
         padding: 4px 8px !important;
+        font-size: 13px !important;
     }
 
-    /* 2. PÁGINA INICIAL (HOME) */
+
+    /* ==========================================
+       2. HOME, QUEM SOMOS E INDICADORES
+       MESMO MODELO VISUAL DE INICIATIVAS
+       ========================================== */
+
+
+    /* ------------------------------------------
+       ESTRUTURA GERAL DAS TRES PAGINAS
+       ------------------------------------------ */
+
+    .home-page,
+    .about-page,
+    .indicators-page {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 100vh !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
     .home-page main,
-    .hero,
-    .banner-container,
-    .hero-container {
+    .about-page main,
+    .indicators-page main {
+        position: relative !important;
+        isolation: isolate !important;
+
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        min-height: calc(100vh - 190px) !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* ------------------------------------------
+       FILTRO ROSA/ROXO DESBOTADO
+       ------------------------------------------ */
+
+    .home-page main::before,
+    .about-page main::before,
+    .indicators-page main::before {
+        content: "" !important;
+
+        position: absolute !important;
+        inset: 0 !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(112, 0, 75, 0.13) 0%,
+                rgba(142, 24, 93, 0.09) 30%,
+                rgba(244, 188, 184, 0.13) 65%,
+                rgba(255, 239, 233, 0.18) 100%
+            ) !important;
+
+        pointer-events: none !important;
+        z-index: 0 !important;
+    }
+
+    .home-page main > *,
+    .about-page main > *,
+    .indicators-page main > * {
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+
+    /* ------------------------------------------
+       REMOVE CARDS E MARGENS DAS SECOES PRINCIPAIS
+       ------------------------------------------ */
+
+    .home-page .hero,
+    .home-page .hero-section,
+    .home-page .banner,
+    .home-page .home-hero,
+
+    .about-page .about-hero,
+    .about-page .about-section,
+    .about-page .intro-section,
+    .about-section,
+
+    .indicators-page .hero,
+    .indicators-page .indicators-hero,
+    .indicators-page .intro-section,
+    .indicators-page .content-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 55px 30px 45px !important;
+
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+
+        border: none !important;
+        border-radius: 0 !important;
+        outline: none !important;
+        box-shadow: none !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* ------------------------------------------
+       REMOVE CONTAINERS ESTREITOS
+       ------------------------------------------ */
+
+    .home-page .container,
+    .home-page .content,
+    .home-page .wrapper,
+    .home-page .hero-content,
+    .home-page .banner-content,
+    .home-page .home-content,
+
+    .about-page .container,
+    .about-page .content,
+    .about-page .wrapper,
+    .about-page .about-content,
+    .about-page .about-container,
+
+    .about-section .container,
+    .about-section .content,
+    .about-section .wrapper,
+
+    .indicators-page .container,
+    .indicators-page .content,
+    .indicators-page .wrapper,
+    .indicators-page .hero-content,
+    .indicators-page .indicators-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 auto !important;
+        padding: 0 !important;
+
+        background: transparent !important;
+        background-color: transparent !important;
+
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* ------------------------------------------
+       CORRECAO GLOBAL DE LARGURA
+       ------------------------------------------ */
+
+    .home-page main *,
+    .about-page main *,
+    .indicators-page main * {
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
+
+
+    /* ==========================================
+       HOME
+       ========================================== */
+
+    .home-page .hero,
+    .home-page .hero-section,
+    .home-page .home-hero,
+    .home-page .banner,
+    .home-page .hero-content,
+    .home-page .banner-content,
+    .home-page .home-content {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: flex-start !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
         text-align: center !important;
-        padding: 30px 20px !important;
+        gap: 0 !important;
     }
 
-    .home-page main *,
-    .hero *,
-    .banner-container * {
+
+    /* ------------------------------------------
+       REMOVE POSICIONAMENTOS DO DESKTOP
+       SOMENTE DA APRESENTACAO PRINCIPAL
+       ------------------------------------------ */
+
+    .home-page .hero > *,
+    .home-page .hero-section > *,
+    .home-page .home-hero > *,
+    .home-page .banner > *,
+    .home-page .hero-content > *,
+    .home-page .banner-content > *,
+    .home-page .home-content > * {
         position: static !important;
+
         top: auto !important;
-        left: auto !important;
         right: auto !important;
         bottom: auto !important;
+        left: auto !important;
+
+        float: none !important;
+        clear: both !important;
+
         transform: none !important;
-        margin-top: 0 !important;
+        translate: none !important;
+
+        grid-column: auto !important;
+        grid-row: auto !important;
     }
 
-    .home-page h2, 
-    .hero-subtitle,
-    .banner-subtitle,
-    .home-page span.orange-text {
-        display: block !important;
-        font-size: 22px !important;
-        line-height: 1.3 !important;
-        margin-bottom: 15px !important;
-        order: 1 !important;
-    }
 
-    .home-page img,
-    .hero img,
-    .sunflower-logo,
-    .hero-icon {
+    /* ==========================================
+        BEM-VINDO(A) ANTES DA FLOR E DO TITULO
+        ========================================== */
+
+        /* Esconde o Bem-vindo(a) original */
+        .home-page .hero-subtitle,
+        .home-page .banner-subtitle,
+        .home-page .welcome-text,
+        .home-page .orange-text,
+        .home-page span.orange-text {
+            display: none !important;
+        }
+
+        /* Garante que o bloco principal aceite a nova ordem */
+        .home-page .hero,
+        .home-page .hero-section,
+        .home-page .home-hero,
+        .home-page .banner {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+
+        /* Insere o Bem-vindo(a) no início do bloco */
+        .home-page .hero::before,
+        .home-page .hero-section::before,
+        .home-page .home-hero::before,
+        .home-page .banner::before {
+            content: "Bem-vindo(a) ao" !important;
+
+            position: static !important;
+
+            display: block !important;
+
+            width: 100% !important;
+
+            margin: 0 auto 24px !important;
+            padding: 0 !important;
+
+            color: #ff6600 !important;
+
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            line-height: 1.35 !important;
+
+            text-align: center !important;
+
+            order: -10 !important;
+        }
+
+        /* Flor fica depois do Bem-vindo(a) */
+        .home-page .sunflower-logo,
+        .home-page .hero-icon,
+        .home-page .hero-logo,
+        .home-page .logo-flor,
+        .home-page .flower-logo,
+        .home-page .hero img:not(.header-logo),
+        .home-page .hero-section img:not(.header-logo),
+        .home-page .home-hero img:not(.header-logo) {
+            order: -9 !important;
+        }
+
+        /* Titulo fica depois da flor */
+        .home-page .hero-title,
+        .home-page .banner-title,
+        .home-page .hero h1,
+        .home-page .hero-section h1,
+        .home-page .home-hero h1 {
+            order: -8 !important;
+        }
+
+
+    /* ------------------------------------------
+       2. FLOR CENTRAL DA HOME
+       ------------------------------------------ */
+
+    .home-page .sunflower-logo,
+    .home-page .hero-icon,
+    .home-page .hero-logo,
+    .home-page .logo-flor,
+    .home-page .flower-logo,
+    .home-page .hero img:not(.header-logo),
+    .home-page .hero-section img:not(.header-logo),
+    .home-page .home-hero img:not(.header-logo) {
+        position: static !important;
+
         display: block !important;
-        width: 110px !important;
+
+        width: 125px !important;
+        max-width: 125px !important;
         height: auto !important;
-        margin: 10px auto 15px auto !important;
+
+        margin: 0 auto 20px !important;
+
+        transform: none !important;
+        object-fit: contain !important;
+
         order: 2 !important;
     }
 
-    .home-page h1, 
-    .hero-title,
-    .banner-title {
+
+    /* ------------------------------------------
+       3. TITULO PRINCIPAL DA HOME
+       ------------------------------------------ */
+
+    .home-page .hero-title,
+    .home-page .banner-title,
+    .home-page .hero h1,
+    .home-page .hero-section h1,
+    .home-page .home-hero h1 {
+        position: static !important;
+
         display: block !important;
-        font-size: 24px !important;
-        line-height: 1.25 !important;
-        margin-bottom: 20px !important;
+
+        width: 100% !important;
+        max-width: 350px !important;
+
+        margin: 0 auto 28px !important;
+
+        color: #5b0047 !important;
+
+        font-size: 30px !important;
+        font-weight: 700 !important;
+        line-height: 1.18 !important;
+
+        text-align: center !important;
+
+        transform: none !important;
+
         order: 3 !important;
     }
 
-    .home-page p,
-    .hero-description {
+
+    /* ------------------------------------------
+       4. TEXTO DE APRESENTACAO DA HOME
+       IMPORTANTE: NAO AFETA OS CARDS
+       ------------------------------------------ */
+
+    .home-page .hero-description,
+    .home-page .banner-description,
+    .home-page .home-description,
+    .home-page .hero > p,
+    .home-page .hero-section > p,
+    .home-page .home-hero > p,
+    .home-page .hero-content > p,
+    .home-page .banner-content > p,
+    .home-page .home-content > p {
+        position: static !important;
+
         display: block !important;
-        font-size: 15px !important;
-        line-height: 1.5 !important;
+
+        width: 100% !important;
+        max-width: 350px !important;
+
+        margin: 0 auto 22px !important;
+
+        color: #5b003f !important;
+
+        font-size: 16px !important;
+        line-height: 1.65 !important;
+
+        text-align: center !important;
+
+        transform: none !important;
+
         order: 4 !important;
     }
 
-    /* 3. PÁGINA DE INDICADORES (FLOR COM ALTURA FIXA E ESCALA A 0.38) */
-    .indicators-page main {
+
+    /* ==========================================
+       CARDS DA HOME
+       PRESERVA TEXTO BRANCO
+       ========================================== */
+
+    .home-page .card,
+    .home-page .dashboard-card,
+    .home-page .feature-card,
+    .home-page .navigation-card,
+    .home-page .home-card,
+    .home-page [class*="card"] {
+        color: #ffffff !important;
+    }
+
+    .home-page .card h1,
+    .home-page .card h2,
+    .home-page .card h3,
+    .home-page .card h4,
+    .home-page .card h5,
+    .home-page .card h6,
+
+    .home-page .dashboard-card h1,
+    .home-page .dashboard-card h2,
+    .home-page .dashboard-card h3,
+    .home-page .dashboard-card h4,
+
+    .home-page .feature-card h1,
+    .home-page .feature-card h2,
+    .home-page .feature-card h3,
+    .home-page .feature-card h4,
+
+    .home-page .navigation-card h1,
+    .home-page .navigation-card h2,
+    .home-page .navigation-card h3,
+    .home-page .navigation-card h4,
+
+    .home-page [class*="card"] h1,
+    .home-page [class*="card"] h2,
+    .home-page [class*="card"] h3,
+    .home-page [class*="card"] h4,
+    .home-page [class*="card"] h5,
+    .home-page [class*="card"] h6 {
+        color: #ffffff !important;
+    }
+
+    .home-page .card p,
+    .home-page .card span,
+    .home-page .card strong,
+    .home-page .card small,
+
+    .home-page .dashboard-card p,
+    .home-page .dashboard-card span,
+    .home-page .dashboard-card strong,
+
+    .home-page .feature-card p,
+    .home-page .feature-card span,
+    .home-page .feature-card strong,
+
+    .home-page .navigation-card p,
+    .home-page .navigation-card span,
+    .home-page .navigation-card strong,
+
+    .home-page [class*="card"] p,
+    .home-page [class*="card"] span,
+    .home-page [class*="card"] strong,
+    .home-page [class*="card"] small {
+        color: #ffffff !important;
+    }
+
+    .home-page .card a,
+    .home-page .dashboard-card a,
+    .home-page .feature-card a,
+    .home-page .navigation-card a,
+    .home-page [class*="card"] a {
+        color: #ffffff !important;
+    }
+
+    /*
+       Evita que as configuracoes do Hero alterem
+       a ordem e o tamanho dos textos dos cards.
+    */
+
+    .home-page [class*="card"] h1,
+    .home-page [class*="card"] h2,
+    .home-page [class*="card"] h3,
+    .home-page [class*="card"] h4,
+    .home-page [class*="card"] h5,
+    .home-page [class*="card"] h6,
+    .home-page [class*="card"] p {
+        position: static !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        transform: none !important;
+
+        order: initial !important;
+    }
+
+
+    /* ==========================================
+       QUEM SOMOS
+       ========================================== */
+
+    .about-page .about-hero,
+    .about-page .about-section,
+    .about-page .about-content,
+    .about-page .about-container,
+    .about-section {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        padding: 20px 15px !important;
+
         width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 55px 30px 45px !important;
+
+        text-align: center !important;
+
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .about-page .about-hero > *,
+    .about-page .about-section > *,
+    .about-page .about-content > *,
+    .about-page .about-container > *,
+    .about-section > * {
+        position: static !important;
+
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+
+        transform: none !important;
+    }
+
+
+    /* TITULO QUEM SOMOS */
+
+    .about-page h1,
+    .about-page .about-hero h1,
+    .about-section h1 {
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 0 auto 80px !important;
+
+        color: #5b0047 !important;
+
+        font-size: 30px !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+
+        text-align: center !important;
+    }
+
+
+    /* SUBTITULOS INTERNOS */
+
+    .about-page h2,
+    .about-page .about-hero h2,
+    .about-section h2 {
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 34px auto 18px !important;
+
+        color: #5b0047 !important;
+
+        font-size: 23px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+
+        text-align: center !important;
+    }
+
+
+    /* PARAGRAFOS */
+
+    .about-page p,
+    .about-page .about-hero p,
+    .about-section p {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 350px !important;
+
+        margin: 0 auto 42px !important;
+
+        color: #5b003f !important;
+
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+
+        text-align: center !important;
+    }
+
+
+    /* ==========================================
+       INDICADORES
+       ========================================== */
+
+    .indicators-page .hero,
+    .indicators-page .indicators-hero,
+    .indicators-page .intro-section,
+    .indicators-page .content-section,
+    .indicators-page .hero-content,
+    .indicators-page .indicators-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 55px 30px 45px !important;
+
+        text-align: center !important;
+
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .indicators-page .hero > *,
+    .indicators-page .indicators-hero > *,
+    .indicators-page .intro-section > *,
+    .indicators-page .content-section > *,
+    .indicators-page .hero-content > *,
+    .indicators-page .indicators-content > * {
+        position: static !important;
+
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+
+        transform: none !important;
+    }
+
+
+    /* TITULO INDICADORES E PAINEIS */
+
+    .indicators-page h1,
+    .indicators-page .hero h1,
+    .indicators-page .indicators-hero h1 {
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 0 auto 22px !important;
+
+        color: #5b0047 !important;
+
+        font-size: 30px !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+
+        text-align: center !important;
+    }
+
+    .indicators-page h2 {
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 32px auto 18px !important;
+
+        color: #5b0047 !important;
+
+        font-size: 23px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+
+        text-align: center !important;
+    }
+
+
+    /* PARAGRAFOS DOS INDICADORES */
+
+    .indicators-page p,
+    .indicators-page .hero p,
+    .indicators-page .indicators-hero p {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 350px !important;
+
+        margin: 0 auto 24px !important;
+
+        color: #5b003f !important;
+
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+
+        text-align: center !important;
+    }
+
+
+  /* ==========================================
+    3. FLOR DOS INDICADORES
+    SEM SOBREPOSICAO, SEM DEFORMAR E CENTRALIZADA
+    ========================================== */
+
+    /* Seção completa */
+    .indicators-page .section-indicators-flower {
+        position: relative !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 40px 0 60px !important;
+
+        overflow: hidden !important;
+
+        text-align: center !important;
+
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Container da seção */
+    .indicators-page .section-indicators-flower .indicators-container {
+        position: relative !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+
+        overflow: visible !important;
+
         box-sizing: border-box !important;
     }
 
-    .indicators-page p,
-    .indicators-intro-text {
-        text-align: center !important;
-        text-align-last: center !important;
-        font-size: 15px !important;
-        line-height: 1.5 !important;
-        margin-bottom: 15px !important;
-    }
 
-    .indicators-page h1,
-    .indicators-page h2,
-    .indicators-title,
-    .eixos-tematicos-title {
-        font-size: 20px !important;
-        line-height: 1.3 !important;
-        text-align: center !important;
-        margin: 15px 0 10px 0 !important;
+    /* ------------------------------------------
+    TEXTO LARANJA
+    ------------------------------------------ */
+
+    .indicators-page .section-indicators-flower .flower-subtitle {
         position: relative !important;
         z-index: 10 !important;
-    }
 
-    .indicators-page .flower-wrapper,
-    .indicators-page .flower-section,
-    .indicators-page .eixos-container {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
+        display: block !important;
+
         width: 100% !important;
-        height: 260px !important;
-        margin: 35px auto 20px auto !important;
-        position: relative !important;
-        overflow: visible !important;
+        max-width: 360px !important;
+
+        margin: 0 auto 24px !important;
+        padding: 0 !important;
+
+        color: #fc7004 !important;
+
+        font-family: "Bricolage Grotesque", sans-serif !important;
+        font-size: 21px !important;
+        font-weight: 700 !important;
+        line-height: 1.25 !important;
+
+        text-align: center !important;
+
+        transform: none !important;
     }
 
-    .indicators-page .flower-container,
-    .indicators-page .petals-container {
+
+    /* ------------------------------------------
+    TITULO EIXOS TEMATICOS
+    ------------------------------------------ */
+
+    .indicators-page .section-indicators-flower h2 {
         position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        margin: 0 auto !important;
-        transform: scale(0.38) !important;
+        z-index: 10 !important;
+
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 0 auto 20px !important;
+        padding: 0 !important;
+
+        color: #5b0047 !important;
+
+        font-family: "Bricolage Grotesque", sans-serif !important;
+        font-size: 23px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+
+        text-align: center !important;
+
+        transform: none !important;
+    }
+
+
+    /* ------------------------------------------
+    CONTAINER REAL DA FLOR
+    CENTRALIZACAO MATEMATICA NO MOBILE
+    ------------------------------------------ */
+
+    .indicators-page .section-indicators-flower .flower-wrapper {
+        position: relative !important;
+
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+
+        /*
+        Coloca o início da caixa no centro
+        horizontal do container.
+        */
+        left: 50% !important;
+
+        display: block !important;
+        flex: none !important;
+        align-self: auto !important;
+
+        /*
+        Mantém o tamanho original usado para
+        calcular as posições das pétalas.
+        */
+        width: 560px !important;
+        min-width: 560px !important;
+        max-width: none !important;
+
+        height: 560px !important;
+        min-height: 560px !important;
+        max-height: none !important;
+
+        /*
+        Metade da largura original é 280px.
+        O deslocamento negativo posiciona o centro
+        da caixa exatamente no centro do container.
+        */
+        margin-top: 15px !important;
+        margin-right: 0 !important;
+        margin-bottom: -220px !important;
+        margin-left: -350px !important;
+
+        padding: 0 !important;
+
+        /*
+        Reduz o conjunto inteiro sem deformar
+        individualmente as pétalas.
+        */
+        transform: scale(0.58) !important;
+        transform-origin: top center !important;
+
+        overflow: visible !important;
+
+        z-index: 1 !important;
+    }
+
+
+    /* ------------------------------------------
+    PETALAS NO TAMANHO ORIGINAL
+    ------------------------------------------ */
+
+    .indicators-page .section-indicators-flower .petal {
+        position: absolute !important;
+
+        top: 50% !important;
+        left: 50% !important;
+
+        /*
+        Não reduzir individualmente.
+        O clip-path foi criado para 150 x 220.
+        */
+        width: 150px !important;
+        min-width: 150px !important;
+        max-width: 150px !important;
+
+        height: 220px !important;
+        min-height: 220px !important;
+        max-height: 220px !important;
+
+        margin-top: -110px !important;
+        margin-left: -75px !important;
+
+        background-color: var(--plum) !important;
+
+        clip-path: path(
+            "M 75,0 C 145,55 145,165 75,220 C 5,165 5,55 75,0 Z"
+        ) !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        box-sizing: border-box !important;
+
         transform-origin: center center !important;
     }
 
-    /* 4. GLOSSÁRIO */
+
+    /* ------------------------------------------
+    DISTRIBUICAO RADIAL
+    ------------------------------------------ */
+
+    .indicators-page .section-indicators-flower .petal-saude {
+        transform: rotate(0deg) translateY(-130px) !important;
+    }
+
+    .indicators-page .section-indicators-flower .petal-educacao {
+        transform: rotate(72deg) translateY(-130px) !important;
+    }
+
+    .indicators-page .section-indicators-flower .petal-economia {
+        transform: rotate(144deg) translateY(-130px) !important;
+    }
+
+    .indicators-page .section-indicators-flower .petal-seguranca {
+        transform: rotate(216deg) translateY(-130px) !important;
+    }
+
+    .indicators-page .section-indicators-flower .petal-demografia {
+        transform: rotate(288deg) translateY(-130px) !important;
+    }
+
+
+    /* ------------------------------------------
+    ROTACAO CORRETA DOS ICONES
+    ------------------------------------------ */
+
+    .indicators-page .section-indicators-flower
+    .petal-saude .petal-content {
+        transform: rotate(0deg) !important;
+    }
+
+    .indicators-page .section-indicators-flower
+    .petal-educacao .petal-content {
+        transform: rotate(-72deg) !important;
+    }
+
+    .indicators-page .section-indicators-flower
+    .petal-economia .petal-content {
+        transform: rotate(-144deg) !important;
+    }
+
+    .indicators-page .section-indicators-flower
+    .petal-seguranca .petal-content {
+        transform: rotate(-216deg) !important;
+    }
+
+    .indicators-page .section-indicators-flower
+    .petal-demografia .petal-content {
+        transform: rotate(-288deg) !important;
+    }
+
+
+    /* ------------------------------------------
+    CONTEUDO DAS PETALAS
+    ------------------------------------------ */
+
+    .indicators-page .section-indicators-flower .petal-content {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 100% !important;
+        max-width: none !important;
+
+        height: 100% !important;
+        max-height: none !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* ------------------------------------------
+    ICONES SVG
+    ------------------------------------------ */
+
+    .indicators-page .section-indicators-flower .petal img {
+        display: block !important;
+
+        width: 105px !important;
+        min-width: 105px !important;
+        max-width: 105px !important;
+
+        height: 105px !important;
+        min-height: 105px !important;
+        max-height: 105px !important;
+
+        margin: 0 !important;
+
+        object-fit: contain !important;
+
+        transform: none !important;
+
+        pointer-events: none !important;
+    }
+
+
+    /* ------------------------------------------
+    DESATIVA CRESCIMENTO NO TOQUE/HOVER MOBILE
+    ------------------------------------------ */
+
+    .indicators-page .section-indicators-flower
+    .petal-saude:hover {
+        transform: rotate(0deg) translateY(-130px) !important;
+    }
+
+    .indicators-page .section-indicators-flower
+    .petal-educacao:hover {
+        transform: rotate(72deg) translateY(-130px) !important;
+    }
+
+    .indicators-page .section-indicators-flower
+    .petal-economia:hover {
+        transform: rotate(144deg) translateY(-130px) !important;
+    }
+
+    .indicators-page .section-indicators-flower
+    .petal-seguranca:hover {
+        transform: rotate(216deg) translateY(-130px) !important;
+    }
+
+    .indicators-page .section-indicators-flower
+    .petal-demografia:hover {
+        transform: rotate(288deg) translateY(-130px) !important;
+    }
+
+
+    /* ------------------------------------------
+    ESCONDE TOOLTIPS NO MOBILE
+    ------------------------------------------ */
+
+    .indicators-page .section-indicators-flower .petal-tooltip {
+        display: none !important;
+    }
+
+    /* ==========================================
+       4. GLOSSARIO
+       ========================================== */
+
     .section-glossary-intro {
         padding: 30px 15px;
     }
@@ -2108,12 +3070,16 @@ main {
     }
 
     .glossary-modal-card {
-        padding: 20px;
         max-width: 92vw;
         max-height: 80vh;
+        padding: 20px;
     }
 
-    /* 5. MAPA LEAFLET E DIMENSIONAMENTO CORRETO DOS ÍCONES DE EQUIPAMENTOS */
+
+    /* ==========================================
+       5. MAPA LEAFLET
+       ========================================== */
+
     .map-wrapper,
     .map-section,
     [class*="map-wrapper"] {
@@ -2128,17 +3094,23 @@ main {
     #map,
     [id*="map"],
     [class*="map-container"] {
-        width: 100% !important;
-        height: 360px !important;
-        border-radius: 16px !important;
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12) !important;
-        margin: 15px 0 !important;
-        overflow: hidden !important;
         position: relative !important;
         z-index: 1 !important;
+
+        width: 100% !important;
+        height: 360px !important;
+
+        margin: 15px 0 !important;
+
+        overflow: hidden !important;
+
+        border-radius: 16px !important;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12) !important;
     }
 
-    /* ISOLAMENTO DAS REGRAS GLOBAIS DE IMAGEM */
+
+    /* ISOLAMENTO DAS IMAGENS DO LEAFLET */
+
     .leaflet-container img,
     .leaflet-container .leaflet-tile-container img {
         max-width: none !important;
@@ -2146,37 +3118,47 @@ main {
         box-sizing: content-box !important;
     }
 
-    /* REDUÇÃO SEGURA DOS PINOS DO MAPA (DIMENSÕES FIXAS VISÍVEIS) */
+
+    /* PINOS DO MAPA */
+
     .leaflet-marker-icon {
         width: 20px !important;
         height: 32px !important;
+
         margin-left: -10px !important;
         margin-top: -32px !important;
+
         box-sizing: content-box !important;
     }
 
     .leaflet-marker-shadow {
         width: 32px !important;
         height: 32px !important;
+
         margin-left: -10px !important;
         margin-top: -32px !important;
+
         box-sizing: content-box !important;
         opacity: 0.5 !important;
     }
 
-    /* CONTROLE DE CAMADAS E ZOOM */
+
+    /* CONTROLES DO MAPA */
+
     .leaflet-control-layers-toggle {
         width: 36px !important;
         height: 36px !important;
+
         background-size: 24px 24px !important;
         background-position: center !important;
     }
 
     .leaflet-control-layers {
-        border-radius: 8px !important;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
         margin-top: 12px !important;
         margin-right: 12px !important;
+
+        border-radius: 8px !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
     }
 
     .leaflet-top.leaflet-left .leaflet-control-zoom {
@@ -2184,7 +3166,12 @@ main {
         margin-left: 12px !important;
     }
 
-    /* 6. PÁGINA DE INICIATIVAS (BARRA DE ABAS EMPILHADA NO MOBILE) */
+
+    /* ==========================================
+       6. PAGINA DE INICIATIVAS
+       BARRA DE ABAS EMPILHADA
+       ========================================== */
+
     .iniciativas-page .tabs-container,
     .initiatives-tabs,
     .view-tabs,
@@ -2193,12 +3180,16 @@ main {
     [class*="view-toggle"] {
         display: flex !important;
         flex-direction: column !important;
+
+        width: 100% !important;
+
         gap: 8px !important;
         padding: 10px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
+
         background: #4a0e2e !important;
         border-radius: 16px !important;
+
+        box-sizing: border-box !important;
     }
 
     .iniciativas-page .tab-btn,
@@ -2211,15 +3202,20 @@ main {
         flex-direction: row !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 12px !important;
-        padding: 12px 18px !important;
+
         width: 100% !important;
         height: auto !important;
+
+        gap: 12px !important;
+        padding: 12px 18px !important;
+
         border-radius: 10px !important;
+
         font-size: 15px !important;
         font-weight: 600 !important;
-        white-space: nowrap !important;
         line-height: 1 !important;
+
+        white-space: nowrap !important;
     }
 
     .iniciativas-page .tab-btn i,
@@ -2229,11 +3225,15 @@ main {
     [class*="tab-btn"] svg,
     [class*="tab-btn"] img,
     [class*="icon"] {
-        font-size: 20px !important;
         width: 20px !important;
-        height: 20px !important;
         max-width: 20px !important;
+
+        height: 20px !important;
         max-height: 20px !important;
+
+        font-size: 20px !important;
+
         flex-shrink: 0 !important;
     }
+
 }
