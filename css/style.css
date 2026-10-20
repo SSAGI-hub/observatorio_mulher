@@ -1558,14 +1558,18 @@ main {
 }
 
 /* ==========================================================================
-   ESTILOS ESPECÍFICOS: INDICADORES E FLOR INTERATIVA
+   ESTILOS ESPECIFICOS: INDICADORES E FLOR INTERATIVA
    ========================================================================== */
 
-.section-indicators-intro,
-.section-content {
+.section-indicators-intro {
     position: relative;
     width: 100%;
     padding: 70px 0 40px;
+    background-image: linear-gradient(
+        180deg,
+        rgba(187, 34, 86, 0.15),
+        transparent
+    );
 }
 
 .indicators-container {
@@ -3280,6 +3284,13 @@ main {
         font-size: 20px !important;
 
         flex-shrink: 0 !important;
+    }
+
+    /* Remove o filtro próprio de Indicadores somente no mobile */
+    .indicators-page .section-indicators-intro {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
     }
 
 }
