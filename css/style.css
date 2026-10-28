@@ -58,6 +58,13 @@ a {
     object-fit: contain; 
 }
 
+.logo-por-elas {
+    width: 270px; 
+    height: 90px;  
+    margin-left: -40px; 
+    object-fit: contain; 
+}
+
 /* Navegação Principal */
 .main-nav { 
     display: flex; 
@@ -1738,7 +1745,7 @@ main {
 }
 
 .content-container {
-    width: min(1200px, calc(100% - 60px));
+    width: min(1500px, calc(100% - 60px));
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -1772,7 +1779,9 @@ main {
     font-weight: 700;
 }
 
+
 /* CONTAINER DA IMAGEM COM MOLDURA E FILTRO DUALTONE PASTEL */
+
 .content-image-wrapper {
     width: 100%;
     height: 460px;
@@ -1801,91 +1810,184 @@ main {
     pointer-events: none;
 }
 
-/* CAIXA CONTAINER PARA OS PAINÉIS / DASHBOARDS POWER BI */
-.section-panel {
-    position: relative;
-    width: 100%;
-    padding: 40px 0 120px;
-}
 
-.dashboard-panel-box {
-    width: min(1200px, calc(100% - 60px));
-    margin: 0 auto;
-    background-color: #d8d8d8;
-    border-radius: 12px;
-    min-height: 600px;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px dashed #b8b8b8;
-}
+/* ==========================================================================
+   PAINEL INTERATIVO DE DEMOGRAFIA
+   ========================================================================== */
 
-.dashboard-placeholder-text {
-    font-family: "Bricolage Grotesque", sans-serif;
-    font-size: 24px;
-    color: #666;
-    font-weight: 600;
-}
-
-@media (max-width: 900px) {
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 700px) {
-    .content-container h1 {
-        font-size: 38px;
-    }
-    .dashboard-panel-box {
-        min-height: 350px;
-    }
-}
-
-/* CONTAINER DO POWER BI AMPLIADO */
 .section-panel {
     position: relative;
     width: 100%;
     padding: 20px 0 100px;
 }
 
-/* CONTAINER PRINCIPAL DO PAINEL */
+
+/* CABEÇALHO INTERNO DA SEÇÃO DO PAINEL */
+
+.dashboard-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 26px;
+}
+
+.dashboard-section-text {
+    max-width: 780px;
+}
+
+.dashboard-section-label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Readex Pro", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.dashboard-section-header h2 {
+    margin: 0;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.08;
+    color: var(--plum);
+}
+
+.dashboard-section-header p {
+    max-width: 760px;
+    margin: 12px 0 0;
+    font-family: "Readex Pro", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--plum);
+}
+
+
+/* BOTÃO PARA ABRIR O PAINEL EM TELA CHEIA */
+
+.dashboard-fullscreen-link {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 11px 20px;
+    background-color: var(--plum);
+    color: var(--cream);
+    border: 2px solid var(--plum);
+    border-radius: 999px;
+    font-family: "Readex Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.dashboard-fullscreen-link:hover,
+.dashboard-fullscreen-link:focus-visible {
+    background-color: var(--cream);
+    color: var(--plum);
+    transform: translateY(-2px);
+}
+
+.dashboard-fullscreen-link:focus-visible {
+    outline: 3px solid rgba(252, 112, 4, 0.4);
+    outline-offset: 3px;
+}
+
+
+/* CONTAINER PRINCIPAL DO PAINEL DE DEMOGRAFIA */
+
 .dashboard-panel-box {
     width: 100%;
-    max-width: 100%;
+    height: 860px;
     margin: 0 auto;
-    background-color: transparent;
+    background-color: #ffffff;
+    border: 1px solid rgba(84, 0, 68, 0.14);
     border-radius: 16px;
     position: relative;
     z-index: 1;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     overflow: hidden;
-
-    /* TÉCNICA PARA PROPORÇÃO EXATA 16:9 (1080 / 1920 = 56.25%) */
-    height: 0;
-    padding-bottom: 56.25%; 
 }
 
+
+/* IFRAME DO PAINEL */
+
 .dashboard-panel-box iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
     width: 100%;
     height: 100%;
     border: none;
-    display: block;
+    background-color: #ffffff;
 }
 
+
+/* RESPONSIVIDADE DAS PÁGINAS DE INDICADORES */
+
 @media (max-width: 900px) {
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .dashboard-section-header h2 {
+        font-size: 36px;
+    }
+
     .dashboard-panel-box {
-        min-height: 450px;
+        height: 820px;
+        border-radius: 12px;
     }
 }
 
+@media (max-width: 700px) {
+
+    .content-container {
+        width: min(100% - 30px, 1200px);
+    }
+
+    .content-container h1 {
+        font-size: 38px;
+    }
+
+    .section-panel {
+        padding: 20px 0 55px;
+    }
+
+    .dashboard-section-header h2 {
+        font-size: 30px;
+    }
+
+    .dashboard-section-header p {
+        font-size: 15px;
+    }
+
+    .dashboard-fullscreen-link {
+        width: 100%;
+    }
+
+    .dashboard-panel-box {
+        height: 900px;
+        border-radius: 10px;
+    }
+}
+
+
 /* Faixa divisória em gradiente no topo do rodapé */
+
 .site-footer {
     position: relative;
     background-color: var(--plum);
@@ -1894,16 +1996,39 @@ main {
     font-family: "Readex Pro", sans-serif;
 }
 
-
 .site-footer::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 20px; /* Ajusta a espessura da faixa conforme necessário */
-    background: linear-gradient(90deg, var(--orange), #b32d66, var(--plum));
+    height: 20px;
+    background: linear-gradient(
+        90deg,
+        var(--orange),
+        #b32d66,
+        var(--plum)
+    );
 }
+
+/* EXIBIR O PAINEL DE DEMOGRAFIA EM TAMANHO COMPLETO */
+
+.dashboard-panel-box {
+    width: 100%;
+    height: 860px !important;
+    min-height: 860px !important;
+    padding-bottom: 0 !important;
+    overflow: hidden;
+}
+
+.dashboard-panel-box iframe {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 860px !important;
+    border: 0;
+}
+
 
 /* ==========================================================================
    RESPONSIVIDADE
