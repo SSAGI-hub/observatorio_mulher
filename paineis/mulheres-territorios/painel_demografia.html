@@ -1844,42 +1844,370 @@ window.addEventListener(
       }
     }
 
-    // ---------- Quantis e cores ----------
-    function calcularQuantis(valores) {
-      const v = valores.map(num).filter(Number.isFinite).sort(function (a, b) { return a - b; });
-      if (v.length === 0) return [0, 0];
+    // ---------- Quebras naturais de Jenks e cores ----------
 
-      function quantil(p) {
-        const pos = (v.length - 1) * p;
-        const base = Math.floor(pos);
-        const resto = pos - base;
-        if (v[base + 1] !== undefined) return v[base] + resto * (v[base + 1] - v[base]);
-        return v[base];
+    function calcularQuebrasNaturais(
+      valores,
+      numeroClasses = 5
+    ) {
+    
+      const v = valores
+        .map(num)
+        .filter(Number.isFinite)
+        .sort(function (a, b) {
+          return a - b;
+        });
+    
+    
+      if (v.length === 0) {
+        return [0, 0];
       }
-
-      const cortes = [v[0], quantil(0.2), quantil(0.4), quantil(0.6), quantil(0.8), v[v.length - 1]];
-      // remove cortes repetidos (comum em indicadores com muitos zeros)
-      const unicos = cortes.filter(function (x, i) { return i === 0 || x > cortes[i - 1]; });
-      if (unicos.length === 1) unicos.push(unicos[0]);
-      return unicos;
+    
+    
+      const valoresUnicos = Array.from(
+        new Set(v)
+      );
+    
+    
+      // Não cria mais classes do que valores distintos
+    
+      const k = Math.min(
+        numeroClasses,
+        valoresUnicos.length,
+        v.length
+      );
+    
+    
+      if (k <= 1) {
+        return [
+          v[0],
+          v[v.length - 1]
+        ];
+      }
+    
+    
+      // --------------------------------------------------------
+      // Somas acumuladas para calcular rapidamente a variância
+      // de qualquer intervalo dos dados ordenados
+      // --------------------------------------------------------
+    
+      const soma = new Array(
+        v.length + 1
+      ).fill(0);
+    
+      const somaQuadrados = new Array(
+        v.length + 1
+      ).fill(0);
+    
+    
+      for (
+        let i = 0;
+        i < v.length;
+        i++
+      ) {
+    
+        soma[i + 1] =
+          soma[i] + v[i];
+    
+        somaQuadrados[i + 1] =
+          somaQuadrados[i] +
+          v[i] * v[i];
+    
+      }
+    
+    
+      function varianciaIntervalo(
+        inicio,
+        fim
+      ) {
+    
+        const quantidade =
+          fim - inicio + 1;
+    
+        const total =
+          soma[fim + 1] -
+          soma[inicio];
+    
+        const totalQuadrados =
+          somaQuadrados[fim + 1] -
+          somaQuadrados[inicio];
+    
+    
+        return (
+          totalQuadrados -
+          (
+            total * total /
+            quantidade
+          )
+        );
+    
+      }
+    
+    
+      // --------------------------------------------------------
+      // Programação dinâmica para encontrar a combinação de
+      // classes com menor variância interna
+      // --------------------------------------------------------
+    
+      const dp = Array.from(
+        {
+          length: k + 1
+        },
+        function () {
+    
+          return new Array(
+            v.length + 1
+          ).fill(Infinity);
+    
+        }
+      );
+    
+    
+      const anterior = Array.from(
+        {
+          length: k + 1
+        },
+        function () {
+    
+          return new Array(
+            v.length + 1
+          ).fill(-1);
+    
+        }
+      );
+    
+    
+      dp[0][0] = 0;
+    
+    
+      for (
+        let classe = 1;
+        classe <= k;
+        classe++
+      ) {
+    
+        for (
+          let quantidade = classe;
+          quantidade <= v.length;
+          quantidade++
+        ) {
+    
+          for (
+            let corte = classe - 1;
+            corte < quantidade;
+            corte++
+          ) {
+    
+            const custoAnterior =
+              dp[classe - 1][corte];
+    
+    
+            if (
+              !Number.isFinite(
+                custoAnterior
+              )
+            ) {
+              continue;
+            }
+    
+    
+            const custoAtual =
+              custoAnterior +
+              varianciaIntervalo(
+                corte,
+                quantidade - 1
+              );
+    
+    
+            if (
+              custoAtual <
+              dp[classe][quantidade]
+            ) {
+    
+              dp[classe][quantidade] =
+                custoAtual;
+    
+              anterior[classe][quantidade] =
+                corte;
+    
+            }
+    
+          }
+    
+        }
+    
+      }
+    
+    
+      // --------------------------------------------------------
+      // Recuperar onde cada classe começa
+      // --------------------------------------------------------
+    
+      const iniciosClasses =
+        new Array(k).fill(0);
+    
+      let quantidade =
+        v.length;
+    
+    
+      for (
+        let classe = k;
+        classe >= 1;
+        classe--
+      ) {
+    
+        const inicio =
+          anterior[classe][quantidade];
+    
+        iniciosClasses[classe - 1] =
+          inicio;
+    
+        quantidade =
+          inicio;
+    
+      }
+    
+    
+      // --------------------------------------------------------
+      // Construir limites no mesmo formato usado pela legenda:
+      // mínimo, limites internos e máximo
+      // --------------------------------------------------------
+    
+      const limites = [
+        v[0]
+      ];
+    
+    
+      for (
+        let classe = 1;
+        classe < k;
+        classe++
+      ) {
+    
+        const inicioClasse =
+          iniciosClasses[classe];
+    
+        const limiteClasseAnterior =
+          v[inicioClasse - 1];
+    
+        limites.push(
+          limiteClasseAnterior
+        );
+    
+      }
+    
+    
+      limites.push(
+        v[v.length - 1]
+      );
+    
+    
+      // Remover limites duplicados
+    
+      const limitesUnicos =
+        limites.filter(
+          function (valor, indice) {
+    
+            return (
+              indice === 0 ||
+              valor >
+              limites[indice - 1]
+            );
+    
+          }
+        );
+    
+    
+      if (
+        limitesUnicos.length === 1
+      ) {
+    
+        limitesUnicos.push(
+          limitesUnicos[0]
+        );
+    
+      }
+    
+    
+      return limitesUnicos;
+    
     }
-
-    // Cor da classe k (0..total-1), espalhada pela rampa de 5 cores
-    function corDaClasse(k, total) {
-      if (total <= 1) return CORES[2];
-      return CORES[Math.round(k * (CORES.length - 1) / (total - 1))];
+    
+    
+    // Cor da classe, distribuída pela rampa de cinco cores
+    
+    function corDaClasse(
+      k,
+      total
+    ) {
+    
+      if (total <= 1) {
+        return CORES[2];
+      }
+    
+    
+      return CORES[
+        Math.round(
+          k *
+          (CORES.length - 1) /
+          (total - 1)
+        )
+      ];
+    
     }
-
-    function classeDoValor(n, limites) {
+    
+    
+    function classeDoValor(
+      n,
+      limites
+    ) {
+    
       let k = 0;
-      for (let i = 1; i < limites.length - 1; i++) { if (n > limites[i]) k = i; }
+    
+    
+      for (
+        let i = 1;
+        i < limites.length - 1;
+        i++
+      ) {
+    
+        if (n > limites[i]) {
+          k = i;
+        }
+    
+      }
+    
+    
       return k;
+    
     }
-
-    function obterCor(valor, limites) {
+    
+    
+    function obterCor(
+      valor,
+      limites
+    ) {
+    
       const n = num(valor);
-      if (!Number.isFinite(n)) return COR_SEM_DADO;
-      return corDaClasse(classeDoValor(n, limites), limites.length - 1);
+    
+    
+      if (
+        !Number.isFinite(n)
+      ) {
+    
+        return COR_SEM_DADO;
+    
+      }
+    
+    
+      return corDaClasse(
+        classeDoValor(
+          n,
+          limites
+        ),
+        limites.length - 1
+      );
+    
     }
 
     // ---------- Pop-up ----------
@@ -2143,8 +2471,11 @@ window.addEventListener(
 
       if (camadaSetores) mapa.removeLayer(camadaSetores);
 
-      const limites = calcularQuantis(
-        dadosSetores.features.map(function (f) { return f.properties[campo]; })
+      const limites = calcularQuebrasNaturais(
+        dadosSetores.features.map(function (f) {
+          return f.properties[campo];
+        }),
+        5
       );
 
       camadaSetores = L.geoJSON(dadosSetores, {
