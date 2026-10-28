@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,14 @@
     
     <!-- ESTILO EXTERNO PADRONIZADO -->
     <link rel="stylesheet" href="css/style.css">
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_ApprovalStatus msdt:dt="string">0</mso:_ApprovalStatus>
+<mso:_ApprovalAssignedTo msdt:dt="string"></mso:_ApprovalAssignedTo>
+<mso:_ApprovalRespondedBy msdt:dt="string"></mso:_ApprovalRespondedBy>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
 </head>
 <body class="indicator-single-page" data-page="indicadores" data-eixo="demografia">
 
@@ -35,10 +43,48 @@
             </div>
         </section>
 
-        <!-- SEÇÃO DO PAINEL POWER BI -->
-        <section class="section-panel">
-            <div class="dashboard-panel-box">
-                <span class="dashboard-placeholder-text">Painel de Indicadores de Demografia (Power BI)</span>
+       <!-- SEÇÃO DO PAINEL MULHERES NO TERRITÓRIO -->
+        <section
+            class="section-panel"
+            aria-labelledby="titulo-painel-demografia"
+        >
+            <div class="content-container">
+
+                <div class="dashboard-section-header">
+
+                    <div class="dashboard-section-text">
+
+                    
+                        <p>
+                            Explore a distribuição das mulheres de Niterói
+                            por setor censitário e bairro, com dados do
+                            Censo Demográfico 2022.
+                        </p>
+
+                    </div>
+
+                    <a
+                        class="dashboard-fullscreen-link"
+                        href="paineis/mulheres-territorios/painel_demografia.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Abrir em tela cheia
+                    </a>
+
+                </div>
+
+                <div class="dashboard-panel-box">
+
+                    <iframe
+                        src="paineis/mulheres-territorios/painel_demografia.html"
+                        title="Painel Mulheres no Território"
+                        loading="lazy"
+                        allowfullscreen
+                    ></iframe>
+
+                </div>
+
             </div>
         </section>
     </main>
