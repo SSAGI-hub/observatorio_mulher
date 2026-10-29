@@ -1042,6 +1042,156 @@ main {
     margin: 14px 0;
 }
 
+/* ==========================================================================
+   BOTAO E MENU DE ORDENACAO DAS INICIATIVAS
+   ========================================================================== */
+
+.sort-filter-wrap {
+    position: relative;
+}
+
+/* Botão Ordenar */
+.sort-filter-wrap .category-filter-btn {
+    min-width: 180px;
+
+    justify-content: center;
+
+    color: #ffffff;
+    background-color: var(--orange);
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.sort-filter-wrap .category-filter-btn:hover {
+    background-color: #d95e00;
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 16px rgba(84, 0, 68, 0.18);
+}
+
+.sort-filter-wrap .category-filter-btn:focus-visible {
+    outline: 3px solid var(--plum);
+    outline-offset: 3px;
+}
+
+/* Menu de ordenação */
+.sort-dropdown-menu {
+    top: calc(100% + 10px);
+    right: 0;
+    left: auto;
+
+    width: 285px;
+
+    transform: none;
+
+    color: var(--cream);
+    background-color: var(--plum);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+
+    padding: 18px;
+
+    box-shadow: 0 12px 28px rgba(84, 0, 68, 0.32);
+}
+
+/* Título do menu */
+.sort-dropdown-menu .filter-group-title {
+    margin: 0 0 12px;
+
+    color: var(--cream);
+
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Cada opção */
+.sort-option {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    gap: 10px;
+    margin: 0 0 6px;
+    padding: 10px 12px;
+
+    color: var(--cream);
+    background-color: transparent;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    font-family: "Readex Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        color 0.15s ease,
+        background-color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.sort-option:last-child {
+    margin-bottom: 0;
+}
+
+.sort-option:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.11);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Botão de rádio */
+.sort-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+
+    margin: 0;
+
+    accent-color: var(--orange);
+
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* Opção selecionada */
+.sort-option:has(input[type="radio"]:checked) {
+    color: #ffffff;
+    background-color: rgba(252, 112, 4, 0.25);
+    border-color: var(--orange);
+
+    font-weight: 700;
+}
+
+/* Mantém os menus acima dos cards */
+.category-filter-wrap,
+.sort-filter-wrap {
+    z-index: 70;
+}
+
+.filter-dropdown-menu,
+.sort-dropdown-menu {
+    z-index: 80;
+}
+
+#filterDropdown {
+    max-height: 70vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
 /* GRID DE CARDS */
 .section-list { padding: 10px 0 100px; }
 .list-container { width: min(1200px, calc(100% - 60px)); margin: 0 auto; }
@@ -1327,6 +1477,48 @@ main {
     .timeline-container::before { left: 20px; }
     .timeline-item { width: calc(100% - 40px) !important; left: 40px !important; text-align: left !important; }
     .modal-body-grid { grid-template-columns: 1fr; }
+    /* ==========================================
+        ORDENACAO DAS INICIATIVAS NO MOBILE
+        ========================================== */
+
+    .sort-filter-wrap {
+        width: 100% !important;
+    }
+
+    .sort-filter-wrap .category-filter-btn {
+        width: 100% !important;
+        min-width: 0 !important;
+
+        justify-content: center !important;
+
+        padding: 12px 18px !important;
+    }
+
+    .sort-dropdown-menu {
+        top: calc(100% + 8px) !important;
+        right: 0 !important;
+        left: 0 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        transform: none !important;
+
+        padding: 14px !important;
+    }
+
+    .sort-option {
+        min-height: 44px;
+
+        padding: 10px !important;
+
+        font-size: 13px !important;
+    }
+
+    .sort-option input[type="radio"] {
+        width: 18px !important;
+        height: 18px !important;
+    }
 }
 
 /* ==========================================================================
