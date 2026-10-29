@@ -111,7 +111,135 @@
                             <label class="filter-option">
                                 <input type="checkbox" value="Indireto" class="filter-impacto"> Impacto Indireto
                             </label>
+                            <hr class="filter-divider">
+
+                            <div class="filter-group-title">
+                                Ano de início
+                            </div>
+
+                            <label class="filter-option">
+                                <input
+                                    type="checkbox"
+                                    value="all-anos"
+                                    class="filter-ano-all"
+                                    checked
+                                >
+                                Todos os anos
+                            </label>
+
+                            <div id="yearFilterOptions">
+                                <!-- Os anos serão inseridos dinamicamente pelo JavaScript -->
+                            </div>
                         </div>
+                    </div>
+                    <!-- DROPDOWN DE ORDENAÇÃO -->
+                    <div class="sort-filter-wrap" id="sortFilterWrap">
+
+                        <button
+                            class="category-filter-btn"
+                            id="sortToggleBtn"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="sortDropdown"
+                        >
+                            <svg
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                aria-hidden="true"
+                            >
+                                <path d="M3 18h6v-2H3v2zm0-5h12v-2H3v2zm0-7v2h18V6H3z"></path>
+                            </svg>
+
+                            <span id="sortBtnLabel">
+                                Ordenar
+                            </span>
+
+                            <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                aria-hidden="true"
+                            >
+                                <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+                            </svg>
+                        </button>
+
+                        <div
+                            class="filter-dropdown-menu sort-dropdown-menu"
+                            id="sortDropdown"
+                        >
+                            <div class="filter-group-title">
+                                Ordenar iniciativas
+                            </div>
+
+                            <label class="sort-option">
+                                <input
+                                    type="radio"
+                                    name="initiative-sort"
+                                    value="default"
+                                    checked
+                                >
+                                Ordenação padrão
+                            </label>
+
+                            <label class="sort-option">
+                                <input
+                                    type="radio"
+                                    name="initiative-sort"
+                                    value="name-asc"
+                                >
+                                Nome: A a Z
+                            </label>
+
+                            <label class="sort-option">
+                                <input
+                                    type="radio"
+                                    name="initiative-sort"
+                                    value="name-desc"
+                                >
+                                Nome: Z a A
+                            </label>
+
+                            <label class="sort-option">
+                                <input
+                                    type="radio"
+                                    name="initiative-sort"
+                                    value="year-desc"
+                                >
+                                Ano: mais recentes
+                            </label>
+
+                            <label class="sort-option">
+                                <input
+                                    type="radio"
+                                    name="initiative-sort"
+                                    value="year-asc"
+                                >
+                                Ano: mais antigos
+                            </label>
+
+                            <label class="sort-option">
+                                <input
+                                    type="radio"
+                                    name="initiative-sort"
+                                    value="agency-asc"
+                                >
+                                Órgão: A a Z
+                            </label>
+
+                            <label class="sort-option">
+                                <input
+                                    type="radio"
+                                    name="initiative-sort"
+                                    value="agency-desc"
+                                >
+                                Órgão: Z a A
+                            </label>
+                        </div>
+
                     </div>
                 </div>
 
@@ -468,6 +596,103 @@
 
             const filterToggleBtn = document.getElementById("filterToggleBtn");
             const filterDropdown = document.getElementById("filterDropdown");
+            const sortFilterWrap = document.getElementById("sortFilterWrap");
+            const sortToggleBtn = document.getElementById("sortToggleBtn");
+            const sortDropdown = document.getElementById("sortDropdown");
+            const sortBtnLabel = document.getElementById("sortBtnLabel");
+
+            function configurarOrdenacaoPorVisualizacao(modo) {
+                currentView = modo;
+
+                const todasOpcoes = sortDropdown.querySelectorAll(
+                    ".sort-option"
+                );
+
+                todasOpcoes.forEach(opcao => {
+                    opcao.style.display = "flex";
+                });
+
+                sortDropdown.classList.remove("active");
+
+                sortToggleBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                if (modo === "map") {
+                    sortFilterWrap.style.display = "none";
+                    return;
+                }
+
+                sortFilterWrap.style.display = "block";
+
+                if (modo === "timeline") {
+                    const opcoesPermitidas = [
+                        "year-desc",
+                        "year-asc"
+                    ];
+
+                    todasOpcoes.forEach(opcao => {
+                        const radio = opcao.querySelector(
+                            'input[name="initiative-sort"]'
+                        );
+
+                        if (
+                            !radio ||
+                            !opcoesPermitidas.includes(radio.value)
+                        ) {
+                            opcao.style.display = "none";
+                        }
+                    });
+
+                    currentSort = timelineSort;
+
+                    const radioTimeline = sortDropdown.querySelector(
+                        `input[value="${timelineSort}"]`
+                    );
+
+                    if (radioTimeline) {
+                        radioTimeline.checked = true;
+                    }
+
+                    if (timelineSort === "year-asc") {
+                        sortBtnLabel.textContent =
+                            "Ano: mais antigos";
+                    } else {
+                        sortBtnLabel.textContent =
+                            "Ano: mais recentes";
+                    }
+
+                    applyFilters();
+                    return;
+                }
+
+                if (modo === "cards") {
+                    currentSort = cardsSort;
+
+                    const radioCards = sortDropdown.querySelector(
+                        `input[value="${cardsSort}"]`
+                    );
+
+                    if (radioCards) {
+                        radioCards.checked = true;
+                    }
+
+                    sortBtnLabel.textContent =
+                        sortLabels[cardsSort] || "Ordenar";
+
+                    applyFilters();
+                }
+            }
+
+
+            const yearFilterOptions = document.getElementById("yearFilterOptions");
+            const anoAllCb = document.querySelector(".filter-ano-all");
+
+            let currentSort = "default";
+            let cardsSort = "default";
+            let timelineSort = "year-desc";
+            let currentView = "cards";
             const modal = document.getElementById("initiativeModal");
             const modalCloseBtn = document.getElementById("modalCloseBtn");
 
@@ -488,6 +713,7 @@
                 timelineContainer.classList.remove("active");
                 mapContainer.style.display = "none";
                 categoryFilterWrap.style.display = "block"; // Exibe o filtro nas outras abas
+                configurarOrdenacaoPorVisualizacao("cards");
             });
 
             btnViewTimeline.addEventListener("click", () => {
@@ -499,6 +725,8 @@
                 timelineContainer.classList.add("active");
                 mapContainer.style.display = "none";
                 categoryFilterWrap.style.display = "block"; // Exibe o filtro nas outras abas
+
+                configurarOrdenacaoPorVisualizacao("timeline");
             });
 
             btnViewMap.addEventListener("click", () => {
@@ -511,6 +739,8 @@
                 mapContainer.style.display = "block";
                 categoryFilterWrap.style.display = "none"; // Oculta o botão/menu de filtro no mapa
 
+                configurarOrdenacaoPorVisualizacao("map");
+
                 initSIGeoMap();
             });
 
@@ -519,11 +749,85 @@
                 filterDropdown.classList.toggle("active");
             });
 
+            sortToggleBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+
+                sortDropdown.classList.toggle("active");
+                filterDropdown.classList.remove("active");
+
+                sortToggleBtn.setAttribute(
+                    "aria-expanded",
+                    String(sortDropdown.classList.contains("active"))
+                );
+            });
+
             document.addEventListener("click", (e) => {
-                if (!filterDropdown.contains(e.target) && e.target !== filterToggleBtn) {
+                if (
+                    !filterDropdown.contains(e.target) &&
+                    !filterToggleBtn.contains(e.target)
+                ) {
                     filterDropdown.classList.remove("active");
                 }
+
+                if (
+                    !sortDropdown.contains(e.target) &&
+                    !sortToggleBtn.contains(e.target)
+                ) {
+                    sortDropdown.classList.remove("active");
+
+                    sortToggleBtn.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
             });
+
+            function preencherFiltroAnos(items) {
+                const anos = Array.from(
+                    new Set(
+                        items
+                            .map(item => String(item.ano_inicio || "").trim())
+                            .filter(ano => ano && ano !== "-")
+                    )
+                );
+
+                anos.sort((a, b) => {
+                    const anoA = Number.parseInt(a, 10);
+                    const anoB = Number.parseInt(b, 10);
+
+                    const aNumerico = Number.isFinite(anoA);
+                    const bNumerico = Number.isFinite(anoB);
+
+                    if (aNumerico && bNumerico) {
+                        return anoB - anoA;
+                    }
+
+                    if (aNumerico) {
+                        return -1;
+                    }
+
+                    if (bNumerico) {
+                        return 1;
+                    }
+
+                    return a.localeCompare(b, "pt-BR");
+                });
+
+                yearFilterOptions.innerHTML = anos
+                    .map(ano => {
+                        return `
+                            <label class="filter-option">
+                                <input
+                                    type="checkbox"
+                                    value="${ano}"
+                                    class="filter-ano"
+                                >
+                                ${ano}
+                            </label>
+                        `;
+                    })
+                    .join("");
+            }
 
             fetch("data/iniciativas.json")
                 .then(res => {
@@ -532,6 +836,7 @@
                 })
                 .then(data => {
                     iniciativasGlobal = normalizeData(data);
+                    preencherFiltroAnos(iniciativasGlobal);
                     applyFilters();
                 })
                 .catch(err => {
@@ -540,6 +845,7 @@
                         .then(res => res.json())
                         .then(data => {
                             iniciativasGlobal = normalizeData(data);
+                            preencherFiltroAnos(iniciativasGlobal);
                             applyFilters();
                         })
                         .catch(e => {
@@ -581,28 +887,252 @@
                 });
             });
 
+            anoAllCb.addEventListener("change", () => {
+                if (anoAllCb.checked) {
+                    document
+                        .querySelectorAll(".filter-ano")
+                        .forEach(cb => {
+                            cb.checked = false;
+                        });
+                }
+
+                applyFilters();
+            });
+
+            yearFilterOptions.addEventListener("change", (e) => {
+                if (!e.target.classList.contains("filter-ano")) {
+                    return;
+                }
+
+                if (e.target.checked) {
+                    anoAllCb.checked = false;
+                }
+
+                const anoCbs = document.querySelectorAll(".filter-ano");
+
+                const algumAnoMarcado = Array.from(
+                    anoCbs
+                ).some(cb => cb.checked);
+
+                if (!algumAnoMarcado) {
+                    anoAllCb.checked = true;
+                }
+
+                applyFilters();
+            });
+
+            const sortOptions = document.querySelectorAll(
+                'input[name="initiative-sort"]'
+            );
+
+            const sortLabels = {
+                default: "Ordenar",
+                "name-asc": "Nome: A a Z",
+                "name-desc": "Nome: Z a A",
+                "year-desc": "Ano: mais recentes",
+                "year-asc": "Ano: mais antigos",
+                "agency-asc": "Órgão: A a Z",
+                "agency-desc": "Órgão: Z a A"
+            };
+
+           sortOptions.forEach(option => {
+                option.addEventListener("change", () => {
+                    if (!option.checked) {
+                        return;
+                    }
+
+                    currentSort = option.value;
+
+                    if (currentView === "cards") {
+                        cardsSort = currentSort;
+                    }
+
+                    if (currentView === "timeline") {
+                        timelineSort = currentSort;
+                    }
+
+                    sortBtnLabel.textContent =
+                        sortLabels[currentSort] || "Ordenar";
+
+                    sortDropdown.classList.remove("active");
+
+                    sortToggleBtn.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    applyFilters();
+                });
+            });
+
+            function obterAnoNumerico(valor) {
+                const resultado = String(valor || "").match(/\d{4}/);
+
+                if (!resultado) {
+                    return null;
+                }
+
+                return Number(resultado[0]);
+            }
+
+            function ordenarIniciativas(items) {
+                const ordenados = [...items];
+
+                switch (currentSort) {
+                    case "name-asc":
+                        return ordenados.sort((a, b) =>
+                            a.nome.localeCompare(
+                                b.nome,
+                                "pt-BR",
+                                {
+                                    sensitivity: "base",
+                                    numeric: true
+                                }
+                            )
+                        );
+
+                    case "name-desc":
+                        return ordenados.sort((a, b) =>
+                            b.nome.localeCompare(
+                                a.nome,
+                                "pt-BR",
+                                {
+                                    sensitivity: "base",
+                                    numeric: true
+                                }
+                            )
+                        );
+
+                    case "year-desc":
+                        return ordenados.sort((a, b) => {
+                            const anoA = obterAnoNumerico(a.ano_inicio);
+                            const anoB = obterAnoNumerico(b.ano_inicio);
+
+                            if (anoA === null && anoB === null) {
+                                return 0;
+                            }
+
+                            if (anoA === null) {
+                                return 1;
+                            }
+
+                            if (anoB === null) {
+                                return -1;
+                            }
+
+                            return anoB - anoA;
+                        });
+
+                    case "year-asc":
+                        return ordenados.sort((a, b) => {
+                            const anoA = obterAnoNumerico(a.ano_inicio);
+                            const anoB = obterAnoNumerico(b.ano_inicio);
+
+                            if (anoA === null && anoB === null) {
+                                return 0;
+                            }
+
+                            if (anoA === null) {
+                                return 1;
+                            }
+
+                            if (anoB === null) {
+                                return -1;
+                            }
+
+                            return anoA - anoB;
+                        });
+
+                    case "agency-asc":
+                        return ordenados.sort((a, b) =>
+                            a.orgao.localeCompare(
+                                b.orgao,
+                                "pt-BR",
+                                {
+                                    sensitivity: "base",
+                                    numeric: true
+                                }
+                            )
+                        );
+
+                    case "agency-desc":
+                        return ordenados.sort((a, b) =>
+                            b.orgao.localeCompare(
+                                a.orgao,
+                                "pt-BR",
+                                {
+                                    sensitivity: "base",
+                                    numeric: true
+                                }
+                            )
+                        );
+
+                    default:
+                        return ordenados;
+                }
+            }
+
             function applyFilters() {
                 const isEixoAll = eixoAllCb.checked;
-                const activeEixos = Array.from(eixoCbs).filter(c => c.checked).map(c => c.value.toLowerCase());
+
+                const activeEixos = Array.from(eixoCbs)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.value.toLowerCase());
 
                 const isImpactoAll = impactoAllCb.checked;
-                const activeImpactos = Array.from(impactoCbs).filter(c => c.checked).map(c => c.value.toLowerCase());
+
+                const activeImpactos = Array.from(impactoCbs)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.value.toLowerCase());
+
+                const anoCbs = document.querySelectorAll(
+                    ".filter-ano"
+                );
+
+                const isAnoAll = anoAllCb.checked;
+
+                const activeAnos = Array.from(anoCbs)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.value);
 
                 const filtered = iniciativasGlobal.filter(item => {
                     let matchEixo = isEixoAll;
+
                     if (!matchEixo) {
-                        matchEixo = activeEixos.some(val => item.eixo && item.eixo.toLowerCase().includes(val));
+                        matchEixo = activeEixos.some(valor =>
+                            item.eixo &&
+                            item.eixo.toLowerCase().includes(valor)
+                        );
                     }
 
                     let matchImpacto = isImpactoAll;
+
                     if (!matchImpacto) {
-                        matchImpacto = activeImpactos.some(val => item.impacto && item.impacto.toLowerCase() === val);
+                        matchImpacto = activeImpactos.some(valor =>
+                            item.impacto &&
+                            item.impacto.toLowerCase() === valor
+                        );
                     }
 
-                    return matchEixo && matchImpacto;
+                    let matchAno = isAnoAll;
+
+                    if (!matchAno) {
+                        matchAno = activeAnos.includes(
+                            String(item.ano_inicio)
+                        );
+                    }
+
+                    return (
+                        matchEixo &&
+                        matchImpacto &&
+                        matchAno
+                    );
                 });
 
-                renderIniciativas(filtered);
+                const resultadoOrdenado =
+                    ordenarIniciativas(filtered);
+
+                renderIniciativas(resultadoOrdenado);
             }
 
             function renderIniciativas(items) {
@@ -651,7 +1181,28 @@
                     grouped[ano].push(item);
                 });
 
-                const sortedYears = Object.keys(grouped).sort((a, b) => b - a);
+                const sortedYears = Object.keys(grouped).sort((a, b) => {
+                    const anoA = obterAnoNumerico(a);
+                    const anoB = obterAnoNumerico(b);
+
+                    if (anoA === null && anoB === null) {
+                        return a.localeCompare(b, "pt-BR");
+                    }
+
+                    if (anoA === null) {
+                        return 1;
+                    }
+
+                    if (anoB === null) {
+                        return -1;
+                    }
+
+                    if (currentSort === "year-asc") {
+                        return anoA - anoB;
+                    }
+
+                    return anoB - anoA;
+                });
 
                 timelineContainer.innerHTML = sortedYears.map(ano => `
                     <div class="timeline-year-group">
