@@ -21,10 +21,16 @@
     </mso:CustomDocumentProperties>
     </xml><![endif]-->
     </head>
+
 <body class="home-page" data-page="home">
 
+    
     <!-- CABEÇALHO (Injetado via JS / Componente) -->
     <div id="header-container"></div>
+
+    <!-- WIDGET DE ACESSIBILIDADE E LIBRAS (No topo do corpo) -->
+    <div id="accessibility-container"></div>
+    <div id="libras-container"></div>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main>
@@ -75,6 +81,9 @@
     <!-- RODAPÉ E BARRA SEPARADORA (Injetados via JS / Componente) -->
     <div id="footer-container"></div>
 
+    <script src="js/acessibilidade.js"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
     <!-- SCRIPT PARA CARREGAR COMPONENTES EXTERNOS -->
     <script>
         async function loadComponent(elementId, filePath) {
@@ -90,8 +99,35 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            loadComponent("header-container", "components/header.html");
-            loadComponent("footer-container", "components/footer.html");
+            loadComponent(
+                "header-container",
+                "components/header.html"
+            );
+
+            loadComponent(
+                "footer-container",
+                "components/footer.html"
+            );
+
+            loadComponent(
+                "accessibility-container",
+                "components/acessibilidade.html"
+            ).then(() => {
+                if (typeof iniciarAcessibilidade === "function") {
+                    iniciarAcessibilidade();
+                }
+            });
+
+            loadComponent(
+                "libras-container",
+                "components/libras.html"
+            ).then(() => {
+                if (window.VLibras) {
+                    new window.VLibras.Widget(
+                        "https://vlibras.gov.br/app"
+                    );
+                }
+            });
         });
     </script>
 </body>
