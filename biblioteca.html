@@ -226,6 +226,27 @@
         // Lógica da página e filtros
         document.addEventListener("DOMContentLoaded", () => {
             loadComponent("header-container", "components/header.html");
+
+            loadComponent(
+                "accessibility-container",
+                "components/acessibilidade.html"
+            ).then(() => {
+                if (typeof iniciarAcessibilidade === "function") {
+                    iniciarAcessibilidade();
+                }
+            });
+
+            loadComponent(
+                "libras-container",
+                "components/libras.html"
+            ).then(() => {
+                if (window.VLibras) {
+                    new window.VLibras.Widget(
+                        "https://vlibras.gov.br/app"
+                    );
+                }
+            });
+
             loadComponent("footer-container", "components/footer.html");
 
             const searchInput = document.getElementById('searchInput');
