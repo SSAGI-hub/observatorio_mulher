@@ -1,0 +1,176 @@
+<section
+    class="accessibility-body-bar"
+    aria-label="Ferramentas de acessibilidade"
+>
+    <div class="accessibility-widget-wrap">
+
+        <button
+            id="accessibility-toggle-btn"
+            class="accessibility-main-btn"
+            type="button"
+            aria-label="Abrir menu de acessibilidade"
+            aria-controls="accessibility-menu"
+            aria-expanded="false"
+            title="Acessibilidade"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+            >
+                <circle cx="12" cy="4" r="2"></circle>
+                <path d="M12 8v8"></path>
+                <path d="M8 12h8"></path>
+                <path d="M6 20l2-6h8l2 6"></path>
+            </svg>
+        </button>
+
+        <div
+            id="accessibility-menu"
+            class="accessibility-menu-panel"
+            hidden
+        >
+            <div class="accessibility-menu-header">
+                <h2 class="accessibility-menu-title">
+                    Acessibilidade
+                </h2>
+
+                <button
+                    id="btn-close-accessibility"
+                    class="accessibility-close-btn"
+                    type="button"
+                    aria-label="Fechar menu de acessibilidade"
+                    title="Fechar"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="accessibility-actions">
+
+                <button
+                    id="btn-increase-font"
+                    type="button"
+                    title="Aumentar texto"
+                >
+                    <span class="accessibility-action-icon">A+</span>
+                    <span>Texto maior</span>
+                </button>
+
+                <button
+                    id="btn-decrease-font"
+                    type="button"
+                    title="Diminuir texto"
+                >
+                    <span class="accessibility-action-icon">A−</span>
+                    <span>Texto menor</span>
+                </button>
+
+                <button
+                    id="btn-high-contrast"
+                    type="button"
+                    title="Ativar alto contraste"
+                    aria-pressed="false"
+                >
+                    <span class="accessibility-action-icon">◐</span>
+                    <span>Contraste</span>
+                </button>
+
+                <button
+                    id="btn-highlight-links"
+                    type="button"
+                    title="Destacar links"
+                    aria-pressed="false"
+                >
+                    <span class="accessibility-action-icon">🔗</span>
+                    <span>Destacar links</span>
+                </button>
+
+                <button
+                    id="btn-text-spacing"
+                    type="button"
+                    title="Aumentar espaçamento do texto"
+                    aria-pressed="false"
+                >
+                    <span class="accessibility-action-icon">↔</span>
+                    <span>Espaçamento</span>
+                </button>
+
+                <button
+                    id="btn-line-height"
+                    type="button"
+                    title="Aumentar altura das linhas"
+                    aria-pressed="false"
+                >
+                    <span class="accessibility-action-icon">↕</span>
+                    <span>Altura da linha</span>
+                </button>
+
+                <button
+                    id="btn-readable-font"
+                    type="button"
+                    title="Ativar fonte legível"
+                    aria-pressed="false"
+                >
+                    <span class="accessibility-action-icon">Df</span>
+                    <span>Fonte legível</span>
+                </button>
+
+                <button
+                    id="btn-large-cursor"
+                    type="button"
+                    title="Ativar cursor maior"
+                    aria-pressed="false"
+                >
+                    <span class="accessibility-action-icon">➤</span>
+                    <span>Cursor maior</span>
+                </button>
+
+                <button
+                    id="btn-pause-animations"
+                    type="button"
+                    title="Pausar animações"
+                    aria-pressed="false"
+                >
+                    <span class="accessibility-action-icon">Ⅱ</span>
+                    <span>Pausar animações</span>
+                </button>
+
+                <button
+                    id="btn-hide-images"
+                    type="button"
+                    title="Ocultar imagens"
+                    aria-pressed="false"
+                >
+                    <span class="accessibility-action-icon">▧</span>
+                    <span>Ocultar imagens</span>
+                </button>
+
+            </div>
+
+            <button
+                id="btn-reset-accessibility"
+                class="accessibility-reset-btn"
+                type="button"
+                title="Restaurar configurações"
+            >
+                Restaurar configurações
+            </button>
+
+            <p
+                id="accessibility-status"
+                class="accessibility-status"
+                aria-live="polite"
+            ></p>
+        </div>
+
+    </div>
+</section>
