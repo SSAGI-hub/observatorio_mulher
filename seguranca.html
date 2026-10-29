@@ -26,6 +26,9 @@
     <!-- CABEÇALHO (Injetado dinamicamente via JS) -->
     <div id="header-container"></div>
 
+    <div id="accessibility-container"></div>
+    <div id="libras-container"></div>
+
     <main>
         <!-- SEÇÃO DE APRESENTAÇÃO DO EIXO -->
         <section class="section-content">
@@ -37,7 +40,7 @@
                         <p>Acompanhar esses índices permite aperfeiçoar a rede de atendimento e proteção às mulheres, orientando ações integradas entre órgãos municipais e forças de segurança para a garantia de uma vida livre de violência.</p>
                     </div>
                     <div class="content-image-wrapper">
-                        <img src="assets/img/seguranca.JPG" alt="Segurança e Proteção em Niterói">
+                        <img src="assets/img/seguranca.jpg" alt="Segurança e Proteção em Niterói">
                     </div>
                 </div>
             </div>
@@ -60,6 +63,9 @@
     <!-- RODAPÉ (Injetado dinamicamente via JS) -->
     <div id="footer-container"></div>
 
+    <script src="js/acessibilidade.js"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
     <!-- SCRIPT DE CARREGAMENTO DOS COMPONENTES -->
     <script>
         async function loadComponent(elementId, filePath) {
@@ -75,8 +81,35 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            loadComponent("header-container", "components/header.html");
-            loadComponent("footer-container", "components/footer.html");
+            loadComponent(
+                "header-container",
+                "components/header.html"
+            );
+
+            loadComponent(
+                "footer-container",
+                "components/footer.html"
+            );
+
+            loadComponent(
+                "accessibility-container",
+                "components/acessibilidade.html"
+            ).then(() => {
+                if (typeof iniciarAcessibilidade === "function") {
+                    iniciarAcessibilidade();
+                }
+            });
+
+            loadComponent(
+                "libras-container",
+                "components/libras.html"
+            ).then(() => {
+                if (window.VLibras) {
+                    new window.VLibras.Widget(
+                        "https://vlibras.gov.br/app"
+                    );
+                }
+            });
         });
     </script>
 </body>
