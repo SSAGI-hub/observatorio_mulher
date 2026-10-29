@@ -2099,7 +2099,7 @@ main {
 }
 
 
-/* CONTAINER DA IMAGEM COM MOLDURA E FILTRO DUALTONE PASTEL */
+/* CONTAINER DA IMAGEM SEM FILTRO ROSA */
 
 .content-image-wrapper {
     width: 100%;
@@ -2107,7 +2107,7 @@ main {
     border-radius: 30px 180px 30px 30px;
     overflow: hidden;
     position: relative;
-    background-color: #e6b8c4;
+    background-color: transparent;
 }
 
 .content-image-wrapper img {
@@ -2115,18 +2115,13 @@ main {
     height: 100%;
     object-fit: cover;
     display: block;
-    mix-blend-mode: multiply;
-    opacity: 0.85;
+    opacity: 1;
+    mix-blend-mode: normal;
 }
 
 .content-image-wrapper::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: #e6b8c4;
-    opacity: 0.15;
-    mix-blend-mode: overlay;
-    pointer-events: none;
+    content: none;
+    display: none;
 }
 
 
