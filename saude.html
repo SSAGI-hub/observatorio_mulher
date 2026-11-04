@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html
+    lang="pt-BR"
+    xmlns:mso="urn:schemas-microsoft-com:office:office"
+    xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+>
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -14,6 +19,7 @@
     </title>
 
     <!-- FONTES -->
+
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
@@ -31,10 +37,20 @@
     >
 
     <!-- ESTILO EXTERNO PADRONIZADO -->
+
     <link
         rel="stylesheet"
         href="css/style.css"
     >
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_ApprovalStatus msdt:dt="string">0</mso:_ApprovalStatus>
+<mso:_ApprovalAssignedTo msdt:dt="string"></mso:_ApprovalAssignedTo>
+<mso:_ApprovalRespondedBy msdt:dt="string"></mso:_ApprovalRespondedBy>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+
 </head>
 
 <body
@@ -43,14 +59,20 @@
     data-eixo="saude"
 >
 
-    <!-- CABEÇALHO -->
+    <!-- CABEÇALHO INJETADO DINAMICAMENTE -->
+
     <div id="header-container"></div>
 
+
     <!-- ACESSIBILIDADE -->
+
     <div id="accessibility-container"></div>
 
+
     <!-- VLIBRAS -->
+
     <div id="libras-container"></div>
+
 
     <main>
 
@@ -79,11 +101,11 @@
                         </p>
 
                         <p>
-                            O painel reúne informações sobre atenção à saúde
-                            da mulher, rastreamento do câncer de mama e do
-                            colo do útero, mortalidade feminina, assistência
-                            hospitalar e outros temas relevantes para o
-                            planejamento de políticas públicas.
+                            O painel reúne informações sobre saúde materna,
+                            atenção ao pré-natal, condições ao nascer,
+                            rastreamento do câncer de mama e do colo do
+                            útero, mortalidade feminina e internações
+                            hospitalares financiadas pelo SUS.
                         </p>
 
                         <p>
@@ -135,10 +157,10 @@
                         </h2>
 
                         <p>
-                            Explore indicadores sobre rastreamento do câncer
-                            de mama e do colo do útero, mortalidade feminina,
-                            distribuição etária dos óbitos e principais grupos
-                            de causas registrados no município.
+                            Explore indicadores sobre saúde materna,
+                            nascimentos, rastreamento do câncer,
+                            mortalidade feminina e internações
+                            hospitalares financiadas pelo SUS.
                         </p>
 
                     </div>
@@ -158,11 +180,12 @@
                 <div class="dashboard-panel-box">
 
                     <iframe
-                        src="paineis/mulheres-territorios/painel-saude.html"
                         title="Painel de Saúde das Mulheres de Niterói"
+                        src="paineis/mulheres-territorios/painel-saude.html"
                         loading="lazy"
                         allowfullscreen
-                    ></iframe>
+                    >
+                    </iframe>
 
                 </div>
 
@@ -174,23 +197,109 @@
 
 
     <!-- FAIXA DE TRANSIÇÃO PARA O RODAPÉ -->
+
     <div class="footer-gradient"></div>
 
 
-    <!-- RODAPÉ -->
+    <!-- RODAPÉ INJETADO DINAMICAMENTE -->
+
     <div id="footer-container"></div>
 
 
     <!-- SCRIPT DE ACESSIBILIDADE -->
+
     <script src="js/acessibilidade.js"></script>
 
 
     <!-- SCRIPT DO VLIBRAS -->
+
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
 
-    <!-- COMPONENTES DO SITE -->
-    <script src="js/components-loader.js"></script>
+        <!-- CARREGAMENTO DOS COMPONENTES -->
+    <script>
+        async function loadComponent(
+            elementId,
+            filePath
+        ) {
+            try {
+                const response = await fetch(
+                    filePath
+                );
+
+                if (!response.ok) {
+                    throw new Error(
+                        `Falha ao carregar ${filePath}: ` +
+                        `${response.status} ${response.statusText}`
+                    );
+                }
+
+                const html = await response.text();
+
+                const container = document.getElementById(
+                    elementId
+                );
+
+                if (!container) {
+                    throw new Error(
+                        `Elemento não encontrado: ${elementId}`
+                    );
+                }
+
+                container.innerHTML = html;
+
+            } catch (error) {
+                console.error(
+                    `Erro ao carregar componente ${filePath}:`,
+                    error
+                );
+            }
+        }
+
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                loadComponent(
+                    "header-container",
+                    "components/header.html"
+                );
+
+                loadComponent(
+                    "footer-container",
+                    "components/footer.html"
+                );
+
+                loadComponent(
+                    "accessibility-container",
+                    "components/acessibilidade.html"
+                ).then(() => {
+
+                    if (
+                        typeof iniciarAcessibilidade ===
+                        "function"
+                    ) {
+                        iniciarAcessibilidade();
+                    }
+                });
+
+                loadComponent(
+                    "libras-container",
+                    "components/libras.html"
+                ).then(() => {
+
+                    if (
+                        window.VLibras
+                    ) {
+                        new window.VLibras.Widget(
+                            "https://vlibras.gov.br/app"
+                        );
+                    }
+                });
+            }
+        );
+    </script>
 
 </body>
 
