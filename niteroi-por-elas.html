@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niterói por Elas - Observatório da Mulher de Niterói</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Readex+Pro:wght@300;400;500;700&family=Vina+Sans&display=swap" rel="stylesheet">
+
+    <!-- CSS EXTERNO PADRONIZADO -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="niteroi-por-elas" class="home-page">
+
+    <!-- CABEÇALHO CARREGADO VIA SCRIPT -->
+    <div id="header-container"></div>
+
+    <div id="accessibility-container"></div>
+    <div id="libras-container"></div>
+
+    <main>
+
+        <!-- SEÇÃO 1: LOGO + APRESENTAÇÃO DO PROGRAMA -->
+        <section class="elas-intro">
+            <div class="elas-container">
+                <h1 class="elas-logo">
+                    <img src="assets/img/logo-niteroi-por-elas.png" alt="Niterói por Elas">
+                </h1>
+
+                <p class="elas-texto">
+                    <strong class="elas-destaque">O Programa Niterói por ELAS</strong>
+                    é uma iniciativa do Escritório de Políticas Transversais de Direitos e Cuidados (EPTC),
+                    órgão vinculado ao Gabinete do Prefeito, criado para integrar e promover políticas
+                    públicas que garantam a transversalidade dos direitos e cuidados no município.
+                    Com base em princípios como equidade, não discriminação, antirracismo e promoção
+                    da autonomia, o Escritório atua na articulação entre secretarias, na capacitação
+                    de servidores e no monitoramento de políticas voltadas à inclusão e à justiça social.
+                </p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: AÇÕES JÁ REALIZADAS (CARDS POR SECRETARIA) -->
+        <section class="elas-acoes" aria-labelledby="titulo-acoes">
+            <div class="elas-container elas-container--largo">
+                <h2 id="titulo-acoes" class="elas-titulo-secao">Ações já realizadas</h2>
+
+                <div class="elas-grid">
+                    <!--
+                        Cada bloco = uma secretaria.
+                        Para adicionar outra, copie um <article> inteiro.
+                        O <p> é opcional: se não quiser descrição, apague a linha.
+                    -->
+                    <article class="elas-acao">
+                        <h3>Card de secretaria</h3>
+                        <p>Breve descrição da ação realizada.</p>
+                    </article>
+
+                    <article class="elas-acao">
+                        <h3>Card de secretaria</h3>
+                        <p>Breve descrição da ação realizada.</p>
+                    </article>
+
+                    <article class="elas-acao">
+                        <h3>Card de secretaria</h3>
+                        <p>Breve descrição da ação realizada.</p>
+                    </article>
+
+                    <article class="elas-acao">
+                        <h3>Card de secretaria</h3>
+                        <p>Breve descrição da ação realizada.</p>
+                    </article>
+
+                    <article class="elas-acao">
+                        <h3>Card de secretaria</h3>
+                        <p>Breve descrição da ação realizada.</p>
+                    </article>
+
+                    <article class="elas-acao">
+                        <h3>Card de secretaria</h3>
+                        <p>Breve descrição da ação realizada.</p>
+                    </article>
+
+                    <article class="elas-acao">
+                        <h3>Card de secretaria</h3>
+                        <p>Breve descrição da ação realizada.</p>
+                    </article>
+
+                    <article class="elas-acao">
+                        <h3>Card de secretaria</h3>
+                        <p>Breve descrição da ação realizada.</p>
+                    </article>
+
+                    <article class="elas-acao">
+                        <h3>Card de secretaria</h3>
+                        <p>Breve descrição da ação realizada.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ CARREGADO VIA SCRIPT -->
+    <div id="footer-container"></div>
+
+    <script src="js/acessibilidade.js"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+    <script>
+        async function loadComponent(elementId, filePath) {
+            try {
+                const response = await fetch(filePath);
+                if (response.ok) {
+                    document.getElementById(elementId).innerHTML = await response.text();
+                }
+            } catch (error) {
+                console.error(`Erro ao carregar ${filePath}:`, error);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadComponent("header-container", "components/header.html");
+            loadComponent("footer-container", "components/footer.html");
+
+            loadComponent("accessibility-container", "components/acessibilidade.html")
+                .then(() => {
+                    if (typeof iniciarAcessibilidade === "function") {
+                        iniciarAcessibilidade();
+                    }
+                });
+
+            loadComponent("libras-container", "components/libras.html")
+                .then(() => {
+                    if (window.VLibras) {
+                        new window.VLibras.Widget("https://vlibras.gov.br/app");
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
