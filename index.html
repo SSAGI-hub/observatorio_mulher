@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Observatório da Mulher</title>
-        
+
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Readex+Pro:wght@300;400;500;700&family=Vina+Sans&display=swap" rel="stylesheet">
-        
+
         <!-- CSS EXTERNO -->
         <link rel="stylesheet" href="css/style.css">
 
@@ -24,7 +24,7 @@
 
 <body class="home-page" data-page="home">
 
-    
+
     <!-- CABEÇALHO (Injetado via JS / Componente) -->
     <div id="header-container"></div>
 
@@ -48,6 +48,11 @@
         </section>
 
         <section class="resources" aria-label="Recursos">
+            <!-- NOVO: Niterói por Elas -->
+            <a class="resource-card" id="niteroi-por-elas" href="niteroi-por-elas.html">
+                <h2>Niterói por<br>Elas</h2>
+                <p>Conheça a iniciativa transversal que integra políticas públicas voltadas à garantia de direitos femininos</p>
+            </a>
             <a class="resource-card" id="iniciativas" href="iniciativas.html">
                 <h2>Iniciativas<br>Municipais</h2>
                 <p>Consulte o catálogo completo com mais de 30 programas e ações da prefeitura, filtrando por eixos temáticos e órgãos.</p>
@@ -76,6 +81,63 @@
                 </div>
             </div>
         </section>
+
+        <!-- NOVO: APOIO INSTITUCIONAL E GESTÃO -->
+        <section class="apoio-gestao" id="quem-somos">
+            <h2>Apoio Institucional<br>e Gestão</h2>
+            <p>O desenvolvimento e a manutenção contínua desta plataforma são conduzidos pelo Departamento de Gestão da Informação da SSAGI/SEPLAG, em articulação com órgãos do município.</p>
+        </section>
+
+        <!--
+            NOVO: ÓRGÃOS DE APOIO
+            Para colocar o logo, salve a imagem no caminho indicado no <img>.
+            Enquanto o arquivo não existir, o onerror esconde a imagem quebrada
+            e o espaço do logo fica vazio (sem ícone de erro).
+        -->
+        <ul class="apoio-orgaos" aria-label="Órgãos de apoio">
+            <li class="apoio-orgao">
+                <div class="apoio-logo">
+                    <img src="assets/img/logo-ssagi.png" alt="Logo da SSAGI" onerror="this.style.display='none'">
+                </div>
+                <h3>Subsecretaria de Avaliação e Gestão da Informação (SSAGI)</h3>
+                <p>Gestão técnica, arquitetura de dados e desenvolvimento do Observatório.</p>
+            </li>
+            <li class="apoio-orgao">
+                <div class="apoio-logo">
+                    <img src="assets/img/logo-smu.png" alt="Logo da Secretaria de Urbanismo" onerror="this.style.display='none'">
+                </div>
+                <h3>Secretaria de Urbanismo (SMU)</h3>
+                <p>Fornecimento de dados espaciais sobre o uso do espaço público e acessibilidade urbana.</p>
+            </li>
+            <li class="apoio-orgao">
+                <div class="apoio-logo">
+                    <img src="assets/img/logo-smmu.png" alt="Logo da Secretaria da Mulher" onerror="this.style.display='none'">
+                </div>
+                <h3>Secretaria da Mulher (SMMU)</h3>
+                <p>Formulação e acompanhamento de políticas públicas para proteção e autonomia feminina.</p>
+            </li>
+            <li class="apoio-orgao">
+                <div class="apoio-logo">
+                    <img src="assets/img/logo-eptc.png" alt="Logo do EPTC" onerror="this.style.display='none'">
+                </div>
+                <h3>Escritório de Políticas Transversais (EPTC)</h3>
+                <p>Articulação intersetorial de programas de direitos, igualdade e economia do cuidado.</p>
+            </li>
+            <li class="apoio-orgao">
+                <div class="apoio-logo">
+                    <img src="assets/img/logo-labnit.png" alt="Logo do Labnit" onerror="this.style.display='none'">
+                </div>
+                <h3>Laboratório de Inovação de Niterói</h3>
+                <p>Capacitação de servidores e promoção da igualdade de gênero na gestão pública.</p>
+            </li>
+            <li class="apoio-orgao">
+                <div class="apoio-logo">
+                    <img src="assets/img/logo-ospnit.png" alt="Logo do OSPNit" onerror="this.style.display='none'">
+                </div>
+                <h3>Observatório da Segurança Pública (OSPNit)</h3>
+                <p>Consolidação de dados sobre violência doméstica e segurança municipal.</p>
+            </li>
+        </ul>
     </main>
 
     <!-- RODAPÉ E BARRA SEPARADORA (Injetados via JS / Componente) -->
