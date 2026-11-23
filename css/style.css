@@ -87,6 +87,29 @@ a {
     transform: rotate(360deg);
 }
 
+/* Flor + nome do Observatório lado a lado */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.header-title {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--cream);
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .header-brand { gap: 10px; }
+    .header-title { font-size: 20px !important; }
+    .header-brand .header-mark { margin-bottom: 0 !important; }
+}
+
 /* Logotipo SEPLAG / Prefeitura (Mais Legível) */
 .seplag-logo { 
     width: 270px; /* Aumentado de 220px para garantir total legibilidade */
