@@ -4184,3 +4184,126 @@ body.hide-images section:not(.accessibility-body-bar) img {
     }
 
 }
+/* ==========================================================================
+   PÁGINA: NITERÓI POR ELAS
+   Fundo de pétalas vem do body.home-page (já definido acima).
+   Obs.: as classes não usam a palavra "card" de propósito, porque no
+   mobile a regra .home-page [class*="card"] deixaria o texto branco.
+   ========================================================================== */
+
+.elas-intro {
+    padding: 70px 20px 0;
+    background: linear-gradient(180deg, rgb(187 34 86 / 15%), transparent);
+}
+
+.elas-container {
+    width: min(1000px, 100%);
+    margin: 0 auto;
+}
+
+.elas-container--largo {
+    width: min(1430px, 100%);
+}
+
+/* Logo */
+.elas-logo {
+    margin: 0 0 70px;
+    text-align: center;
+    line-height: 0;
+}
+
+.elas-logo img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+}
+
+/* Texto de apresentação */
+.elas-texto {
+    margin: 0;
+    font-family: "Readex Pro", sans-serif;
+    font-size: 26px;
+    line-height: 1.55;
+    color: var(--plum);
+    text-align: justify;
+    hyphens: auto;
+}
+
+.elas-destaque {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--orange);
+}
+
+/* Ações já realizadas */
+.elas-acoes {
+    padding: 70px 20px 90px;
+}
+
+.elas-titulo-secao {
+    margin: 0 0 50px;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--plum);
+    text-align: center;
+}
+
+.elas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.elas-acao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 210px;
+    padding: 28px 32px;
+    background-color: #f0c8cb;
+    border-radius: 16px;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.elas-acao:hover {
+    background-color: #ebb8bd;
+    transform: translateY(-3px);
+}
+
+.elas-acao h3 {
+    margin: 0;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.elas-acao p {
+    margin: 12px 0 0;
+    font-family: "Readex Pro", sans-serif;
+    font-size: 17px;
+    line-height: 1.45;
+    color: var(--plum);
+}
+
+@media (max-width: 1024px) {
+    .elas-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .elas-texto { font-size: 22px; }
+    .elas-acao h3 { font-size: 26px; }
+}
+
+@media (max-width: 640px) {
+    .elas-intro { padding: 40px 20px 0; }
+    .elas-logo { margin-bottom: 40px; }
+    .elas-texto { font-size: 17px; text-align: left; }
+    .elas-acoes { padding: 50px 20px 70px; }
+    .elas-titulo-secao { font-size: 30px; margin-bottom: 30px; }
+    .elas-grid { grid-template-columns: 1fr; gap: 16px; }
+    .elas-acao { min-height: 140px; }
+    .elas-acao h3 { font-size: 22px; }
+}
