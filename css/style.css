@@ -1969,9 +1969,10 @@ main {
 }
 
 .indicators-intro p {
+    max-width: 760px;           /* NOVO: largura do texto (antes: 1000px) */
     font-size: 20px;
     line-height: 1.6;
-    margin: 0 0 25px;
+    margin: 0 auto 25px;        /* antes: 0 0 25px (o "auto" centraliza) */
     color: var(--plum);
     text-align: justify;
 }
@@ -2142,7 +2143,7 @@ main {
 .content-text p {
     margin: 0 0 24px;
     font-family: "Readex Pro", sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.6;
     color: var(--plum);
     text-align: justify;
