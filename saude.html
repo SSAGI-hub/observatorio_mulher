@@ -1,17 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<html
+    lang="pt-BR"
+    xmlns:mso="urn:schemas-microsoft-com:office:office"
+    xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+>
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segurança - Indicadores - Observatório da Mulher de Niterói</title>
-    
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Readex+Pro:wght@300;400;500;700&family=Vina+Sans&display=swap" rel="stylesheet">
-    
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Saúde - Indicadores - Observatório da Mulher de Niterói
+    </title>
+
+    <!-- FONTES -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Readex+Pro:wght@300;400;500;700&family=Vina+Sans&display=swap"
+        rel="stylesheet"
+    >
+
     <!-- ESTILO EXTERNO PADRONIZADO -->
-    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 
 <!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
@@ -20,117 +50,257 @@
 <mso:_ApprovalRespondedBy msdt:dt="string"></mso:_ApprovalRespondedBy>
 </mso:CustomDocumentProperties>
 </xml><![endif]-->
-</head>
-<body class="indicator-single-page" data-page="indicadores" data-eixo="seguranca">
 
-    <!-- CABEÇALHO (Injetado dinamicamente via JS) -->
+</head>
+
+<body
+    class="indicator-single-page"
+    data-page="indicadores"
+    data-eixo="saude"
+>
+
+    <!-- CABEÇALHO INJETADO DINAMICAMENTE -->
+
     <div id="header-container"></div>
 
+
+    <!-- ACESSIBILIDADE -->
+
     <div id="accessibility-container"></div>
+
+
+    <!-- VLIBRAS -->
+
     <div id="libras-container"></div>
 
+
     <main>
-        <!-- SEÇÃO DE APRESENTAÇÃO DO EIXO -->
+
+        <!-- ==================================================
+             APRESENTAÇÃO DO EIXO SAÚDE
+             ================================================== -->
+
         <section class="section-content">
+
             <div class="content-container">
-                <h1>Segurança</h1>
+
+                <h1>Saúde</h1>
+
                 <div class="content-grid">
+
                     <div class="content-text">
-                        <p><strong>A importância dos dados</strong> sobre segurança e prevenção à violência reflete o monitoramento contínuo das ocorrências contra a mulher, como violência doméstica, assédio e feminicídio no município de Niterói.</p>
-                        <p>Acompanhar esses índices permite aperfeiçoar a rede de atendimento e proteção às mulheres, orientando ações integradas entre órgãos municipais e forças de segurança para a garantia de uma vida livre de violência.</p>
+
+                        <p>
+                            <strong>
+                                Os indicadores de saúde
+                            </strong>
+                            permitem compreender as condições de vida,
+                            o acesso aos serviços de saúde e os principais
+                            desafios enfrentados pelas mulheres residentes
+                            em Niterói.
+                        </p>
+
+                        <p>
+                            O painel reúne informações sobre saúde materna,
+                            atenção ao pré-natal, condições ao nascer,
+                            rastreamento do câncer de mama e do colo do
+                            útero, mortalidade feminina e internações
+                            hospitalares financiadas pelo SUS.
+                        </p>
+
+                        <p>
+                            A análise integrada desses dados contribui para
+                            identificar desigualdades, acompanhar tendências
+                            e orientar estratégias de prevenção, cuidado e
+                            promoção da saúde no município.
+                        </p>
+
                     </div>
+
                     <div class="content-image-wrapper">
-                        <img src="assets/img/seguranca.png" alt="Segurança e Proteção em Niterói">
+
+                        <img
+                            src="assets/img/saude.png"
+                            alt="Indicadores de saúde das mulheres de Niterói"
+                        >
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- SEÇÃO DO PAINEL POWER BI -->
-        <section class="section-panel">
+
+        <!-- ==================================================
+             PAINEL INTERATIVO DE SAÚDE
+             ================================================== -->
+
+        <section
+            class="section-panel"
+            aria-labelledby="titulo-painel-saude"
+        >
+
             <div class="content-container">
+
                 <div class="dashboard-section-header">
+
                     <div class="dashboard-section-text">
-                        <span class="dashboard-section-label">Painel interativo</span>
-                        <h2>Violência contra as mulheres</h2>
-                        <p>Explore os indicadores de violência contra as mulheres em Niterói. Use os filtros do painel para comparar períodos e tipos de ocorrência.</p>
+
+                        <span class="dashboard-section-label">
+                            Painel interativo
+                        </span>
+
+                        <h2 id="titulo-painel-saude">
+                            Saúde das mulheres de Niterói
+                        </h2>
+
+                        <p>
+                            Explore indicadores sobre saúde materna,
+                            nascimentos, rastreamento do câncer,
+                            mortalidade feminina e internações
+                            hospitalares financiadas pelo SUS.
+                        </p>
+
                     </div>
 
                     <a
                         class="dashboard-fullscreen-link"
-                        href="https://app.powerbi.com/view?r=eyJrIjoiMWUzNWMyMDctMmYzNS00OTU4LWFmMTktNWYzYzdlODliM2I0IiwidCI6ImRiM2MxYzY5LWUyOGMtNDNkNy04ZTFhLTk1ODNlOWU5OGE1MSJ9"
+                        href="paineis/mulheres-territorios/painel-saude.html"
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label="Abrir o painel de saúde em uma nova janela"
                     >
                         Abrir em tela cheia
                     </a>
+
                 </div>
 
                 <div class="dashboard-panel-box">
+
                     <iframe
-                        title="Painel de indicadores de violência contra as mulheres em Niterói"
-                        src="https://app.powerbi.com/view?r=eyJrIjoiMWUzNWMyMDctMmYzNS00OTU4LWFmMTktNWYzYzdlODliM2I0IiwidCI6ImRiM2MxYzY5LWUyOGMtNDNkNy04ZTFhLTk1ODNlOWU5OGE1MSJ9&chromeless=1"
+                        title="Painel de Saúde das Mulheres de Niterói"
+                        src="paineis/mulheres-territorios/painel-saude.html"
                         loading="lazy"
                         allowfullscreen
-                    ></iframe>
+                    >
+                    </iframe>
+
                 </div>
+
             </div>
+
         </section>
+
     </main>
+
+
+    <!-- FAIXA DE TRANSIÇÃO PARA O RODAPÉ -->
 
     <div class="footer-gradient"></div>
 
-    <!-- RODAPÉ (Injetado dinamicamente via JS) -->
+
+    <!-- RODAPÉ INJETADO DINAMICAMENTE -->
+
     <div id="footer-container"></div>
 
+
+    <!-- SCRIPT DE ACESSIBILIDADE -->
+
     <script src="js/acessibilidade.js"></script>
+
+
+    <!-- SCRIPT DO VLIBRAS -->
+
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
-    <!-- SCRIPT DE CARREGAMENTO DOS COMPONENTES -->
+
+        <!-- CARREGAMENTO DOS COMPONENTES -->
     <script>
-        async function loadComponent(elementId, filePath) {
+        async function loadComponent(
+            elementId,
+            filePath
+        ) {
             try {
-                const response = await fetch(filePath);
-                if (response.ok) {
-                    const html = await response.text();
-                    document.getElementById(elementId).innerHTML = html;
+                const response = await fetch(
+                    filePath
+                );
+
+                if (!response.ok) {
+                    throw new Error(
+                        `Falha ao carregar ${filePath}: ` +
+                        `${response.status} ${response.statusText}`
+                    );
                 }
+
+                const html = await response.text();
+
+                const container = document.getElementById(
+                    elementId
+                );
+
+                if (!container) {
+                    throw new Error(
+                        `Elemento não encontrado: ${elementId}`
+                    );
+                }
+
+                container.innerHTML = html;
+
             } catch (error) {
-                console.error(`Erro ao carregar componente ${filePath}:`, error);
+                console.error(
+                    `Erro ao carregar componente ${filePath}:`,
+                    error
+                );
             }
         }
 
-        document.addEventListener("DOMContentLoaded", () => {
-            loadComponent(
-                "header-container",
-                "components/header.html"
-            );
 
-            loadComponent(
-                "footer-container",
-                "components/footer.html"
-            );
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
 
-            loadComponent(
-                "accessibility-container",
-                "components/acessibilidade.html"
-            ).then(() => {
-                if (typeof iniciarAcessibilidade === "function") {
-                    iniciarAcessibilidade();
-                }
-            });
+                loadComponent(
+                    "header-container",
+                    "components/header.html"
+                );
 
-            loadComponent(
-                "libras-container",
-                "components/libras.html"
-            ).then(() => {
-                if (window.VLibras) {
-                    new window.VLibras.Widget(
-                        "https://vlibras.gov.br/app"
-                    );
-                }
-            });
-        });
+                loadComponent(
+                    "footer-container",
+                    "components/footer.html"
+                );
+
+                loadComponent(
+                    "accessibility-container",
+                    "components/acessibilidade.html"
+                ).then(() => {
+
+                    if (
+                        typeof iniciarAcessibilidade ===
+                        "function"
+                    ) {
+                        iniciarAcessibilidade();
+                    }
+                });
+
+                loadComponent(
+                    "libras-container",
+                    "components/libras.html"
+                ).then(() => {
+
+                    if (
+                        window.VLibras
+                    ) {
+                        new window.VLibras.Widget(
+                            "https://vlibras.gov.br/app"
+                        );
+                    }
+                });
+            }
+        );
     </script>
+
 </body>
+
 </html>
