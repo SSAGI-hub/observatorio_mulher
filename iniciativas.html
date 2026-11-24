@@ -358,10 +358,33 @@
         </div>
 
         <div class="modal-footer-action">
-            <button class="btn-update" onclick="alert('Formulário de atualização em breve.')">Informar dados de atualização</button>
+            <button class="btn-update" id="btnAtualizacao" type="button">Informar dados de atualização</button>
         </div>
     </div>
 </div>
+
+    <!-- POPUP DO FORMULÁRIO DE ATUALIZAÇÃO (Microsoft Forms incorporado) -->
+    <div class="modal-overlay form-overlay" id="formAtualizacaoModal">
+        <div class="form-popup" role="dialog" aria-modal="true" aria-labelledby="formPopupTitulo">
+            <div class="form-popup-header">
+                <h2 id="formPopupTitulo">Informar dados de atualização</h2>
+                <button class="form-popup-close" id="formPopupFechar" type="button" aria-label="Fechar formulário">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+
+            <iframe
+                id="formAtualizacaoFrame"
+                title="Formulário de atualização de dados da iniciativa"
+                src="about:blank"
+            ></iframe>
+
+            <p class="form-popup-rodape">
+                O formulário não carregou?
+                <a id="formPopupLink" href="#" target="_blank" rel="noopener">Abrir em nova aba</a>
+            </p>
+        </div>
+    </div>
 
     <div class="footer-gradient"></div>
 
@@ -376,6 +399,70 @@
         let iniciativasGlobal = [];
         let mapInstance = null;
         let mapInitialized = false;
+
+        // ==========================================================
+        // FORMULÁRIO DE ATUALIZAÇÃO (Microsoft Forms)
+        // ----------------------------------------------------------
+        // FORM_ATUALIZACAO_URL: link comum do formulário.
+        //
+        // FORM_ATUALIZACAO_PREENCHIDO: link pré-preenchido, gerado no
+        // Forms com a palavra "teste" no campo "Iniciativa". Quando ele
+        // estiver aqui, o botão troca "teste" pelo nome da iniciativa
+        // aberta. Enquanto estiver vazio, o botão abre o link comum.
+        // ==========================================================
+        const FORM_ATUALIZACAO_URL = "https://forms.cloud.microsoft/r/4JW5G7RjRq";
+        const FORM_ATUALIZACAO_PREENCHIDO = "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=aRw824zi10OOGpWD6emKUeeg3MfIsFRFhO3qEU0WmGVUQjFSU1U2TTFGU0NQWUlRNEhYT1Q3OVlQSy4u&r48ada0ff928949c1940ed6044ac252a0=teste";
+
+        // true: abre o formulário em popup na própria página
+        // false: abre o formulário numa nova aba
+        const FORM_ATUALIZACAO_EM_POPUP = true;
+
+        let iniciativaAberta = null;
+
+        function fecharFormularioAtualizacao() {
+            const overlay = document.getElementById("formAtualizacaoModal");
+            const frame = document.getElementById("formAtualizacaoFrame");
+
+            overlay.classList.remove("active");
+
+            // Limpa o quadro para o próximo formulário abrir do zero
+            frame.src = "about:blank";
+        }
+
+        function abrirFormularioAtualizacao() {
+            let url = FORM_ATUALIZACAO_URL;
+
+            // Troca o "teste" do fim do link (maiúsculo ou minúsculo)
+            // pelo nome da iniciativa aberta
+            const marcador = /=teste$/i;
+
+            if (
+                FORM_ATUALIZACAO_PREENCHIDO &&
+                marcador.test(FORM_ATUALIZACAO_PREENCHIDO) &&
+                iniciativaAberta
+            ) {
+                url = FORM_ATUALIZACAO_PREENCHIDO.replace(
+                    marcador,
+                    "=" + encodeURIComponent(iniciativaAberta.nome)
+                );
+            }
+
+            if (!FORM_ATUALIZACAO_EM_POPUP) {
+                window.open(url, "_blank", "noopener");
+                return;
+            }
+
+            const separador = url.includes("?") ? "&" : "?";
+
+            document.getElementById("formAtualizacaoFrame").src =
+                url + separador + "embed=true";
+
+            document.getElementById("formPopupLink").href = url;
+
+            document
+                .getElementById("formAtualizacaoModal")
+                .classList.add("active");
+        }
 
         // ÍCONES VETORIAIS COM AS IMAGENS DA PASTA ASSETS
         const fieldSVGIcons = {
@@ -1231,6 +1318,9 @@
                 const item = iniciativasGlobal.find(i => Number(i.id) === Number(id));
                 if (!item) return;
 
+                // Guarda a iniciativa aberta para o formulário de atualização
+                iniciativaAberta = item;
+
                 // --- ATUALIZAÇÃO DINÂMICA DO ÍCONE DO TOPO ---
                 const eixoText = (item.eixo || '').toLowerCase();
                 let iconePath = 'assets/icone_seguranca.svg'; // Ícone padrão caso não encontre correspondência
@@ -1267,12 +1357,35 @@
                 modal.classList.add("active");
             };
 
+            document
+                .getElementById("btnAtualizacao")
+                .addEventListener("click", abrirFormularioAtualizacao);
+
             modalCloseBtn.addEventListener("click", () => modal.classList.remove("active"));
             modal.addEventListener("click", (e) => {
                 if (e.target === modal) modal.classList.remove("active");
             });
+            // Popup do formulário: fecha no X ou clicando fora
+            const formOverlay = document.getElementById("formAtualizacaoModal");
+
+            document
+                .getElementById("formPopupFechar")
+                .addEventListener("click", fecharFormularioAtualizacao);
+
+            formOverlay.addEventListener("click", (e) => {
+                if (e.target === formOverlay) fecharFormularioAtualizacao();
+            });
+
+            // ESC fecha primeiro o formulário (se aberto) e depois a ficha
             document.addEventListener("keydown", (e) => {
-                if (e.key === "Escape") modal.classList.remove("active");
+                if (e.key !== "Escape") return;
+
+                if (formOverlay.classList.contains("active")) {
+                    fecharFormularioAtualizacao();
+                    return;
+                }
+
+                modal.classList.remove("active");
             });
         });
     </script>
