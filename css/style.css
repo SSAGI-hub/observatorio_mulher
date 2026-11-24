@@ -205,8 +205,8 @@ a {
    ========================================================================== */
 .hero { 
     position: relative; 
-    min-height: 595px; 
-    padding: 218px 0 0; 
+    min-height: 120px; 
+    padding: 130px 0 0; 
     background: linear-gradient(180deg, rgb(187 34 86 / 15%), transparent); 
 }
 
@@ -244,7 +244,7 @@ a {
 
 .welcome { 
     position: absolute; 
-    top: 60px; 
+    top: 20px; 
     left: max(20px, calc(50% - 569px)); 
     width: min(551px, calc(100% - 40px)); 
     margin: 0; 
