@@ -3984,7 +3984,7 @@ body.hide-images section:not(.accessibility-body-bar) img {
         display: none !important;
     }
 
-    /* ==========================================
+        /* ==========================================
        4. GLOSSARIO
        ========================================== */
 
@@ -3992,9 +3992,25 @@ body.hide-images section:not(.accessibility-body-bar) img {
         padding: 30px 15px;
     }
 
+    .glossary-container {
+        width: calc(100% - 30px);
+    }
+
+    /* minmax(0, 1fr) impede que uma palavra longa alargue a coluna */
     .glossary-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 16px;
+    }
+
+    .glossary-card {
+        min-height: 0;
+        padding: 26px 20px;
+    }
+
+    .glossary-card h3 {
+        font-size: 22px;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     .glossary-modal-card {
