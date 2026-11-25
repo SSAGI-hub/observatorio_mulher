@@ -501,6 +501,23 @@
             return 'tag-out';
         }
 
+        // Nome curto do eixo para as etiquetas dos cards e da linha do
+        // tempo (o nome completo continua na ficha da iniciativa).
+        // Usa os mesmos nomes do filtro "Eixos Temáticos".
+        const rotulosCurtosEixo = {
+            "tag-eco": "Autonomia Econômica",
+            "tag-seg": "Enfrentamento à Violência",
+            "tag-sau": "Saúde e Bem-Estar",
+            "tag-edu": "Educação",
+            "tag-gov": "Governança & Gestão",
+            "tag-urb": "Urbanismo & Mobilidade",
+            "tag-ast": "Assistência Social"
+        };
+
+        function rotuloCurtoEixo(eixo) {
+            return rotulosCurtosEixo[getEixoTagClass(eixo)] || eixo;
+        }
+
         function normalizeData(raw) {
             let list = [];
             if (Array.isArray(raw)) {
@@ -916,7 +933,7 @@
                     .join("");
             }
 
-            fetch("data/iniciativas.json")
+            fetch("iniciativas_municipais_genero.json")
                 .then(res => {
                     if (!res.ok) throw new Error("JSON não localizado");
                     return res.json();
@@ -926,19 +943,9 @@
                     preencherFiltroAnos(iniciativasGlobal);
                     applyFilters();
                 })
-                .catch(err => {
-                    console.warn("Tentando rota alternativa 'Iniciativas municipais - Gênero.json'...", err);
-                    fetch("iniciativas_municipais_genero.json")
-                        .then(res => res.json())
-                        .then(data => {
-                            iniciativasGlobal = normalizeData(data);
-                            preencherFiltroAnos(iniciativasGlobal);
-                            applyFilters();
-                        })
-                        .catch(e => {
-                            console.error("Não foi possível carregar o arquivo JSON:", e);
-                            initiativeGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--plum);">Erro ao carregar o arquivo JSON. Verifique se o arquivo está na pasta correta.</p>`;
-                        });
+                .catch(e => {
+                    console.error("Não foi possível carregar o arquivo JSON:", e);
+                    initiativeGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--plum);">Erro ao carregar o arquivo JSON. Verifique se o arquivo está na pasta correta.</p>`;
                 });
 
             const eixoAllCb = document.querySelector(".filter-eixo-all");
@@ -1247,7 +1254,7 @@
                                 </div>
                             </div>
                             <div class="card-tags">
-                                <span class="tag ${eixoClass}">${item.eixo}</span>
+                                <span class="tag ${eixoClass}" title="${item.eixo}">${rotuloCurtoEixo(item.eixo)}</span>
                                 <span class="tag ${impactoClass}">${item.impacto}</span>
                             </div>
                         </div>
@@ -1303,7 +1310,7 @@
                                             <h4>${item.nome}</h4>
                                             <p>${item.descricao || ""}</p>
                                             <div class="card-tags">
-                                                <span class="tag ${eixoClass}">${item.eixo}</span>
+                                                <span class="tag ${eixoClass}" title="${item.eixo}">${rotuloCurtoEixo(item.eixo)}</span>
                                             </div>
                                         </div>
                                     </div>
