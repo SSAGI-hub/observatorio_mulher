@@ -1,0 +1,1676 @@
+{
+  "metadados": {
+    "titulo": "Repositório de Legislação",
+    "orgao": "Secretaria Municipal da Mulher (SMMU) - Prefeitura de Niterói",
+    "versao": "2.0",
+    "atualizado_em": "2026-11-24",
+    "total": 70,
+    "aviso": "Conteúdo informativo. Para fins jurídicos, consulte o texto integral nos portais oficiais."
+  },
+  "documentos": [
+    {
+      "id": "m-lom",
+      "ordem": 1,
+      "esfera": "Municipal",
+      "tipo": "Lei Orgânica",
+      "numero": "",
+      "ano": 1990,
+      "data": "1990-04-04",
+      "identificacao": "Lei Orgânica, de 4 de abril de 1990",
+      "titulo": "Lei Orgânica do Município de Niterói",
+      "nome_popular": "Lei Orgânica",
+      "apelidos": [
+        "LOM",
+        "Lei Orgânica de Niterói"
+      ],
+      "resumo": "Lei maior do município. Entre os direitos dos servidores e trabalhadores, prevê a proteção do mercado de trabalho da mulher mediante incentivos específicos (art. 159, I, \"n\"), além da licença à gestante e da proibição de diferença salarial por sexo.",
+      "temas": [
+        "Direitos e igualdade",
+        "Trabalho e renda"
+      ],
+      "situacao": "alterada",
+      "link": "https://portaldoservidor.niteroi.rj.gov.br/wp-content/uploads/2023/06/Lei-Organica-Niteroi.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Portal do Servidor de Niterói"
+    },
+    {
+      "id": "m-3622",
+      "ordem": 2,
+      "esfera": "Municipal",
+      "tipo": "Lei Municipal",
+      "numero": "3.622",
+      "ano": 2021,
+      "data": "2021-07-30",
+      "identificacao": "Lei Municipal nº 3.622, de 30 de julho de 2021",
+      "titulo": "Auxílio Social para Mulheres em Situação de Violência",
+      "nome_popular": "Auxílio Social",
+      "apelidos": [
+        "Auxílio Social",
+        "Auxílio Social para Mulheres"
+      ],
+      "resumo": "Institui o benefício Auxílio Social para Mulheres em Situação de Violência no Município de Niterói.",
+      "temas": [
+        "Assistência e benefícios",
+        "Violência doméstica e familiar"
+      ],
+      "situacao": "alterada",
+      "link": "https://diariooficial.niteroi.rj.gov.br/do/2021/11_Nov/24.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Diário Oficial de Niterói (citada no Decreto 14.211/2021)"
+    },
+    {
+      "id": "m-d14211",
+      "ordem": 3,
+      "esfera": "Municipal",
+      "tipo": "Decreto Municipal",
+      "numero": "14.211",
+      "ano": 2021,
+      "data": "2021-11-23",
+      "identificacao": "Decreto Municipal nº 14.211, de 23 de novembro de 2021",
+      "titulo": "Regulamenta o Auxílio Social para Mulheres em Situação de Violência",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Regulamenta a Lei 3.622/2021: requisitos, triagem para concessão e renovação, e possibilidade de recurso contra o indeferimento.",
+      "temas": [
+        "Assistência e benefícios"
+      ],
+      "situacao": "vigente",
+      "link": "https://diariooficial.niteroi.rj.gov.br/do/2021/11_Nov/24.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Diário Oficial de Niterói, 24/11/2021"
+    },
+    {
+      "id": "m-3986",
+      "ordem": 4,
+      "esfera": "Municipal",
+      "tipo": "Lei Municipal",
+      "numero": "3.986",
+      "ano": 2025,
+      "data": "2025-03-19",
+      "identificacao": "Lei Municipal nº 3.986, de 19 de março de 2025",
+      "titulo": "Novo valor e novas regras do Auxílio Social para Mulheres em Situação de Violência",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Altera a Lei 3.622/2021. Fixa o benefício em R$ 1.518,00, reajustável por decreto, vincula o programa à Secretaria Municipal da Mulher (SMMU) e permite uma prorrogação pelo mesmo período, com parecer técnico da SMMU.",
+      "temas": [
+        "Assistência e benefícios"
+      ],
+      "situacao": "vigente",
+      "link": "https://diariooficial.niteroi.rj.gov.br/do/2025/03_Mar/20.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Diário Oficial de Niterói, 20/03/2025"
+    },
+    {
+      "id": "m-d839",
+      "ordem": 5,
+      "esfera": "Municipal",
+      "tipo": "Decreto Municipal",
+      "numero": "839",
+      "ano": 2026,
+      "data": "2026-07-07",
+      "identificacao": "Decreto Municipal nº 839, de 7 de julho de 2026",
+      "titulo": "Regulamenta o protocolo de acolhimento à mulher em situação de risco em bares, restaurantes, hotéis e casas noturnas",
+      "nome_popular": "protocolo no comércio",
+      "apelidos": [
+        "Protocolo de acolhimento",
+        "Formação Lilás",
+        "Termo de Adesão"
+      ],
+      "resumo": "Regulamenta a Lei 3.592/2021. A SMMU coordena o protocolo. Ele é obrigatório para bares, restaurantes, casas noturnas, hotéis, motéis, pousadas, espaços culturais e outros estabelecimentos abertos ao público previstos na lei municipal e na Lei estadual 8.378/2019. Os demais estabelecimentos podem aderir por Termo de Adesão.",
+      "temas": [
+        "Assédio e importunação",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "vigente",
+      "link": "https://diariooficial.niteroi.rj.gov.br/do/2026/07_Jul/08.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Diário Oficial de Niterói, 08/07/2026"
+    },
+    {
+      "id": "m-3991",
+      "ordem": 6,
+      "esfera": "Municipal",
+      "tipo": "Lei Municipal",
+      "numero": "3.991",
+      "ano": 2025,
+      "data": "2025-04-09",
+      "identificacao": "Lei Municipal nº 3.991, de 9 de abril de 2025",
+      "titulo": "Semana de Conscientização da Lei Maria da Penha nas escolas",
+      "nome_popular": "",
+      "apelidos": [
+        "Semana Maria da Penha nas escolas"
+      ],
+      "resumo": "Altera a Lei 3.474/2020 para instituir, em agosto, a Semana de Conscientização da Lei Maria da Penha nas escolas.",
+      "temas": [
+        "Educação e prevenção"
+      ],
+      "situacao": "vigente",
+      "link": "https://diariooficial.niteroi.rj.gov.br/do/2025/04_Abr/10.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Diário Oficial de Niterói, 10/04/2025"
+    },
+    {
+      "id": "m-3592",
+      "ordem": 7,
+      "esfera": "Municipal",
+      "tipo": "Lei Municipal",
+      "numero": "3.592",
+      "ano": 2021,
+      "data": "2021-05-18",
+      "identificacao": "Lei Municipal nº 3.592, de 18 de maio de 2021",
+      "titulo": "Protocolo de acolhimento à mulher em situação de risco em bares, restaurantes e outros estabelecimentos",
+      "nome_popular": "protocolo em bares e comércio",
+      "apelidos": [
+        "Protocolo de acolhimento",
+        "bares",
+        "restaurantes"
+      ],
+      "resumo": "Cria o protocolo de acolhimento à mulher niteroiense em situação de risco, a ser aplicado por estabelecimentos comerciais: bares, restaurantes, cafés, quiosques, polos gastronômicos, shoppings, casas noturnas, espaços de eventos, casas de shows, hotéis e centros de convenções.",
+      "temas": [
+        "Assédio e importunação",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "alterada",
+      "link": "https://diariooficial.niteroi.rj.gov.br/do/2021/05_Mai/19.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Diário Oficial de Niterói, 19/05/2021"
+    },
+    {
+      "id": "m-3989",
+      "ordem": 8,
+      "esfera": "Municipal",
+      "tipo": "Lei Municipal",
+      "numero": "3.989",
+      "ano": 2025,
+      "data": "2025-04-09",
+      "identificacao": "Lei Municipal nº 3.989, de 9 de abril de 2025",
+      "titulo": "Opção de motorista do mesmo gênero em aplicativos de transporte",
+      "nome_popular": "",
+      "apelidos": [
+        "Motorista mulher",
+        "Aplicativo de transporte"
+      ],
+      "resumo": "Obriga aplicativos de transporte a oferecer às passageiras a opção de escolher motoristas do mesmo gênero.",
+      "temas": [
+        "Assédio e importunação"
+      ],
+      "situacao": "verificar",
+      "link": "https://diariooficial.niteroi.rj.gov.br/do/2025/04_Abr/10.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Diário Oficial de Niterói, 10/04/2025"
+    },
+    {
+      "id": "m-4091",
+      "ordem": 9,
+      "esfera": "Municipal",
+      "tipo": "Lei Municipal",
+      "numero": "4.091",
+      "ano": 2025,
+      "data": "2025-12-19",
+      "identificacao": "Lei Municipal nº 4.091, de 19 de dezembro de 2025",
+      "titulo": "Prevenção e combate à violência e ao assédio contra mulheres em competições e eventos esportivos",
+      "nome_popular": "",
+      "apelidos": [
+        "eventos esportivos",
+        "estádio"
+      ],
+      "resumo": "Institui a Política Municipal de Prevenção e Combate à Violência e ao Assédio contra Mulheres em Competições e Eventos Esportivos.",
+      "temas": [
+        "Assédio e importunação",
+        "Educação e prevenção"
+      ],
+      "situacao": "vigente",
+      "link": "https://diariooficial.niteroi.rj.gov.br/do/2025/12_Dez/20.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Diário Oficial de Niterói, 20/12/2025"
+    },
+    {
+      "id": "m-4024",
+      "ordem": 10,
+      "esfera": "Municipal",
+      "tipo": "Lei Municipal",
+      "numero": "4.024",
+      "ano": 2025,
+      "data": "2025-06-18",
+      "identificacao": "Lei Municipal nº 4.024, de 18 de junho de 2025",
+      "titulo": "Política Municipal de Atenção ao Luto Materno e Parental",
+      "nome_popular": "",
+      "apelidos": [
+        "Luto materno e parental"
+      ],
+      "resumo": "Institui a Política Municipal de Atenção ao Luto Materno e Parental, com acolhimento psicológico, acolhimento em hospitais e espaços de memória para famílias que perdem filhos.",
+      "temas": [
+        "Saúde",
+        "Assistência e benefícios"
+      ],
+      "situacao": "vigente",
+      "link": "https://diariooficial.niteroi.rj.gov.br/do/2025/06_Jun/19.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Diário Oficial de Niterói, 19/06/2025"
+    },
+    {
+      "id": "m-3664",
+      "ordem": 11,
+      "esfera": "Municipal",
+      "tipo": "Lei Municipal",
+      "numero": "3.664",
+      "ano": 2021,
+      "data": "2021-11-29",
+      "identificacao": "Lei Municipal nº 3.664, de 29 de novembro de 2021",
+      "titulo": "Programa Municipal de Promoção à Dignidade Menstrual",
+      "nome_popular": "",
+      "apelidos": [
+        "Dignidade menstrual",
+        "Absorventes"
+      ],
+      "resumo": "Institui programa de distribuição gratuita de absorventes higiênicos descartáveis e reutilizáveis e de coletores menstruais.",
+      "temas": [
+        "Saúde",
+        "Assistência e benefícios"
+      ],
+      "situacao": "alterada",
+      "link": "https://www.controladoria.niteroi.rj.gov.br/wp-content/uploads/2021/01/30a.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Diário Oficial de Niterói (cópia na Controladoria)"
+    },
+    {
+      "id": "m-3921",
+      "ordem": 12,
+      "esfera": "Municipal",
+      "tipo": "Lei Municipal",
+      "numero": "3.921",
+      "ano": 2024,
+      "data": "2024-06-19",
+      "identificacao": "Lei Municipal nº 3.921, de 19 de junho de 2024",
+      "titulo": "Dia Municipal das Mulheres de Combate ao Sexismo e à Misoginia (30 de abril)",
+      "nome_popular": "",
+      "apelidos": [
+        "30 de abril",
+        "sexismo",
+        "misoginia"
+      ],
+      "resumo": "Inclui no calendário oficial de Niterói o Dia Municipal das Mulheres de Combate ao Sexismo, à Misoginia e a todos os outros tipos de discriminação contra o gênero feminino, celebrado em 30 de abril.",
+      "temas": [
+        "Direitos e igualdade",
+        "Educação e prevenção"
+      ],
+      "situacao": "vigente",
+      "link": "https://diariooficial.niteroi.rj.gov.br/do/2024/06_Jun/20.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Diário Oficial de Niterói, 20/06/2024"
+    },
+    {
+      "id": "m-d13378",
+      "ordem": 13,
+      "esfera": "Municipal",
+      "tipo": "Decreto Municipal",
+      "numero": "13.378",
+      "ano": 2019,
+      "data": "2019-11-06",
+      "identificacao": "Decreto Municipal nº 13.378, de 6 de novembro de 2019",
+      "titulo": "Política Municipal de Prevenção à Violência (PMPV)",
+      "nome_popular": "",
+      "apelidos": [
+        "PMPV",
+        "Pacto Niterói Contra a Violência"
+      ],
+      "resumo": "Cria a Política Municipal de Prevenção à Violência de Niterói, de caráter geral, com ações de acolhimento e acompanhamento de pessoas em situação de violação de direitos e risco social.",
+      "temas": [
+        "Rede e protocolos de atendimento",
+        "Educação e prevenção"
+      ],
+      "situacao": "vigente",
+      "link": "https://pactocontraaviolencia.niteroi.rj.gov.br/wp-content/uploads/2025/08/dec-13378-2019-niteroi-rj.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Procuradoria-Geral do Município (publicado em 07/11/2019)"
+    },
+    {
+      "id": "m-d14004",
+      "ordem": 14,
+      "esfera": "Municipal",
+      "tipo": "Decreto Municipal",
+      "numero": "14.004",
+      "ano": 2021,
+      "data": "2021-04-26",
+      "identificacao": "Decreto Municipal nº 14.004, de 26 de abril de 2021",
+      "titulo": "Nome oficial do CEAM: Centro Especializado de Atendimento à Mulher Neuza de Souza Santos",
+      "nome_popular": "",
+      "apelidos": [
+        "Neuza de Souza Santos",
+        "CEAM"
+      ],
+      "resumo": "Inclui o nome de Neuza de Souza Santos na nomenclatura oficial do Centro Especializado de Atendimento à Mulher em situação de Violência (CEAM) de Niterói, em homenagem à sua militância na luta pelas mulheres niteroienses.",
+      "temas": [
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "vigente",
+      "link": "https://diariooficial.niteroi.rj.gov.br/do/2021/04_Abr/27.pdf",
+      "link_tipo": "oficial",
+      "fonte": "Diário Oficial de Niterói, 27/04/2021"
+    },
+    {
+      "id": "m-3474",
+      "ordem": 15,
+      "esfera": "Municipal",
+      "tipo": "Lei Municipal",
+      "numero": "3.474",
+      "ano": 2020,
+      "data": "2020-02-07",
+      "identificacao": "Lei Municipal nº 3.474, de 7 de fevereiro de 2020",
+      "titulo": "Calendário oficial da cidade de Niterói",
+      "nome_popular": "",
+      "apelidos": [
+        "calendário oficial"
+      ],
+      "resumo": "Lei do calendário oficial de datas e eventos de Niterói. Várias datas ligadas às mulheres foram incluídas nela por leis posteriores.",
+      "temas": [
+        "Educação e prevenção"
+      ],
+      "situacao": "alterada",
+      "link": "https://diariooficial.niteroi.rj.gov.br/",
+      "link_tipo": "busca",
+      "fonte": "Citada na Lei 3.921/2024 (Diário Oficial de 20/06/2024)"
+    },
+    {
+      "id": "e-9235",
+      "ordem": 16,
+      "esfera": "Estadual",
+      "tipo": "Lei Estadual",
+      "numero": "9.235",
+      "ano": 2021,
+      "data": "2021-04-08",
+      "identificacao": "Lei Estadual nº 9.235, de 8 de abril de 2021",
+      "titulo": "Diretrizes para o atendimento de mulheres em situação de violência no Estado do Rio de Janeiro",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Estabelece diretrizes para o atendimento de mulheres em situação de violência no Estado do Rio de Janeiro.",
+      "temas": [
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "verificar",
+      "link": "https://www.alerj.rj.gov.br/",
+      "link_tipo": "busca",
+      "fonte": "CBMERJ (documento oficial)"
+    },
+    {
+      "id": "e-9895",
+      "ordem": 17,
+      "esfera": "Estadual",
+      "tipo": "Lei Estadual",
+      "numero": "9.895",
+      "ano": 2022,
+      "data": null,
+      "identificacao": "Lei Estadual nº 9.895/2022",
+      "titulo": "Programa estadual de prevenção e combate à violência contra mulheres e meninas (enfrentamento ao feminicídio)",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Institui programa estadual de prevenção e combate à violência contra mulheres e meninas, com objetivo de reduzir os feminicídios no Estado do Rio de Janeiro.",
+      "temas": [
+        "Feminicídio",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "verificar",
+      "link": "https://www.alerj.rj.gov.br/",
+      "link_tipo": "busca",
+      "fonte": "Imprensa (Brasil de Fato, 08/11/2022)"
+    },
+    {
+      "id": "e-10932",
+      "ordem": 18,
+      "esfera": "Estadual",
+      "tipo": "Lei Estadual",
+      "numero": "10.932",
+      "ano": 2025,
+      "data": null,
+      "identificacao": "Lei Estadual nº 10.932/2025",
+      "titulo": "Isenção de taxa de inscrição em concursos estaduais para mulheres vítimas de violência doméstica",
+      "nome_popular": "",
+      "apelidos": [
+        "Isenção de taxa de concurso"
+      ],
+      "resumo": "Isenta mulheres vítimas de violência doméstica e familiar do pagamento de taxa de inscrição em concursos públicos estaduais do Rio de Janeiro.",
+      "temas": [
+        "Trabalho e renda",
+        "Assistência e benefícios"
+      ],
+      "situacao": "verificar",
+      "link": "https://www.alerj.rj.gov.br/",
+      "link_tipo": "busca",
+      "fonte": "Imprensa (Alma Preta, 11/09/2025)"
+    },
+    {
+      "id": "e-8378",
+      "ordem": 19,
+      "esfera": "Estadual",
+      "tipo": "Lei Estadual",
+      "numero": "8.378",
+      "ano": 2019,
+      "data": null,
+      "identificacao": "Lei Estadual nº 8.378/2019",
+      "titulo": "Medidas de auxílio à mulher em situação de risco em bares, restaurantes e casas noturnas",
+      "nome_popular": "",
+      "apelidos": [
+        "Não é Não RJ"
+      ],
+      "resumo": "Obriga bares, restaurantes e casas noturnas a adotar medidas de auxílio à mulher que se sinta em situação de risco. Foi regulamentada por decreto estadual de fevereiro de 2025 (Protocolo \"Não é Não! Respeite a decisão\").",
+      "temas": [
+        "Assédio e importunação",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "verificar",
+      "link": "https://www.alerj.rj.gov.br/",
+      "link_tipo": "busca",
+      "fonte": "Secretaria de Estado da Mulher RJ (cartilha \"Não é Não\")"
+    },
+    {
+      "id": "e-10408",
+      "ordem": 20,
+      "esfera": "Estadual",
+      "tipo": "Lei Estadual",
+      "numero": "10.408",
+      "ano": 2024,
+      "data": null,
+      "identificacao": "Lei Estadual nº 10.408/2024",
+      "titulo": "Divulgação da cirurgia plástica restauradora gratuita para mulheres vítimas de violência",
+      "nome_popular": "",
+      "apelidos": [
+        "Cirurgia plástica restauradora"
+      ],
+      "resumo": "Obriga hospitais e delegacias a divulgar o direito à cirurgia plástica restauradora gratuita para mulheres vítimas de violência.",
+      "temas": [
+        "Saúde"
+      ],
+      "situacao": "verificar",
+      "link": "https://www.alerj.rj.gov.br/",
+      "link_tipo": "busca",
+      "fonte": "Imprensa (Brasil de Fato, 07/06/2024)"
+    },
+    {
+      "id": "f-cf88",
+      "ordem": 21,
+      "esfera": "Federal",
+      "tipo": "Constituição Federal",
+      "numero": "",
+      "ano": 1988,
+      "data": "1988-10-05",
+      "identificacao": "Constituição Federal, de 5 de outubro de 1988",
+      "titulo": "Constituição da República Federativa do Brasil",
+      "nome_popular": "Constituição",
+      "apelidos": [
+        "CF",
+        "Constituição",
+        "CF/88"
+      ],
+      "resumo": "Base de toda a política para mulheres: igualdade entre homens e mulheres (art. 5º, I), proibição de diferença salarial por motivo de sexo (art. 7º, XXX) e dever do Estado de criar mecanismos para coibir a violência nas relações familiares (art. 226, § 8º).",
+      "temas": [
+        "Direitos e igualdade",
+        "Violência doméstica e familiar"
+      ],
+      "situacao": "alterada",
+      "link": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-11340",
+      "ordem": 22,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "11.340",
+      "ano": 2006,
+      "data": "2006-08-07",
+      "identificacao": "Lei nº 11.340, de 7 de agosto de 2006",
+      "titulo": "Lei Maria da Penha",
+      "nome_popular": "Lei Maria da Penha",
+      "apelidos": [
+        "Lei Maria da Penha",
+        "LMP"
+      ],
+      "resumo": "Principal lei de enfrentamento à violência doméstica e familiar contra a mulher. Define as formas de violência, cria as medidas protetivas de urgência, os Juizados de Violência Doméstica e as regras de atendimento policial e da rede.",
+      "temas": [
+        "Violência doméstica e familiar",
+        "Medidas protetivas",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "alterada",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto (texto compilado)"
+    },
+    {
+      "id": "f-14994",
+      "ordem": 23,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.994",
+      "ano": 2024,
+      "data": "2024-10-09",
+      "identificacao": "Lei nº 14.994, de 9 de outubro de 2024",
+      "titulo": "Feminicídio como crime autônomo e aumento de penas de crimes contra a mulher",
+      "nome_popular": "feminicídio autônomo",
+      "apelidos": [
+        "Pacote Antifeminicídio"
+      ],
+      "resumo": "Tornou o feminicídio crime autônomo (art. 121-A do Código Penal), com pena de reclusão de 20 a 40 anos, e aumentou penas de outros crimes praticados contra a mulher por razões da condição do sexo feminino.",
+      "temas": [
+        "Feminicídio",
+        "Medidas protetivas",
+        "Processo e justiça"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/L14994.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14550",
+      "ordem": 24,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.550",
+      "ano": 2023,
+      "data": "2023-04-19",
+      "identificacao": "Lei nº 14.550, de 19 de abril de 2023",
+      "titulo": "Medidas protetivas independem de boletim de ocorrência, inquérito ou ação",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Altera a Lei Maria da Penha para garantir que as medidas protetivas sejam concedidas a partir do relato da mulher, sem exigir tipificação penal, boletim de ocorrência, inquérito ou ação, e que vigorem enquanto houver risco.",
+      "temas": [
+        "Medidas protetivas",
+        "Violência doméstica e familiar"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14550.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15383",
+      "ordem": 25,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.383",
+      "ano": 2026,
+      "data": "2026-04-09",
+      "identificacao": "Lei nº 15.383, de 9 de abril de 2026",
+      "titulo": "Monitoração eletrônica do agressor como medida protetiva autônoma",
+      "nome_popular": "monitoração eletrônica",
+      "apelidos": [
+        "Tornozeleira",
+        "Monitoração eletrônica"
+      ],
+      "resumo": "Diante de risco atual ou iminente à vida ou à integridade da mulher ou de seus dependentes, o agressor deve ser submetido imediatamente à monitoração eletrônica. A vítima pode receber aplicativo ou dispositivo que alerta sobre a aproximação.",
+      "temas": [
+        "Medidas protetivas",
+        "Violência doméstica e familiar"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15383.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15384",
+      "ordem": 26,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.384",
+      "ano": 2026,
+      "data": "2026-04-09",
+      "identificacao": "Lei nº 15.384, de 9 de abril de 2026",
+      "titulo": "Violência vicária e crime de vicaricídio",
+      "nome_popular": "violência vicária",
+      "apelidos": [
+        "Violência vicária",
+        "Vicaricídio"
+      ],
+      "resumo": "Inclui a violência vicária entre as formas de violência doméstica e familiar (art. 7º, VI, da Lei Maria da Penha) e cria o crime de vicaricídio (art. 121-B do Código Penal), incluído entre os crimes hediondos.",
+      "temas": [
+        "Violência doméstica e familiar",
+        "Feminicídio",
+        "Processo e justiça"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15384.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto (retificada no DOU de 15/04/2026)"
+    },
+    {
+      "id": "f-14149",
+      "ordem": 27,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.149",
+      "ano": 2021,
+      "data": "2021-05-05",
+      "identificacao": "Lei nº 14.149, de 5 de maio de 2021",
+      "titulo": "Formulário Nacional de Avaliação de Risco",
+      "nome_popular": "formulário de risco",
+      "apelidos": [
+        "Formulário de risco",
+        "FONAR"
+      ],
+      "resumo": "Institui o Formulário Nacional de Avaliação de Risco, aplicado à mulher em situação de violência doméstica e familiar para identificar fatores de risco e orientar medidas de proteção.",
+      "temas": [
+        "Rede e protocolos de atendimento",
+        "Feminicídio"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14149.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15516",
+      "ordem": 28,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.516",
+      "ano": 2026,
+      "data": "2026-09-22",
+      "identificacao": "Lei nº 15.516, de 22 de setembro de 2026",
+      "titulo": "Protocolo Intersetorial de Atendimento e Resposta Integrada em Situações de Violência",
+      "nome_popular": "",
+      "apelidos": [
+        "Protocolo Intersetorial"
+      ],
+      "resumo": "Orienta a atuação das autoridades nos casos de estupro e de outras formas de violência física contra mulher, criança, adolescente e pessoa em situação de vulnerabilidade. Prevê encaminhamento imediato à saúde, salas reservadas para acolhimento e treinamento periódico dos profissionais.",
+      "temas": [
+        "Rede e protocolos de atendimento",
+        "Violência sexual",
+        "Saúde"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15516.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14717",
+      "ordem": 29,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.717",
+      "ano": 2023,
+      "data": "2023-10-31",
+      "identificacao": "Lei nº 14.717, de 31 de outubro de 2023",
+      "titulo": "Pensão especial a filhos e dependentes órfãos do feminicídio",
+      "nome_popular": "pensão a órfãos",
+      "apelidos": [
+        "Pensão órfãos do feminicídio"
+      ],
+      "resumo": "Pensão especial de um salário mínimo para filhos e dependentes crianças ou adolescentes (menores de 18 anos) órfãos em razão de feminicídio, quando a renda familiar mensal por pessoa for de até 1/4 do salário mínimo.",
+      "temas": [
+        "Feminicídio",
+        "Assistência e benefícios"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14717.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-12845",
+      "ordem": 30,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "12.845",
+      "ano": 2013,
+      "data": "2013-08-01",
+      "identificacao": "Lei nº 12.845, de 1º de agosto de 2013",
+      "titulo": "Atendimento obrigatório e integral a pessoas em situação de violência sexual",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Hospitais do SUS devem oferecer atendimento imediato, obrigatório e gratuito a pessoas em situação de violência sexual: tratamento de lesões, apoio médico, psicológico e social, profilaxias e coleta de material.",
+      "temas": [
+        "Violência sexual",
+        "Saúde",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "alterada",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12845.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-13641",
+      "ordem": 31,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "13.641",
+      "ano": 2018,
+      "data": "2018-04-03",
+      "identificacao": "Lei nº 13.641, de 3 de abril de 2018",
+      "titulo": "Crime de descumprimento de medida protetiva de urgência",
+      "nome_popular": "",
+      "apelidos": [
+        "Descumprimento de medida protetiva"
+      ],
+      "resumo": "Torna crime descumprir decisão judicial que concede medida protetiva de urgência prevista na Lei Maria da Penha.",
+      "temas": [
+        "Medidas protetivas",
+        "Processo e justiça"
+      ],
+      "situacao": "alterada",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13641.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-13827",
+      "ordem": 32,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "13.827",
+      "ano": 2019,
+      "data": "2019-05-13",
+      "identificacao": "Lei nº 13.827, de 13 de maio de 2019",
+      "titulo": "Afastamento imediato do agressor do lar",
+      "nome_popular": "",
+      "apelidos": [
+        "Afastamento do agressor"
+      ],
+      "resumo": "Incluiu na Lei Maria da Penha o afastamento imediato do agressor do lar quando há risco à vida ou à integridade da mulher, inclusive por delegado ou policial nas hipóteses que a lei especifica (art. 12-C).",
+      "temas": [
+        "Medidas protetivas"
+      ],
+      "situacao": "alterada",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13827.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14674",
+      "ordem": 33,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.674",
+      "ano": 2023,
+      "data": "2023-09-14",
+      "identificacao": "Lei nº 14.674, de 14 de setembro de 2023",
+      "titulo": "Auxílio-aluguel concedido pelo juiz à mulher em situação de violência",
+      "nome_popular": "",
+      "apelidos": [
+        "Auxílio-aluguel"
+      ],
+      "resumo": "Inclui entre as medidas da Lei Maria da Penha o auxílio-aluguel, concedido pelo juiz à mulher em situação de vulnerabilidade social e econômica afastada do lar.",
+      "temas": [
+        "Medidas protetivas",
+        "Assistência e benefícios"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14674.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15411",
+      "ordem": 34,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.411",
+      "ano": 2026,
+      "data": "2026-05-20",
+      "identificacao": "Lei nº 15.411, de 20 de maio de 2026",
+      "titulo": "Afastamento do agressor também por risco sexual, moral ou patrimonial",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Amplia as hipóteses de afastamento imediato do agressor do lar, incluindo o risco à integridade sexual, moral ou patrimonial da mulher.",
+      "temas": [
+        "Medidas protetivas"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15411.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15412",
+      "ordem": 35,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.412",
+      "ano": 2026,
+      "data": "2026-05-20",
+      "identificacao": "Lei nº 15.412, de 20 de maio de 2026",
+      "titulo": "Medidas protetivas de natureza cível valem como título executivo",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Disciplina a aplicação das medidas protetivas de urgência e estabelece que as de natureza cível constituem título executivo judicial.",
+      "temas": [
+        "Medidas protetivas",
+        "Processo e justiça"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15412.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14188",
+      "ordem": 36,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.188",
+      "ano": 2021,
+      "data": "2021-07-28",
+      "identificacao": "Lei nº 14.188, de 28 de julho de 2021",
+      "titulo": "Programa Sinal Vermelho e crime de violência psicológica",
+      "nome_popular": "Sinal Vermelho",
+      "apelidos": [
+        "Sinal Vermelho",
+        "Violência psicológica"
+      ],
+      "resumo": "Define o programa de cooperação Sinal Vermelho contra a Violência Doméstica (um X vermelho na mão como pedido de ajuda) e cria o crime de violência psicológica contra a mulher (art. 147-B do Código Penal).",
+      "temas": [
+        "Violência doméstica e familiar",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "alterada",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14188.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14321",
+      "ordem": 37,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.321",
+      "ano": 2022,
+      "data": "2022-03-31",
+      "identificacao": "Lei nº 14.321, de 31 de março de 2022",
+      "titulo": "Crime de violência institucional",
+      "nome_popular": "",
+      "apelidos": [
+        "Violência institucional",
+        "Revitimização"
+      ],
+      "resumo": "Inclui na Lei de Abuso de Autoridade o crime de violência institucional: submeter a vítima ou testemunha a procedimentos desnecessários, repetitivos ou invasivos que a façam reviver a violência.",
+      "temas": [
+        "Serviço público",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14321.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14540",
+      "ordem": 38,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.540",
+      "ano": 2023,
+      "data": "2023-04-03",
+      "identificacao": "Lei nº 14.540, de 3 de abril de 2023",
+      "titulo": "Programa de Prevenção e Enfrentamento ao Assédio Sexual na administração pública",
+      "nome_popular": "",
+      "apelidos": [
+        "Assédio sexual na administração pública"
+      ],
+      "resumo": "Institui programa de prevenção e enfrentamento ao assédio sexual e demais crimes contra a dignidade sexual na administração pública direta e indireta federal, estadual, distrital e municipal.",
+      "temas": [
+        "Assédio e importunação",
+        "Serviço público"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14540.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-10778",
+      "ordem": 39,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "10.778",
+      "ano": 2003,
+      "data": "2003-11-24",
+      "identificacao": "Lei nº 10.778, de 24 de novembro de 2003",
+      "titulo": "Notificação compulsória de violência contra a mulher nos serviços de saúde",
+      "nome_popular": "",
+      "apelidos": [
+        "Notificação compulsória"
+      ],
+      "resumo": "Obriga os serviços de saúde, públicos e privados, a notificar casos com indícios ou confirmação de violência contra a mulher atendida.",
+      "temas": [
+        "Saúde",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "alterada",
+      "link": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.778.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-13931",
+      "ordem": 40,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "13.931",
+      "ano": 2019,
+      "data": "2019-12-10",
+      "identificacao": "Lei nº 13.931, de 10 de dezembro de 2019",
+      "titulo": "Comunicação à polícia, em 24 horas, de casos de violência contra a mulher atendidos na saúde",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Altera a Lei 10.778/2003. Serviços de saúde passam a comunicar à autoridade policial, em até 24 horas, os casos com indícios ou confirmação de violência contra a mulher.",
+      "temas": [
+        "Saúde",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13931.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14310",
+      "ordem": 41,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.310",
+      "ano": 2022,
+      "data": "2022-03-08",
+      "identificacao": "Lei nº 14.310, de 8 de março de 2022",
+      "titulo": "Registro imediato das medidas protetivas pelo Judiciário",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Determina o registro imediato, pela autoridade judicial, das medidas protetivas de urgência concedidas, para consulta pelos órgãos de segurança e da rede.",
+      "temas": [
+        "Medidas protetivas"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14310.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14857",
+      "ordem": 42,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.857",
+      "ano": 2024,
+      "data": "2024-05-21",
+      "identificacao": "Lei nº 14.857, de 21 de maio de 2024",
+      "titulo": "Sigilo do nome da mulher nos processos de violência doméstica",
+      "nome_popular": "",
+      "apelidos": [
+        "Sigilo do nome da vítima"
+      ],
+      "resumo": "Determina o sigilo do nome da ofendida nos processos que apuram crimes praticados no contexto de violência doméstica e familiar.",
+      "temas": [
+        "Processo e justiça",
+        "Serviço público"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14857.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15380",
+      "ordem": 43,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.380",
+      "ano": 2026,
+      "data": "2026-04-06",
+      "identificacao": "Lei nº 15.380, de 6 de abril de 2026",
+      "titulo": "Audiência de retratação só com manifestação expressa da vítima",
+      "nome_popular": "",
+      "apelidos": [
+        "Audiência de retratação"
+      ],
+      "resumo": "A audiência para renúncia à representação (art. 16 da Lei Maria da Penha) somente será realizada se a vítima manifestar expressamente essa vontade, antes do recebimento da denúncia.",
+      "temas": [
+        "Processo e justiça"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15380.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15438",
+      "ordem": 44,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.438",
+      "ano": 2026,
+      "data": "2026-06-18",
+      "identificacao": "Lei nº 15.438, de 18 de junho de 2026",
+      "titulo": "Prazo maior para queixa ou representação em violência doméstica",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Aumenta o prazo decadencial do direito de queixa ou de representação nos crimes de violência doméstica e familiar contra a mulher.",
+      "temas": [
+        "Processo e justiça"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15438.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-12015",
+      "ordem": 45,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "12.015",
+      "ano": 2009,
+      "data": "2009-08-07",
+      "identificacao": "Lei nº 12.015, de 7 de agosto de 2009",
+      "titulo": "Crimes contra a dignidade sexual (reforma do Título VI do Código Penal)",
+      "nome_popular": "",
+      "apelidos": [
+        "Crimes contra a dignidade sexual"
+      ],
+      "resumo": "Substituiu a antiga expressão \"crimes contra os costumes\" por \"crimes contra a dignidade sexual\" e criou o crime de estupro de vulnerável (art. 217-A do Código Penal).",
+      "temas": [
+        "Violência sexual",
+        "Processo e justiça"
+      ],
+      "situacao": "alterada",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l12015.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-13104",
+      "ordem": 46,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "13.104",
+      "ano": 2015,
+      "data": "2015-03-09",
+      "identificacao": "Lei nº 13.104, de 9 de março de 2015",
+      "titulo": "Lei do Feminicídio (qualificadora, substituída pelo crime autônomo em 2024)",
+      "nome_popular": "Lei do Feminicídio",
+      "apelidos": [
+        "Lei do Feminicídio"
+      ],
+      "resumo": "Criou o feminicídio como qualificadora do homicídio e o incluiu entre os crimes hediondos. Em 2024 a qualificadora foi revogada e o feminicídio passou a ser crime autônomo.",
+      "temas": [
+        "Feminicídio",
+        "Processo e justiça"
+      ],
+      "situacao": "revogada",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13104.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14132",
+      "ordem": 47,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.132",
+      "ano": 2021,
+      "data": "2021-03-31",
+      "identificacao": "Lei nº 14.132, de 31 de março de 2021",
+      "titulo": "Crime de perseguição (stalking)",
+      "nome_popular": "",
+      "apelidos": [
+        "Perseguição",
+        "Stalking"
+      ],
+      "resumo": "Cria o crime de perseguição (art. 147-A do Código Penal): perseguir alguém de forma reiterada, ameaçando sua integridade ou restringindo sua liberdade ou privacidade.",
+      "temas": [
+        "Violência doméstica e familiar",
+        "Processo e justiça"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14132.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-13718",
+      "ordem": 48,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "13.718",
+      "ano": 2018,
+      "data": "2018-09-24",
+      "identificacao": "Lei nº 13.718, de 24 de setembro de 2018",
+      "titulo": "Crimes de importunação sexual e de divulgação de cena de estupro",
+      "nome_popular": "importunação sexual",
+      "apelidos": [
+        "Importunação sexual"
+      ],
+      "resumo": "Cria o crime de importunação sexual (art. 215-A do Código Penal, reclusão de 1 a 5 anos) e o de divulgação de cena de estupro; torna pública incondicionada a ação penal nos crimes contra a liberdade sexual; e prevê aumento de pena para estupro coletivo e corretivo.",
+      "temas": [
+        "Violência sexual",
+        "Assédio e importunação"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13718.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14786",
+      "ordem": 49,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.786",
+      "ano": 2023,
+      "data": "2023-12-28",
+      "identificacao": "Lei nº 14.786, de 28 de dezembro de 2023",
+      "titulo": "Protocolo \"Não é Não\" em casas noturnas, shows e eventos",
+      "nome_popular": "Não é Não",
+      "apelidos": [
+        "Não é Não",
+        "Protocolo Não é Não"
+      ],
+      "resumo": "Cria o protocolo \"Não é Não\" para prevenção ao constrangimento e à violência contra a mulher em ambientes de lazer e eventos, e institui o selo \"Não é Não - Mulheres Seguras\".",
+      "temas": [
+        "Assédio e importunação",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14786.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14245",
+      "ordem": 50,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.245",
+      "ano": 2021,
+      "data": "2021-11-22",
+      "identificacao": "Lei nº 14.245, de 22 de novembro de 2021",
+      "titulo": "Lei Mariana Ferrer: proteção da dignidade da vítima em audiências",
+      "nome_popular": "Lei Mariana Ferrer",
+      "apelidos": [
+        "Lei Mariana Ferrer"
+      ],
+      "resumo": "Proíbe atos que atentem contra a dignidade da vítima e de testemunhas em audiências e julgamentos, e aumenta a pena da coação no curso do processo em crimes contra a dignidade sexual.",
+      "temas": [
+        "Processo e justiça",
+        "Violência sexual"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14245.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14541",
+      "ordem": 51,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.541",
+      "ano": 2023,
+      "data": "2023-04-03",
+      "identificacao": "Lei nº 14.541, de 3 de abril de 2023",
+      "titulo": "Delegacias da Mulher com funcionamento ininterrupto",
+      "nome_popular": "",
+      "apelidos": [
+        "DEAM 24 horas"
+      ],
+      "resumo": "Dispõe sobre a criação e o funcionamento ininterrupto, inclusive em feriados e fins de semana, das Delegacias Especializadas de Atendimento à Mulher.",
+      "temas": [
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14541.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-4377",
+      "ordem": 52,
+      "esfera": "Federal",
+      "tipo": "Decreto",
+      "numero": "4.377",
+      "ano": 2002,
+      "data": "2002-09-13",
+      "identificacao": "Decreto nº 4.377, de 13 de setembro de 2002",
+      "titulo": "Promulga a Convenção sobre a Eliminação de Todas as Formas de Discriminação contra a Mulher (CEDAW)",
+      "nome_popular": "",
+      "apelidos": [
+        "CEDAW",
+        "Convenção da Mulher"
+      ],
+      "resumo": "É o decreto vigente que incorpora a CEDAW ao direito brasileiro. Substituiu o Decreto nº 89.460/1984, que promulgava a Convenção com reservas e foi revogado.",
+      "temas": [
+        "Tratados internacionais",
+        "Direitos e igualdade"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/decreto/2002/d4377.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-1973",
+      "ordem": 53,
+      "esfera": "Federal",
+      "tipo": "Decreto",
+      "numero": "1.973",
+      "ano": 1996,
+      "data": "1996-08-01",
+      "identificacao": "Decreto nº 1.973, de 1º de agosto de 1996",
+      "titulo": "Promulga a Convenção Interamericana para Prevenir, Punir e Erradicar a Violência contra a Mulher (Convenção de Belém do Pará)",
+      "nome_popular": "",
+      "apelidos": [
+        "Convenção de Belém do Pará"
+      ],
+      "resumo": "Tratado da Organização dos Estados Americanos que reconhece a violência contra a mulher como violação de direitos humanos e obriga o Estado a preveni-la, puni-la e erradicá-la.",
+      "temas": [
+        "Tratados internacionais",
+        "Violência doméstica e familiar"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/decreto/1996/d1973.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-d11431",
+      "ordem": 54,
+      "esfera": "Federal",
+      "tipo": "Decreto",
+      "numero": "11.431",
+      "ano": 2023,
+      "data": "2023-03-08",
+      "identificacao": "Decreto nº 11.431, de 8 de março de 2023",
+      "titulo": "Programa Mulher Viver sem Violência",
+      "nome_popular": "",
+      "apelidos": [
+        "Mulher Viver sem Violência",
+        "Casa da Mulher Brasileira"
+      ],
+      "resumo": "Institui o Programa Mulher Viver sem Violência, para integrar e ampliar os serviços públicos destinados às mulheres em situação de violência.",
+      "temas": [
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11431.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-d11640",
+      "ordem": 55,
+      "esfera": "Federal",
+      "tipo": "Decreto",
+      "numero": "11.640",
+      "ano": 2023,
+      "data": "2023-08-16",
+      "identificacao": "Decreto nº 11.640, de 16 de agosto de 2023",
+      "titulo": "Pacto Nacional de Prevenção aos Feminicídios",
+      "nome_popular": "",
+      "apelidos": [
+        "Pacto Nacional de Prevenção aos Feminicídios"
+      ],
+      "resumo": "Institui o Pacto Nacional de Prevenção aos Feminicídios, com comitê gestor no âmbito do Ministério das Mulheres.",
+      "temas": [
+        "Feminicídio",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11640.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-d13084",
+      "ordem": 56,
+      "esfera": "Federal",
+      "tipo": "Decreto",
+      "numero": "13.084",
+      "ano": 2026,
+      "data": "2026-07-29",
+      "identificacao": "Decreto nº 13.084, de 29 de julho de 2026",
+      "titulo": "Programa Alerta Mulher Segura (monitoração eletrônica)",
+      "nome_popular": "",
+      "apelidos": [
+        "Alerta Mulher Segura"
+      ],
+      "resumo": "Institui o Programa Alerta Mulher Segura e regulamenta a monitoração eletrônica como medida protetiva de urgência (art. 22, VIII, da Lei Maria da Penha). A execução cabe a cada estado.",
+      "temas": [
+        "Medidas protetivas"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d13084.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto (cópia no MPM e no Senado)"
+    },
+    {
+      "id": "f-14611",
+      "ordem": 57,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.611",
+      "ano": 2023,
+      "data": "2023-07-03",
+      "identificacao": "Lei nº 14.611, de 3 de julho de 2023",
+      "titulo": "Igualdade salarial entre mulheres e homens",
+      "nome_popular": "",
+      "apelidos": [
+        "Igualdade salarial"
+      ],
+      "resumo": "Dispõe sobre a igualdade salarial e de critérios remuneratórios entre mulheres e homens.",
+      "temas": [
+        "Trabalho e renda",
+        "Direitos e igualdade"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14164",
+      "ordem": 58,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.164",
+      "ano": 2021,
+      "data": "2021-06-10",
+      "identificacao": "Lei nº 14.164, de 10 de junho de 2021",
+      "titulo": "Prevenção da violência contra a mulher nos currículos escolares",
+      "nome_popular": "",
+      "apelidos": [
+        "Semana Escolar de Combate à Violência contra a Mulher"
+      ],
+      "resumo": "Inclui conteúdo sobre prevenção da violência contra a mulher nos currículos da educação básica e institui a Semana Escolar de Combate à Violência contra a Mulher.",
+      "temas": [
+        "Educação e prevenção"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14164.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15116",
+      "ordem": 59,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.116",
+      "ano": 2025,
+      "data": "2025-04-02",
+      "identificacao": "Lei nº 15.116, de 2 de abril de 2025",
+      "titulo": "Programa de Reconstrução Dentária para mulheres vítimas de violência doméstica",
+      "nome_popular": "",
+      "apelidos": [
+        "Reconstrução dentária"
+      ],
+      "resumo": "Institui, no SUS, programa de reconstrução dentária para mulheres vítimas de violência doméstica.",
+      "temas": [
+        "Saúde",
+        "Violência doméstica e familiar"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15116.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15409",
+      "ordem": 60,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.409",
+      "ano": 2026,
+      "data": "2026-05-20",
+      "identificacao": "Lei nº 15.409, de 20 de maio de 2026",
+      "titulo": "Cadastro Nacional de Pessoas Condenadas por Violência contra a Mulher",
+      "nome_popular": "",
+      "apelidos": [
+        "CNVM"
+      ],
+      "resumo": "Cria o Cadastro Nacional de Pessoas Condenadas por Violência contra a Mulher (CNVM).",
+      "temas": [
+        "Processo e justiça"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15409.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15478",
+      "ordem": 61,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.478",
+      "ano": 2026,
+      "data": "2026-07-29",
+      "identificacao": "Lei nº 15.478, de 29 de julho de 2026",
+      "titulo": "Divulgação do serviço telefônico de denúncia de violência contra a mulher",
+      "nome_popular": "",
+      "apelidos": [
+        "Ligue 180"
+      ],
+      "resumo": "Dispõe sobre a divulgação do serviço telefônico de denúncias relacionadas à violência contra a mulher.",
+      "temas": [
+        "Rede e protocolos de atendimento",
+        "Educação e prevenção"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15478.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15123",
+      "ordem": 62,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.123",
+      "ano": 2025,
+      "data": "2025-04-24",
+      "identificacao": "Lei nº 15.123, de 24 de abril de 2025",
+      "titulo": "Aumento de pena para violência psicológica com inteligência artificial",
+      "nome_popular": "",
+      "apelidos": [
+        "Inteligência artificial",
+        "Deepfake"
+      ],
+      "resumo": "Altera o art. 147-B do Código Penal para aumentar a pena da violência psicológica contra a mulher praticada com inteligência artificial ou outro recurso que altere imagem ou som da vítima.",
+      "temas": [
+        "Violência doméstica e familiar",
+        "Processo e justiça"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15123.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-14192",
+      "ordem": 63,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "14.192",
+      "ano": 2021,
+      "data": "2021-08-04",
+      "identificacao": "Lei nº 14.192, de 4 de agosto de 2021",
+      "titulo": "Violência política contra a mulher",
+      "nome_popular": "",
+      "apelidos": [
+        "Violência política de gênero"
+      ],
+      "resumo": "Estabelece normas para prevenir, reprimir e combater a violência política contra a mulher e altera o Código Eleitoral.",
+      "temas": [
+        "Direitos e igualdade"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14192.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15281",
+      "ordem": 64,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.281",
+      "ano": 2025,
+      "data": "2025-12-05",
+      "identificacao": "Lei nº 15.281, de 5 de dezembro de 2025",
+      "titulo": "Estratégia de saúde para mulheres que fazem uso abusivo de álcool",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Altera a Lei de Drogas (Lei 11.343/2006) para prever estratégia de saúde multiprofissional voltada às mulheres alcoolistas, com atenção a gestantes e puérperas.",
+      "temas": [
+        "Saúde"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/L15281.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-15139",
+      "ordem": 65,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.139",
+      "ano": 2025,
+      "data": "2025-05-23",
+      "identificacao": "Lei nº 15.139, de 23 de maio de 2025",
+      "titulo": "Política Nacional de Humanização do Luto Materno e Parental",
+      "nome_popular": "",
+      "apelidos": [
+        "Luto materno e parental"
+      ],
+      "resumo": "Institui política de acolhimento a mães, pais e famílias que perdem filhos na gestação, no parto ou logo após o nascimento, e permite dar nome ao natimorto no registro.",
+      "temas": [
+        "Saúde",
+        "Assistência e benefícios"
+      ],
+      "situacao": "verificar",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15139.htm",
+      "link_tipo": "oficial",
+      "fonte": "Fontes secundárias (Migalhas, 26/05/2025)"
+    },
+    {
+      "id": "f-13812",
+      "ordem": 66,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "13.812",
+      "ano": 2019,
+      "data": "2019-03-16",
+      "identificacao": "Lei nº 13.812, de 16 de março de 2019",
+      "titulo": "Política Nacional de Busca de Pessoas Desaparecidas",
+      "nome_popular": "",
+      "apelidos": [
+        "Pessoas desaparecidas"
+      ],
+      "resumo": "Institui a Política Nacional de Busca de Pessoas Desaparecidas e cria o Cadastro Nacional de Pessoas Desaparecidas.",
+      "temas": [
+        "Pessoas desaparecidas"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13812.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-13146",
+      "ordem": 67,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "13.146",
+      "ano": 2015,
+      "data": "2015-07-06",
+      "identificacao": "Lei nº 13.146, de 6 de julho de 2015",
+      "titulo": "Lei Brasileira de Inclusão da Pessoa com Deficiência",
+      "nome_popular": "",
+      "apelidos": [
+        "Estatuto da Pessoa com Deficiência",
+        "LBI"
+      ],
+      "resumo": "Estatuto da Pessoa com Deficiência. Garante acessibilidade e atendimento adequado a mulheres com deficiência em todos os serviços.",
+      "temas": [
+        "Direitos e igualdade",
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "alterada",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-9099",
+      "ordem": 68,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "9.099",
+      "ano": 1995,
+      "data": "1995-09-26",
+      "identificacao": "Lei nº 9.099, de 26 de setembro de 1995",
+      "titulo": "Juizados Especiais Cíveis e Criminais (não se aplica à violência doméstica contra a mulher)",
+      "nome_popular": "",
+      "apelidos": [
+        "Juizados Especiais",
+        "JECRIM"
+      ],
+      "resumo": "Lei dos Juizados Especiais. Aparece no repositório para registrar que ela não se aplica aos crimes de violência doméstica e familiar contra a mulher, qualquer que seja a pena.",
+      "temas": [
+        "Processo e justiça",
+        "Violência doméstica e familiar"
+      ],
+      "situacao": "vigente",
+      "link": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    },
+    {
+      "id": "f-d13083",
+      "ordem": 69,
+      "esfera": "Federal",
+      "tipo": "Decreto",
+      "numero": "13.083",
+      "ano": 2026,
+      "data": "2026-07-29",
+      "identificacao": "Decreto nº 13.083, de 29 de julho de 2026",
+      "titulo": "Sistema Integrado Mulher Segura (dados sobre violência contra as mulheres)",
+      "nome_popular": "",
+      "apelidos": [
+        "SI Mulher Segura"
+      ],
+      "resumo": "Cria o Sistema Integrado Mulher Segura, plataforma para reunir e organizar dados sobre os diversos tipos de violência contra as mulheres. Em vigor desde 28/09/2026.",
+      "temas": [
+        "Rede e protocolos de atendimento"
+      ],
+      "situacao": "verificar",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d13083.htm",
+      "link_tipo": "oficial",
+      "fonte": "TJRJ (notícia de 30/07/2026)"
+    },
+    {
+      "id": "f-15125",
+      "ordem": 70,
+      "esfera": "Federal",
+      "tipo": "Lei",
+      "numero": "15.125",
+      "ano": 2025,
+      "data": "2025-04-24",
+      "identificacao": "Lei nº 15.125, de 24 de abril de 2025",
+      "titulo": "Monitoração eletrônica durante medida protetiva (regra de 2025, substituída em 2026)",
+      "nome_popular": "",
+      "apelidos": [],
+      "resumo": "Incluiu na Lei Maria da Penha a sujeição do agressor à monitoração eletrônica durante a medida protetiva. O dispositivo foi revogado em 2026 e substituído pelas regras da Lei 15.383/2026.",
+      "temas": [
+        "Medidas protetivas"
+      ],
+      "situacao": "revogada",
+      "link": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15125.htm",
+      "link_tipo": "oficial",
+      "fonte": "Planalto"
+    }
+  ]
+}
