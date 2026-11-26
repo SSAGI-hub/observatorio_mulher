@@ -698,7 +698,7 @@ a {
 /* Secção de Introdução e Filtros (z-index ajustado para baixo para o menu do topo flutuar livremente) */
 .section-library-intro {
     position: relative;
-    z-index: 1;
+    z-index: 5; /* acima da grade, para os menus de filtro e ordenação abrirem por cima dos cards */
     width: 100%;
     padding: 60px 0 30px;
     background: linear-gradient(180deg, rgb(187 34 86 / 15%), transparent);
@@ -734,10 +734,10 @@ a {
 /* Barra de Pesquisa e Filtros */
 .library-filters {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto; /* busca | esfera | ordenar */
     gap: 20px;
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     margin-bottom: 20px;
 }
 
@@ -950,6 +950,66 @@ a {
 
 .btn-access:hover {
     background-color: #a01c4a;
+}
+
+/* Botão "Ordenar" com a mesma altura da busca e do filtro */
+.library-filters .sort-filter-wrap .category-filter-btn {
+    height: 100%;
+    padding: 14px 26px;
+}
+
+/* Contador, mensagens e aviso da biblioteca */
+.library-count {
+    margin: 0;
+    font-size: 14px;
+    color: var(--plum);
+    opacity: 0.85;
+}
+
+.library-empty {
+    grid-column: 1 / -1;
+    padding: 40px;
+    text-align: center;
+    color: var(--plum);
+}
+
+.library-aviso {
+    max-width: 900px;
+    margin: 40px auto 0;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--plum);
+    opacity: 0.8;
+}
+
+/* Etiquetas dos cards: esfera (clicável) e situação */
+.library-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-esfera-municipal { background-color: var(--pink); }
+.tag-esfera-estadual { background-color: #1b8a70; }
+.tag-esfera-federal { background-color: var(--plum); }
+
+.tag-situacao {
+    cursor: default;
+    color: var(--plum);
+    background-color: transparent;
+    border: 1px solid rgba(84, 0, 68, 0.45);
+    padding: 5px 14px;
+}
+
+.tag-situacao:hover {
+    opacity: 1;
+}
+
+.tag-situacao-revogada {
+    color: #ffffff;
+    background-color: #6b6b6b;
+    border-color: #6b6b6b;
 }
 
 
