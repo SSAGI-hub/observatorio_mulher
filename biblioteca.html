@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Biblioteca - Observatório da Mulher de Niterói</title>
-        
+
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Readex+Pro:wght@300;400;500;700&family=Vina+Sans&display=swap" rel="stylesheet">
-        
+
         <!-- CSS EXTERNO -->
         <link rel="stylesheet" href="css/style.css">
 
@@ -30,174 +30,104 @@
     <div id="libras-container"></div>
 
     <main>
-        <!-- 1ª SEÇÃO: INTRODUÇÃO E BUSCA CENTRALIZADA -->
+        <!-- 1ª SEÇÃO: INTRODUÇÃO, BUSCA, FILTRO E ORDENAÇÃO -->
         <section class="section-library-intro">
             <div class="library-container">
                 <div class="library-intro">
                     <h1>Biblioteca</h1>
-                    <p>Repositório de pesquisas, artigos acadêmicos, leis e relatórios técnicos relevantes sobre gênero, direitos e políticas públicas para as mulheres.</p>
+                    <p>Repositório de leis, decretos e normas municipais, estaduais e federais sobre os direitos das mulheres e o enfrentamento à violência.</p>
                 </div>
 
-                <!-- Filtros de Pesquisa e Categoria Customizada -->
                 <div class="library-filters">
+                    <!-- Busca -->
                     <div class="search-input-wrap">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                        <input type="text" id="searchInput" placeholder="Buscar por título ou autor...">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        <input type="text" id="searchInput" placeholder="Buscar por título, número ou tema..." aria-label="Buscar na biblioteca">
                     </div>
 
-                    <!-- Dropdown Customizado -->
+                    <!-- Filtro por esfera -->
                     <div class="custom-select-container" id="customSelect">
                         <div class="custom-select-trigger">
                             <span class="select-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/></svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/></svg>
                             </span>
-                            <span class="custom-select-label">Todas as Categorias</span>
+                            <span class="custom-select-label">Todas as esferas</span>
                             <span class="arrow-icon">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
                             </span>
                         </div>
                         <div class="custom-select-options">
-                            <div class="custom-option selected" data-value="">Todas as Categorias</div>
-                            <div class="custom-option" data-value="estudos">Estudos Acadêmicos</div>
-                            <div class="custom-option" data-value="politicas">Políticas Públicas e Relatórios</div>
-                            <div class="custom-option" data-value="normativos">Normativos e Leis</div>
+                            <div class="custom-option selected" data-value="">Todas as esferas</div>
+                            <div class="custom-option" data-value="Municipal">Municipal</div>
+                            <div class="custom-option" data-value="Estadual">Estadual</div>
+                            <div class="custom-option" data-value="Federal">Federal</div>
                         </div>
-                        <input type="hidden" id="categorySelect" value="">
+                        <input type="hidden" id="esferaSelect" value="">
+                    </div>
+
+                    <!-- Ordenação (mesmo modelo da página de Iniciativas) -->
+                    <div class="sort-filter-wrap" id="sortFilterWrap">
+                        <button
+                            class="category-filter-btn"
+                            id="sortToggleBtn"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="sortDropdown"
+                        >
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M3 18h6v-2H3v2zm0-5h12v-2H3v2zm0-7v2h18V6H3z"></path>
+                            </svg>
+
+                            <span id="sortBtnLabel">Ordenar</span>
+
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+                            </svg>
+                        </button>
+
+                        <div class="filter-dropdown-menu sort-dropdown-menu" id="sortDropdown">
+                            <div class="filter-group-title">Ordenar documentos</div>
+
+                            <label class="sort-option">
+                                <input type="radio" name="library-sort" value="default" checked>
+                                Ordenação padrão
+                            </label>
+
+                            <label class="sort-option">
+                                <input type="radio" name="library-sort" value="name-asc">
+                                Título: A a Z
+                            </label>
+
+                            <label class="sort-option">
+                                <input type="radio" name="library-sort" value="name-desc">
+                                Título: Z a A
+                            </label>
+
+                            <label class="sort-option">
+                                <input type="radio" name="library-sort" value="date-desc">
+                                Data: mais recentes
+                            </label>
+
+                            <label class="sort-option">
+                                <input type="radio" name="library-sort" value="date-asc">
+                                Data: mais antigas
+                            </label>
+                        </div>
                     </div>
                 </div>
+
+                <p class="library-count" id="libraryCount" aria-live="polite"></p>
             </div>
         </section>
 
-        <!-- 2ª SEÇÃO: GRADE DE CATÁLOGO -->
+        <!-- 2ª SEÇÃO: GRADE DE DOCUMENTOS (gerada a partir do JSON) -->
         <section class="section-library-content">
             <div class="library-container">
                 <div class="library-grid" id="libraryGrid">
-                    <!-- Card 1 -->
-                    <div class="library-card" data-category="estudos">
-                        <div class="card-library-content">
-                            <h3>Dossiê Mulheres Negras e Violência no Brasil</h3>
-                            <div class="card-library-meta">
-                                <strong>Autor/Fonte:</strong> Instituto de Pesquisa X / Rede de Observatórios<br>
-                                <strong>Ano:</strong> 2024
-                            </div>
-                            <div class="card-library-desc">
-                                Análise aprofundada sobre a interseccionalidade de gênero e raça nas ocorrências de violência urbana e doméstica.
-                            </div>
-                        </div>
-                        <div class="card-library-footer">
-                            <span class="tag-lib tag-estudos" onclick="filterByCategory('estudos')">Estudos Acadêmicos</span>
-                            <a href="#" class="btn-access">
-                                <span>Acessar versão original</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="library-card" data-category="politicas">
-                        <div class="card-library-content">
-                            <h3>Guia Metodológico de Orçamento Sensível a Gênero</h3>
-                            <div class="card-library-meta">
-                                <strong>Autor/Fonte:</strong> Secretaria de Planejamento (SEPLAG)<br>
-                                <strong>Ano:</strong> 2025
-                            </div>
-                            <div class="card-library-desc">
-                                Diretrizes técnicas para a rotulagem e alocação de recursos públicos com foco na redução das desigualdades de gênero.
-                            </div>
-                        </div>
-                        <div class="card-library-footer">
-                            <span class="tag-lib tag-politicas" onclick="filterByCategory('politicas')">Políticas Públicas</span>
-                            <a href="#" class="btn-access">
-                                <span>Acessar versão original</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="library-card" data-category="normativos">
-                        <div class="card-library-content">
-                            <h3>Decreto Municipal nº 14.293/2022 - Comissão de Ética e Integridade</h3>
-                            <div class="card-library-meta">
-                                <strong>Autor/Fonte:</strong> Prefeitura Municipal de Niterói<br>
-                                <strong>Ano:</strong> 2022
-                            </div>
-                            <div class="card-library-desc">
-                                Legislação oficial que institui a comissão de combate ao assédio moral e sexual no âmbito da administração pública.
-                            </div>
-                        </div>
-                        <div class="card-library-footer">
-                            <span class="tag-lib tag-normativos" onclick="filterByCategory('normativos')">Normativos e Leis</span>
-                            <a href="#" class="btn-access">
-                                <span>Acessar versão original</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="library-card" data-category="estudos">
-                        <div class="card-library-content">
-                            <h3>Impacto das Moedas Sociais na Autonomia Financeira de Mães Solo</h3>
-                            <div class="card-library-meta">
-                                <strong>Autor/Fonte:</strong> Universidade Federal Fluminense (UFF)<br>
-                                <strong>Ano:</strong> 2024
-                            </div>
-                            <div class="card-library-desc">
-                                Artigo científico avaliando os efeitos de programas de transferência de renda local liderados por mulheres.
-                            </div>
-                        </div>
-                        <div class="card-library-footer">
-                            <span class="tag-lib tag-estudos" onclick="filterByCategory('estudos')">Estudos Acadêmicos</span>
-                            <a href="#" class="btn-access">
-                                <span>Acessar versão original</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="library-card" data-category="politicas">
-                        <div class="card-library-content">
-                            <h3>Plano Municipal de Políticas para as Mulheres</h3>
-                            <div class="card-library-meta">
-                                <strong>Autor/Fonte:</strong> Secretaria Municipal da Mulher (SMMU)<br>
-                                <strong>Ano:</strong> 2023
-                            </div>
-                            <div class="card-library-desc">
-                                Documento orientador das diretrizes estratégicas, eixos de atuação e metas de longo prazo para o município.
-                            </div>
-                        </div>
-                        <div class="card-library-footer">
-                            <span class="tag-lib tag-politicas" onclick="filterByCategory('politicas')">Políticas Públicas</span>
-                            <a href="#" class="btn-access">
-                                <span>Acessar versão original</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card 6 -->
-                    <div class="library-card" data-category="normativos">
-                        <div class="card-library-content">
-                            <h3>Lei Federal nº 11.340/2006 (Lei Maria da Penha)</h3>
-                            <div class="card-library-meta">
-                                <strong>Autor/Fonte:</strong> Congresso Nacional<br>
-                                <strong>Ano:</strong> 2006
-                            </div>
-                            <div class="card-library-desc">
-                                Legislação marco no país para criar mecanismos de coibir e prevenir a violência doméstica e familiar contra a mulher.
-                            </div>
-                        </div>
-                        <div class="card-library-footer">
-                            <span class="tag-lib tag-normativos" onclick="filterByCategory('normativos')">Normativos e Leis</span>
-                            <a href="#" class="btn-access">
-                                <span>Acessar versão original</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                            </a>
-                        </div>
-                    </div>
+                    <p class="library-empty">Carregando documentos...</p>
                 </div>
+
+                <p class="library-aviso" id="libraryAviso"></p>
             </div>
         </section>
     </main>
@@ -210,6 +140,12 @@
 
     <!-- SCRIPTS -->
     <script>
+        // Arquivo com os documentos da biblioteca
+        // (gerado a partir da planilha repositorio_legislacao_mulher_niteroi.xlsx)
+        const ARQUIVO_BIBLIOTECA = "biblioteca_legislacao.json";
+
+        let documentosGlobal = [];
+
         // Função para carregar componentes externos (Header / Footer)
         async function loadComponent(elementId, filePath) {
             try {
@@ -223,7 +159,30 @@
             }
         }
 
-        // Lógica da página e filtros
+        // Evita que textos do JSON sejam interpretados como HTML
+        function escaparHtml(texto) {
+            return String(texto ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;");
+        }
+
+        // Remove acentos e deixa em minúsculas, para a busca
+        function normalizarTexto(texto) {
+            return String(texto ?? "")
+                .normalize("NFD")
+                .replace(/[̀-ͯ]/g, "")
+                .toLowerCase();
+        }
+
+        function formatarDataCurta(iso) {
+            if (!iso) return "";
+            const [ano, mes, dia] = iso.split("-");
+            return `${dia}/${mes}/${ano}`;
+        }
+
+        // Lógica da página
         document.addEventListener("DOMContentLoaded", () => {
             loadComponent("header-container", "components/header.html");
 
@@ -249,74 +208,245 @@
 
             loadComponent("footer-container", "components/footer.html");
 
-            const searchInput = document.getElementById('searchInput');
-            const hiddenCategoryInput = document.getElementById('categorySelect');
-            const grid = document.getElementById('libraryGrid');
-            const cards = Array.from(grid.getElementsByClassName('library-card'));
+            const searchInput = document.getElementById("searchInput");
+            const esferaInput = document.getElementById("esferaSelect");
+            const grid = document.getElementById("libraryGrid");
+            const contador = document.getElementById("libraryCount");
+            const aviso = document.getElementById("libraryAviso");
 
-            const customSelect = document.getElementById('customSelect');
-            const trigger = customSelect.querySelector('.custom-select-trigger');
-            const label = customSelect.querySelector('.custom-select-label');
-            const options = customSelect.querySelectorAll('.custom-option');
+            const customSelect = document.getElementById("customSelect");
+            const trigger = customSelect.querySelector(".custom-select-trigger");
+            const label = customSelect.querySelector(".custom-select-label");
+            const options = customSelect.querySelectorAll(".custom-option");
 
-            // Toggle do dropdown customizado
-            trigger.addEventListener('click', (e) => {
-                e.stopPropagation();
-                customSelect.classList.toggle('open');
-            });
+            const sortToggleBtn = document.getElementById("sortToggleBtn");
+            const sortDropdown = document.getElementById("sortDropdown");
+            const sortBtnLabel = document.getElementById("sortBtnLabel");
+            const sortOptions = document.querySelectorAll('input[name="library-sort"]');
 
-            // Fechar dropdown ao clicar fora
-            document.addEventListener('click', () => {
-                customSelect.classList.remove('open');
-            });
+            let ordenacaoAtual = "default";
 
-            // Seleção de opção no custom select
-            options.forEach(option => {
-                option.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const val = option.getAttribute('data-value');
-                    const text = option.textContent;
+            const sortLabels = {
+                "default": "Ordenar",
+                "name-asc": "Título: A a Z",
+                "name-desc": "Título: Z a A",
+                "date-desc": "Data: mais recentes",
+                "date-asc": "Data: mais antigas"
+            };
 
-                    options.forEach(opt => opt.classList.remove('selected'));
-                    option.classList.add('selected');
-                    label.textContent = text;
-                    hiddenCategoryInput.value = val;
+            // ---------- Carregar o JSON ----------
+            fetch(ARQUIVO_BIBLIOTECA)
+                .then(res => {
+                    if (!res.ok) throw new Error("JSON não localizado");
+                    return res.json();
+                })
+                .then(dados => {
+                    documentosGlobal = (dados.documentos || []).map(doc => ({
+                        ...doc,
+                        // Texto usado na busca: título, nome popular, apelidos,
+                        // número (com e sem ponto), resumo e temas
+                        textoBusca: normalizarTexto([
+                            doc.titulo,
+                            doc.nome_popular,
+                            (doc.apelidos || []).join(" "),
+                            doc.identificacao,
+                            doc.numero,
+                            String(doc.numero || "").replace(/\./g, ""),
+                            doc.resumo,
+                            (doc.temas || []).join(" ")
+                        ].join(" "))
+                    }));
 
-                    customSelect.classList.remove('open');
-                    filterCards();
-                });
-            });
-
-            // Evento de digitação na busca
-            searchInput.addEventListener('input', filterCards);
-
-            // Filtragem combinada (texto + categoria)
-            function filterCards() {
-                const query = searchInput.value.toLowerCase().trim();
-                const selectedCategory = hiddenCategoryInput.value;
-
-                cards.forEach(card => {
-                    const textContent = card.textContent.toLowerCase();
-                    const cardCategory = card.getAttribute('data-category');
-
-                    const matchesSearch = textContent.includes(query);
-                    const matchesCategory = !selectedCategory || cardCategory === selectedCategory;
-
-                    if (matchesSearch && matchesCategory) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
+                    const meta = dados.metadados || {};
+                    if (meta.aviso) {
+                        aviso.textContent =
+                            meta.aviso +
+                            (meta.orgao ? ` Levantamento: ${meta.orgao}` : "") +
+                            (meta.atualizado_em ? `, atualizado em ${formatarDataCurta(meta.atualizado_em)}.` : ".");
                     }
+
+                    aplicarFiltros();
+                })
+                .catch(erro => {
+                    console.error("Não foi possível carregar a biblioteca:", erro);
+                    grid.innerHTML = `<p class="library-empty">Não foi possível carregar os documentos. Tente novamente mais tarde.</p>`;
                 });
+
+            // ---------- Filtro por esfera (dropdown) ----------
+            trigger.addEventListener("click", (e) => {
+                e.stopPropagation();
+                customSelect.classList.toggle("open");
+                sortDropdown.classList.remove("active");
+            });
+
+            options.forEach(option => {
+                option.addEventListener("click", (e) => {
+                    e.stopPropagation();
+
+                    options.forEach(opt => opt.classList.remove("selected"));
+                    option.classList.add("selected");
+                    label.textContent = option.textContent;
+                    esferaInput.value = option.getAttribute("data-value");
+
+                    customSelect.classList.remove("open");
+                    aplicarFiltros();
+                });
+            });
+
+            // Clicar na etiqueta da esfera dentro do card também filtra
+            window.filtrarPorEsfera = function(esfera) {
+                const alvo = Array.from(options).find(
+                    opt => opt.getAttribute("data-value") === esfera
+                );
+                if (alvo) alvo.click();
+            };
+
+            // ---------- Ordenação ----------
+            sortToggleBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                sortDropdown.classList.toggle("active");
+                customSelect.classList.remove("open");
+                sortToggleBtn.setAttribute(
+                    "aria-expanded",
+                    String(sortDropdown.classList.contains("active"))
+                );
+            });
+
+            sortOptions.forEach(option => {
+                option.addEventListener("change", () => {
+                    if (!option.checked) return;
+
+                    ordenacaoAtual = option.value;
+                    sortBtnLabel.textContent = sortLabels[ordenacaoAtual] || "Ordenar";
+
+                    sortDropdown.classList.remove("active");
+                    sortToggleBtn.setAttribute("aria-expanded", "false");
+
+                    aplicarFiltros();
+                });
+            });
+
+            // Fechar os menus ao clicar fora deles
+            document.addEventListener("click", (e) => {
+                customSelect.classList.remove("open");
+
+                if (!sortDropdown.contains(e.target) && !sortToggleBtn.contains(e.target)) {
+                    sortDropdown.classList.remove("active");
+                    sortToggleBtn.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            // ---------- Busca ----------
+            searchInput.addEventListener("input", aplicarFiltros);
+
+            // Ignora aspas e símbolos no início do título ao ordenar
+            function chaveTitulo(doc) {
+                return normalizarTexto(doc.titulo).replace(/^[^a-z0-9]+/, "");
             }
 
-            // Função global para acionar filtro ao clicar diretamente nas tags
-            window.filterByCategory = function(category) {
-                const targetOption = Array.from(options).find(opt => opt.getAttribute('data-value') === category);
-                if (targetOption) {
-                    targetOption.click();
+            // Documentos sem data completa usam 1º de janeiro do ano
+            function chaveData(doc) {
+                return doc.data || `${doc.ano}-01-01`;
+            }
+
+            function ordenar(lista) {
+                const itens = [...lista];
+
+                switch (ordenacaoAtual) {
+                    case "name-asc":
+                        return itens.sort((a, b) =>
+                            chaveTitulo(a).localeCompare(chaveTitulo(b), "pt-BR", { numeric: true }));
+
+                    case "name-desc":
+                        return itens.sort((a, b) =>
+                            chaveTitulo(b).localeCompare(chaveTitulo(a), "pt-BR", { numeric: true }));
+
+                    case "date-desc":
+                        return itens.sort((a, b) => chaveData(b).localeCompare(chaveData(a)));
+
+                    case "date-asc":
+                        return itens.sort((a, b) => chaveData(a).localeCompare(chaveData(b)));
+
+                    default:
+                        return itens.sort((a, b) => a.ordem - b.ordem);
                 }
-            };
+            }
+
+            function aplicarFiltros() {
+                const termo = normalizarTexto(searchInput.value.trim());
+                const esfera = esferaInput.value;
+
+                const filtrados = documentosGlobal.filter(doc => {
+                    const combinaBusca = !termo || doc.textoBusca.includes(termo);
+                    const combinaEsfera = !esfera || doc.esfera === esfera;
+                    return combinaBusca && combinaEsfera;
+                });
+
+                contador.textContent =
+                    `Mostrando ${filtrados.length} de ${documentosGlobal.length} documentos`;
+
+                renderizar(ordenar(filtrados));
+            }
+
+            // ---------- Cards ----------
+            function rotuloSituacao(situacao) {
+                if (situacao === "alterada") return "Alterada";
+                if (situacao === "revogada") return "Revogada";
+                return "";
+            }
+
+            function renderizar(lista) {
+                if (lista.length === 0) {
+                    grid.innerHTML = `<p class="library-empty">Nenhum documento encontrado com os filtros selecionados.</p>`;
+                    return;
+                }
+
+                const iconeLink = `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>`;
+
+                grid.innerHTML = lista.map(doc => {
+                    const situacao = rotuloSituacao(doc.situacao);
+                    const esferaClasse = normalizarTexto(doc.esfera);
+
+                    const textoBotao = doc.link_tipo === "oficial"
+                        ? "Ler texto oficial"
+                        : "Buscar no portal oficial";
+
+                    const dicaBotao = doc.link_tipo === "oficial"
+                        ? ""
+                        : ` title="O link abre o portal de busca, onde a norma pode ser consultada pelo número"`;
+
+                    return `
+                        <article class="library-card" data-esfera="${escaparHtml(doc.esfera)}">
+                            <div class="card-library-content">
+                                <h3>${escaparHtml(doc.titulo)}</h3>
+                                <div class="card-library-meta">
+                                    <strong>Norma:</strong> ${escaparHtml(doc.identificacao)}<br>
+                                    <strong>Temas:</strong> ${escaparHtml((doc.temas || []).join(", "))}
+                                </div>
+                                <div class="card-library-desc">${escaparHtml(doc.resumo)}</div>
+                            </div>
+                            <div class="card-library-footer">
+                                <div class="library-tags">
+                                    <span
+                                        class="tag-lib tag-esfera-${esferaClasse}"
+                                        role="button"
+                                        tabindex="0"
+                                        title="Mostrar só normas da esfera ${escaparHtml(doc.esfera.toLowerCase())}"
+                                        onclick="filtrarPorEsfera('${escaparHtml(doc.esfera)}')"
+                                        onkeydown="if(event.key==='Enter'){filtrarPorEsfera('${escaparHtml(doc.esfera)}')}"
+                                    >${escaparHtml(doc.esfera)}</span>
+                                    ${situacao ? `<span class="tag-lib tag-situacao tag-situacao-${doc.situacao}">${situacao}</span>` : ""}
+                                </div>
+                                ${doc.link ? `
+                                <a href="${escaparHtml(doc.link)}" class="btn-access" target="_blank" rel="noopener noreferrer"${dicaBotao}>
+                                    <span>${textoBotao}</span>
+                                    ${iconeLink}
+                                </a>` : ""}
+                            </div>
+                        </article>
+                    `;
+                }).join("");
+            }
         });
     </script>
 </body>
